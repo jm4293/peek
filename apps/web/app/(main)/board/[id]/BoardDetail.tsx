@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { use } from 'react';
 
 import { ShareButton } from '@/components/button';
+import { Card, EmptyDataView, InternalErrorView } from '@/components/card';
 import { Thumbnail } from '@/components/image';
 import { PreText, Text } from '@/components/text';
-import { EmptyDataView, InternalErrorView, Wrapper } from '@/components/wrapper';
 
 import { BoardModel, useBoardMutation } from '@/services/board';
 import { UserAccountModel } from '@/services/user';
@@ -46,7 +46,7 @@ export default function BoardDetail(props: Props) {
 
   return (
     <>
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
             <Thumbnail thumbnail={data.userAccount.user.thumbnail} size={24} />
@@ -57,9 +57,9 @@ export default function BoardDetail(props: Props) {
           </div>
           <ShareButton text="게시글" />
         </div>
-      </Wrapper.SECTION>
+      </Card.SECTION>
 
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <div className="flex flex-col gap-4">
           <div className="flex items-start gap-2 flex-wrap">
             <Text.PARAGRAPH text={`[${data.stockCategory.name}]`} color="gray" className="flex-shrink-0" />
@@ -79,7 +79,7 @@ export default function BoardDetail(props: Props) {
             </div>
           )}
         </div>
-      </Wrapper.SECTION>
+      </Card.SECTION>
     </>
   );
 }

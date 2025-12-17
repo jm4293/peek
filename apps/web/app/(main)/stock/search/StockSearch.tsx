@@ -4,11 +4,11 @@ import { LocalStorageUtil } from '@/utils';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
+import { Card } from '@/components/card';
 import { InfinityList } from '@/components/infinity-list';
 import { Input } from '@/components/input';
 import { LineSkeleton } from '@/components/skeleton';
 import { NetworkErrorText, Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import { useDebounce } from '@/hooks/useDebounce';
 
@@ -77,7 +77,7 @@ export default function StockSearch() {
 
   return (
     <div className="flex flex-col gap-4">
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <Input
           label="종목 검색"
           name="title"
@@ -86,9 +86,9 @@ export default function StockSearch() {
           placeholder="종목명을 입력해주세요"
           required
         />
-      </Wrapper.SECTION>
+      </Card.SECTION>
 
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <div className="flex flex-col gap-2">
           <Text.CAPTION text={`총: ${data?.total || 0}건`} className="text-end" />
           <hr />
@@ -115,7 +115,7 @@ export default function StockSearch() {
             </div>
           )}
         </div>
-      </Wrapper.SECTION>
+      </Card.SECTION>
     </div>
   );
 }

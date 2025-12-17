@@ -34,7 +34,7 @@ const CONTAINER = (props: Props) => {
         ${className}
       `}
       {...rest}>
-      <strong className="text-white disabled:text-theme-txt-gray whitespace-nowrap font-semibold">{text}</strong>
+      <strong className="text-white disabled:text-theme-text-gray whitespace-nowrap font-semibold">{text}</strong>
     </button>
   );
 };
@@ -58,7 +58,7 @@ const OUTLINE = (props: Props) => {
       `}
       {...rest}>
       <strong
-        className={`whitespace-nowrap font-semibold ${color === 'default' ? 'text-theme-main-color disabled:text-theme-txt-gray' : 'text-[#FF5A5F]'}`}>
+        className={`whitespace-nowrap font-semibold ${color === 'default' ? 'text-theme-main-color disabled:text-theme-text-gray' : 'text-[#FF5A5F]'}`}>
         {text}
       </strong>
     </button>

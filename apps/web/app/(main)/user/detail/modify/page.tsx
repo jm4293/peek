@@ -1,4 +1,4 @@
-import { InternalErrorView, NotAuthView, Wrapper } from '@/components/wrapper';
+import { Card, InternalErrorView, NotAuthView } from '@/components/card';
 
 import { getUserInfo } from '@/services/user';
 
@@ -15,15 +15,15 @@ export default async function ModifyUserPage() {
 
   if (!data) {
     return (
-      <Wrapper.MAIN text="유저 상세">
+      <Card.MAIN text="유저 상세">
         <InternalErrorView />
-      </Wrapper.MAIN>
+      </Card.MAIN>
     );
   }
 
   return (
-    <Wrapper.MAIN text="유저정보 변경">
+    <Card.MAIN text="유저정보 변경">
       <ModifyUser userInfo={data} />
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

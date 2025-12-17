@@ -84,14 +84,14 @@ export const Select = (props: Props) => {
           disabled={disabled}
           className={`w-full flex items-center justify-between pl-4 pr-10 py-3 rounded-xl border ${
             isError ? 'border-red-500' : 'border-theme-border-light/50 dark:border-white/10'
-          } bg-theme-bg-card/30 dark:bg-theme-bg-section/30 backdrop-blur-md text-theme-txt-default focus:outline-none focus:ring-2 focus:ring-theme-main-color/20 focus:border-theme-main-color transition-all duration-200 ${
+          } bg-theme-bg-card/30 dark:bg-theme-bg-section/30 backdrop-blur-md text-theme-text-default focus:outline-none focus:ring-2 focus:ring-theme-main-color/20 focus:border-theme-main-color transition-all duration-200 ${
             disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'
           } shadow-lg shadow-black/5 dark:shadow-black/20`}>
-          <span className={`${!selectedOption && placeholder ? 'text-theme-txt-gray' : ''}`}>{displayText}</span>
+          <span className={`${!selectedOption && placeholder ? 'text-theme-text-gray' : ''}`}>{displayText}</span>
           <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
             <ChevronDown
               size={18}
-              className={`text-theme-txt-gray transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+              className={`text-theme-text-gray transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
             />
           </div>
         </button>
@@ -108,7 +108,7 @@ export const Select = (props: Props) => {
                 className={`w-full text-left px-4 py-3 transition-colors duration-150 ${
                   selectedValue === option.value
                     ? 'bg-theme-main-color/20 text-theme-main-color font-medium'
-                    : 'text-theme-txt-default hover:bg-theme-bg-card/50 dark:hover:bg-theme-bg-card-hover'
+                    : 'text-theme-text-default hover:bg-theme-bg-card/50 dark:hover:bg-theme-bg-card-hover'
                 }`}>
                 {option.label}
               </button>

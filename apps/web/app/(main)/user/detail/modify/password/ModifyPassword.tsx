@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { FormEvent } from 'react';
 
 import { Button } from '@/components/button';
+import { Card } from '@/components/card';
 import { Input } from '@/components/input';
-import { Wrapper } from '@/components/wrapper';
 
 import { useModal } from '@/hooks/modal';
 
@@ -67,7 +67,7 @@ export default function ModifyPassword() {
   };
 
   return (
-    <Wrapper.SECTION>
+    <Card.SECTION>
       <form className="flex flex-col gap-16" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-8">
           <Input label="현재 비밀번호" name="currentPassword" placeholder="현재 비밀번호" />
@@ -82,6 +82,6 @@ export default function ModifyPassword() {
           <Button.CONTAINER type="submit" text="변경하기" />
         </div>
       </form>
-    </Wrapper.SECTION>
+    </Card.SECTION>
   );
 }

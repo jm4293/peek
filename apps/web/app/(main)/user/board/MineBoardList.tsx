@@ -4,9 +4,9 @@ import { DayjsUtil } from '@/utils';
 import { Heart, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
+import { Card, EmptyDataView, InternalErrorView, LoadingView } from '@/components/card';
 import { InfinityList } from '@/components/infinity-list';
 import { Text } from '@/components/text';
-import { EmptyDataView, InternalErrorView, LoadingView, Wrapper } from '@/components/wrapper';
 
 import { BoardModel, useMineBoardList } from '@/services/board';
 
@@ -18,7 +18,7 @@ export default function MineBoardList() {
 
     return (
       <li key={id}>
-        <Wrapper.SECTION>
+        <Card.SECTION>
           <Link href={`/board/${id}`} className="flex flex-col gap-1">
             <div className="w-full flex justify-between items-center">
               <div className="w-full flex items-center gap-2">
@@ -42,7 +42,7 @@ export default function MineBoardList() {
               <Text.CAPTION text={DayjsUtil.of(createdAt).formatYYMMDDHHmm()} color="gray" />
             </div>
           </Link>
-        </Wrapper.SECTION>
+        </Card.SECTION>
       </li>
     );
   };

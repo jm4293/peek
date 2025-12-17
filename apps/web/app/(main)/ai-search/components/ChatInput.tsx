@@ -41,24 +41,24 @@ const ChatInput = ({ onSubmit, disabled }: ChatInputProps) => {
             }}
             placeholder="국내 주식에 대해 궁금한 점을 입력해 보세요"
             rows={1}
-            className="max-h-32 w-full resize-none rounded-lg border border-white/10 bg-theme-bg-main px-3 py-2 pr-12 text-sm text-theme-txt-default shadow-inner focus:outline-none focus:ring-2 focus:ring-theme-main-color/50"
+            className="max-h-32 w-full resize-none rounded-lg border border-white/10 bg-theme-bg-main px-3 py-2 pr-12 text-sm text-theme-text-default shadow-inner focus:outline-none focus:ring-2 focus:ring-theme-main-color/50"
           />
 
           <button
             type="submit"
             aria-label="메시지 전송"
             disabled={disabled || !value.trim()}
-            className="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center rounded-full bg-theme-main-color text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:bg-theme-main-color/40"
-          >
+            className="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center rounded-full bg-theme-main-color text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:bg-theme-main-color/40">
             <Send className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="text-right text-xs text-theme-txt-gray">{value.length}/{MAX_LENGTH}</div>
+        <div className="text-right text-xs text-theme-text-gray">
+          {value.length}/{MAX_LENGTH}
+        </div>
       </div>
     </form>
   );
 };
 
 export default ChatInput;
-

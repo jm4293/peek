@@ -1,11 +1,11 @@
+import { Card } from '../card/Card';
 import { LineSkeleton } from '../skeleton';
-import { Wrapper } from './Wrapper';
 
 export const LoadingView = () => {
   return (
-    <Wrapper.SECTION>
+    <Card.SECTION>
       <LineSkeleton />
       <LineSkeleton />
-    </Wrapper.SECTION>
+    </Card.SECTION>
   );
 };

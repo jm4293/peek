@@ -5,9 +5,9 @@ import { X } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect } from 'react';
 
+import { Card } from '@/components/card';
 import { InfinityList } from '@/components/infinity-list';
 import { PreText, Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import { useNewsPanel } from '@/hooks/news-panel';
 
@@ -24,7 +24,7 @@ export const NewsPanel = () => {
 
     return (
       <li key={id}>
-        <Wrapper.SECTION>
+        <Card.SECTION>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col">
               <Text.PARAGRAPH text={DayjsUtil.of(createdAt).formatYYMMDDHHmm()} color="gray" />
@@ -43,7 +43,7 @@ export const NewsPanel = () => {
               </div>
             </div>
           </div>
-        </Wrapper.SECTION>
+        </Card.SECTION>
       </li>
     );
   };
@@ -89,7 +89,7 @@ export const NewsPanel = () => {
         <div className="flex flex-col gap-2 p-5">
           <div className="flex justify-between items-center">
             <Text.TITLE text="PEEK" />
-            <X className="text-theme-txt-secondary" size={20} onClick={closePanel} />
+            <X className="text-theme-text-secondary" size={20} onClick={closePanel} />
           </div>
           <div>
             <Text.PARAGRAPH text="최신 소식을 확인하세요!" color="gray" />

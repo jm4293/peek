@@ -23,14 +23,14 @@ const SECTION = (props: Props) => {
   return (
     <section
       key={id}
-      className="flex flex-col justify-center gap-4 p-4 rounded-2xl backdrop-blur-xl bg-white/70 dark:bg-[#1f1f22]/70 border border-white/20 dark:border-white/10 shadow-md">
+      className="flex flex-col justify-center gap-2 p-4 rounded-xl bg-white/70 dark:bg-[#1f1f22]/70 border border-white/20 dark:border-white/10">
       {typeof text === 'string' ? <Text.SUBTITLE text={text} /> : text}
       {children}
     </section>
   );
 };
 
-export const Wrapper = {
+export const Card = {
   MAIN,
   SECTION,
 };

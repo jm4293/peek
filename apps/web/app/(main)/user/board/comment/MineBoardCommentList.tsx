@@ -3,9 +3,9 @@
 import { DayjsUtil } from '@/utils';
 import Link from 'next/link';
 
+import { Card, EmptyDataView, InternalErrorView, LoadingView } from '@/components/card';
 import { InfinityList } from '@/components/infinity-list';
 import { Text } from '@/components/text';
-import { EmptyDataView, InternalErrorView, LoadingView, Wrapper } from '@/components/wrapper';
 
 import { BoardCommentModel, useBoardCommentListMine } from '@/services/board';
 
@@ -17,7 +17,7 @@ export default function MineBoardCommentList() {
 
     return (
       <li key={id}>
-        <Wrapper.SECTION>
+        <Card.SECTION>
           <Link href={`/board/${board.id}`} className="flex flex-col gap-1">
             <div className="w-full flex justify-between items-center">
               <div className="w-full flex items-center gap-2">
@@ -36,7 +36,7 @@ export default function MineBoardCommentList() {
               <Text.PARAGRAPH text={content} className="truncate" />
             </div>
           </Link>
-        </Wrapper.SECTION>
+        </Card.SECTION>
       </li>
     );
   };

@@ -52,16 +52,16 @@ export const Header = () => {
   }, []);
 
   if (isPending) {
-    return <header className="backdrop-blur-sm" />;
+    return <header />;
   }
 
   if (isMobile) {
     return (
-      <header className="backdrop-blur-md px-6 h-12">
+      <header className="px-6 h-12 backdrop-blur-md bg-white/70 dark:bg-[#1f1f22]/70 border border-white/20 dark:border-white/10">
         <div className="w-full grid grid-cols-3 items-center">
           {pathname.split('/').length > 2 ? (
             <div onClick={() => router.back()}>
-              <ChevronLeft className="text-theme-txt-default" size={20} />
+              <ChevronLeft className="text-theme-text-default" size={20} />
             </div>
           ) : (
             <div />
@@ -76,8 +76,8 @@ export const Header = () => {
   }
 
   return (
-    <header className="backdrop-blur-md py-3">
-      <div className="px-12 py-2 bg-white/90 dark:bg-[#1f1f22]/90 rounded-full shadow-md">
+    <header className="py-3">
+      <div className="px-12 py-2 backdrop-blur-md bg-white/70 dark:bg-[#1f1f22]/70 rounded-full border border-white/20 dark:border-white/10 shadow-md">
         <div className="flex items-center gap-12">
           <Logo />
 
@@ -86,19 +86,14 @@ export const Header = () => {
               const isActive = pathname.startsWith(basePath);
 
               return (
-                <Link key={label} href={path} scroll={true} className="relative">
-                  <div
-                    className={`relative px-5 py-1 rounded-full transition-all duration-300 ease-in-out ${
-                      isActive
-                        ? 'backdrop-blur-sm bg-white/50 dark:bg-white/10 shadow-md scale-110'
-                        : 'hover:bg-white/30 dark:hover:bg-white/5 hover:scale-110 active:scale-95'
-                    }`}>
+                <Link key={label} href={path} scroll={true}>
+                  <div className={`relative px-5 py-1 ease-in-out ${isActive ? 'scale-105' : 'hover:scale-105'}`}>
                     <Text.HEADING
                       text={label}
-                      color={isActive ? 'default' : 'gray'}
+                      color={isActive ? 'main' : 'gray'}
                       className={`whitespace-nowrap transition-all duration-300 ${isActive ? 'font-semibold' : 'font-medium'}`}
                     />
-                    {isActive && <div className="absolute inset-0 rounded-full" />}
+                    {/* {isActive && <div className="absolute inset-0 rounded-full bg-theme-bg-main -z-10" />} */}
                   </div>
                 </Link>
               );

@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/button';
+import { Card } from '@/components/card';
 import { Input } from '@/components/input';
 import { Text } from '@/components/text';
 import { Textarea } from '@/components/textarea';
-import { Wrapper } from '@/components/wrapper';
 
 import { BoardModel, UpdateBoardReq, updateBoardReqSchema, useBoardMutation } from '@/services/board';
 
@@ -40,7 +40,7 @@ export default function BoardModify(props: Props) {
   };
 
   return (
-    <Wrapper.SECTION>
+    <Card.SECTION>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-8">
           <div className="col-span-5 flex flex-col gap-4">
@@ -62,6 +62,6 @@ export default function BoardModify(props: Props) {
           </div>
         </div>
       </form>
-    </Wrapper.SECTION>
+    </Card.SECTION>
   );
 }

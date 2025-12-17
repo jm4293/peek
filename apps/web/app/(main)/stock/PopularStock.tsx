@@ -3,9 +3,9 @@
 import { LocalStorageUtil, StockSignMarkUtil } from '@/utils';
 import { useRouter } from 'next/navigation';
 
+import { InternalErrorView, LoadingView } from '@/components/card';
 import { InfinityList } from '@/components/infinity-list';
 import { Text } from '@/components/text';
-import { InternalErrorView, LoadingView } from '@/components/wrapper';
 
 import { LocalStorageKey } from '@/shared/constant/local-storage-key';
 import { StockRankEnum } from '@/shared/enum/stock';

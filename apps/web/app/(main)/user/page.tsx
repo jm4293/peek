@@ -1,9 +1,9 @@
 import { ChevronRight, FileText, HelpCircle, MessageSquare, Palette, Shield, Star } from 'lucide-react';
 import Link from 'next/link';
 
+import { Card, InternalErrorView, NotAuthView } from '@/components/card';
 import { Thumbnail } from '@/components/image';
 import { Text } from '@/components/text';
-import { InternalErrorView, NotAuthView, Wrapper } from '@/components/wrapper';
 
 import { getUserInfo } from '@/services/user';
 
@@ -22,9 +22,9 @@ export default async function UserPage() {
 
   if (!data) {
     return (
-      <Wrapper.MAIN text="내 정보">
+      <Card.MAIN text="내 정보">
         <InternalErrorView />
-      </Wrapper.MAIN>
+      </Card.MAIN>
     );
   }
 
@@ -33,8 +33,8 @@ export default async function UserPage() {
       <NewsButton />
       <NewsPanel />
 
-      <Wrapper.MAIN text="내 정보">
-        <Wrapper.SECTION>
+      <Card.MAIN text="내 정보">
+        <Card.SECTION>
           <Link href="/user/detail" className="w-full flex justify-between items-center">
             <div className="flex items-center gap-4">
               <Thumbnail thumbnail={data.user.thumbnail} size={24} />
@@ -42,9 +42,9 @@ export default async function UserPage() {
             </div>
             <ChevronRight />
           </Link>
-        </Wrapper.SECTION>
+        </Card.SECTION>
 
-        <Wrapper.SECTION text="히스토리">
+        <Card.SECTION text="히스토리">
           <Link href="/user/stock/favorite" className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Star size={20} />
@@ -66,9 +66,9 @@ export default async function UserPage() {
             </div>
             <ChevronRight />
           </Link>
-        </Wrapper.SECTION>
+        </Card.SECTION>
 
-        <Wrapper.SECTION text="설정">
+        <Card.SECTION text="설정">
           <Link href="/user/setting/theme" className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Palette size={20} />
@@ -76,9 +76,9 @@ export default async function UserPage() {
             </div>
             <ChevronRight />
           </Link>
-        </Wrapper.SECTION>
+        </Card.SECTION>
 
-        <Wrapper.SECTION text="지원">
+        <Card.SECTION text="지원">
           <Link href="/user/inquiry" className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <HelpCircle size={20} />
@@ -93,10 +93,10 @@ export default async function UserPage() {
             </div>
             <ChevronRight />
           </Link>
-        </Wrapper.SECTION>
+        </Card.SECTION>
 
         <UserLogout />
-      </Wrapper.MAIN>
+      </Card.MAIN>
     </>
   );
 }

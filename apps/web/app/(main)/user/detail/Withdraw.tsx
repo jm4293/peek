@@ -1,7 +1,7 @@
 'use client';
 
+import { Card } from '@/components/card';
 import { Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import { useModal } from '@/hooks/modal';
 
@@ -29,10 +29,10 @@ export default function UserWithdraw() {
   };
 
   return (
-    <Wrapper.SECTION>
+    <Card.SECTION>
       <div className="cursor-pointer" onClick={withdrawHandler}>
         <Text.HEADING text="탈퇴하기" color="red" />
       </div>
-    </Wrapper.SECTION>
+    </Card.SECTION>
   );
 }

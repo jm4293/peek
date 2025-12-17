@@ -1,4 +1,4 @@
-import { Wrapper } from '../wrapper';
+import { Card } from '../card';
 import styles from './skeleton.module.css';
 
 const skelton = (
@@ -10,11 +10,11 @@ const skelton = (
 export const SkeletonSuspense = () => {
   return (
     <>
-      <Wrapper.SECTION>{skelton}</Wrapper.SECTION>
+      <Card.SECTION>{skelton}</Card.SECTION>
 
-      <Wrapper.SECTION>
+      <Card.SECTION>
         {skelton} {skelton}
-      </Wrapper.SECTION>
+      </Card.SECTION>
     </>
   );
 };

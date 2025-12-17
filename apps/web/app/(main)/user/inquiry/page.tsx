@@ -1,4 +1,4 @@
-import { Wrapper } from '@/components/wrapper';
+import { Card } from '@/components/card';
 
 import { getUserInfo } from '@/services/user';
 
@@ -9,10 +9,10 @@ export default async function UserInquiryPage() {
   const { success } = await getUserInfo();
 
   return (
-    <Wrapper.MAIN text="문의하기">
+    <Card.MAIN text="문의하기">
       <InquiryList />
 
       <InquiryRegisterButton isAuth={success} />
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

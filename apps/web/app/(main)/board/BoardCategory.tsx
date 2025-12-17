@@ -3,8 +3,8 @@
 import { useDeviceLayout } from '@/hooks';
 import { useRouter } from 'next/navigation';
 
+import { InternalErrorView, LoadingView } from '@/components/card';
 import { Tab } from '@/components/tab';
-import { InternalErrorView, LoadingView } from '@/components/wrapper';
 
 import { useQueryParams } from '@/hooks/queryParams';
 

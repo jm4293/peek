@@ -1,7 +1,7 @@
 import { StockSignMarkUtil } from '@/utils';
 
+import { Card, EmptyDataView, InternalErrorView } from '@/components/card';
 import { Text } from '@/components/text';
-import { EmptyDataView, InternalErrorView, Wrapper } from '@/components/wrapper';
 
 import { getStockKoreanDetail } from '@/services/stock';
 
@@ -16,23 +16,23 @@ export default async function StockDetailPage(props: Props) {
 
   // if (!success) {
   //   return (
-  //     <Wrapper.MAIN text="상세 정보">
+  //     <Card.MAIN text="상세 정보">
   //       <InternalErrorView />
-  //     </Wrapper.MAIN>
+  //     </Card.MAIN>
   //   );
   // }
 
   // if (!data) {
   //   return (
-  //     <Wrapper.MAIN text="상세 정보">
+  //     <Card.MAIN text="상세 정보">
   //       <EmptyDataView text="상세 정보" />
-  //     </Wrapper.MAIN>
+  //     </Card.MAIN>
   //   );
   // }
 
   // return (
-  //   <Wrapper.MAIN text="상세 정보">
-  //     <Wrapper.SECTION>
+  //   <Card.MAIN text="상세 정보">
+  //     <Card.SECTION>
   //       <div className="flex justify-between items-center">
   //         <div>
   //           <Text.TITLE text={data.stk_nm} />
@@ -108,7 +108,7 @@ export default async function StockDetailPage(props: Props) {
   //       </div>
 
   //       {/* <BoardDetail code={code} /> */}
-  //     </Wrapper.SECTION>
-  //   </Wrapper.MAIN>
+  //     </Card.SECTION>
+  //   </Card.MAIN>
   // );
 }

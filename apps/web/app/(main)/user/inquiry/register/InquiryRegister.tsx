@@ -7,10 +7,10 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import { Button } from '@/components/button';
+import { Card } from '@/components/card';
 import { Input } from '@/components/input';
 import { Text } from '@/components/text';
 import { Textarea } from '@/components/textarea';
-import { Wrapper } from '@/components/wrapper';
 
 import { useModal, useToast } from '@/hooks/modal';
 
@@ -74,7 +74,7 @@ export default function InquiryRegister() {
   };
 
   return (
-    <Wrapper.SECTION>
+    <Card.SECTION>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-12">
           <div className="flex flex-col gap-4">
@@ -130,6 +130,6 @@ export default function InquiryRegister() {
           </div>
         </div>
       </form>
-    </Wrapper.SECTION>
+    </Card.SECTION>
   );
 }

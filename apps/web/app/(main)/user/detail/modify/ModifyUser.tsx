@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/button';
+import { Card } from '@/components/card';
 import { Input } from '@/components/input';
 import { Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import { UserAccountModel, useUserMutation } from '@/services/user';
 import { UpdateUserInfoReq, updateUserInfoReqSchema } from '@/services/user/type';
@@ -37,7 +37,7 @@ export default function ModifyUser(props: Props) {
   };
 
   return (
-    <Wrapper.SECTION>
+    <Card.SECTION>
       <form className="flex flex-col gap-16" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-8">
           <Input label="이메일" name="email" placeholder="이메일" defaultValue={userInfo.email} disabled />
@@ -66,6 +66,6 @@ export default function ModifyUser(props: Props) {
           <Button.CONTAINER type="submit" text="변경하기" disabled={updateUserMutation.isPending} />
         </div>
       </form>
-    </Wrapper.SECTION>
+    </Card.SECTION>
   );
 }

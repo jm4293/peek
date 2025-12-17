@@ -21,7 +21,7 @@ const bubbleStyles = {
   },
   assistant: {
     alignment: 'justify-start text-left',
-    bubble: 'bg-theme-bg-main text-theme-txt-default border border-theme-main-color/30 rounded-2xl rounded-bl-md',
+    bubble: 'bg-theme-bg-main text-theme-text-default border border-theme-main-color/30 rounded-2xl rounded-bl-md',
     container: 'items-start gap-3',
   },
 } as const;
@@ -55,13 +55,10 @@ const ChatMessageBubble = ({ message }: ChatMessageProps) => {
           )}
         </div>
 
-        <span className="text-xs text-theme-txt-gray">
-          {dayjs(createdAt).format('YYYY.MM.DD HH:mm')}
-        </span>
+        <span className="text-xs text-theme-text-gray">{dayjs(createdAt).format('YYYY.MM.DD HH:mm')}</span>
       </div>
     </div>
   );
 };
 
 export default ChatMessageBubble;
-

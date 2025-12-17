@@ -10,9 +10,9 @@ import jpFlag from '@/assets/country/jp.png';
 import ukFlag from '@/assets/country/uk.png';
 import usFlag from '@/assets/country/us.png';
 
+import { Card } from '@/components/card';
 import { LineSkeleton } from '@/components/skeleton';
 import { NetworkErrorText, Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import { useCurrencyList } from '@/services/currency/query';
 
@@ -32,7 +32,7 @@ export const Currency = () => {
 
   const CurrencyWrapper = ({ children }: { children: React.ReactNode }) => {
     return (
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Text.HEADING text="환율" />
@@ -41,7 +41,7 @@ export const Currency = () => {
           {isSuccess && data && <Text.CAPTION text="10초마다 갱신됩니다." color="gray" className="text-end" />}
         </div>
         {children}
-      </Wrapper.SECTION>
+      </Card.SECTION>
     );
   };
 

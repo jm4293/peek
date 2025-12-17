@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 
+import { Card, EmptyDataView, InternalErrorView, LoadingView } from '@/components/card';
 import { InfinityList } from '@/components/infinity-list';
 import { Text } from '@/components/text';
-import { EmptyDataView, InternalErrorView, LoadingView, Wrapper } from '@/components/wrapper';
 
 import { useStockKoreanFavoriteList } from '@/services/stock';
 import { UserStockFavoriteModel } from '@/services/user';
@@ -17,7 +17,7 @@ export default function StockKoreanFavoriteList() {
 
     return (
       <li key={stockKoreanCompany.id}>
-        <Wrapper.SECTION>
+        <Card.SECTION>
           <Link href={`/stock/detail/${stockKoreanCompany.code}`} className="flex flex-col gap-1">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
@@ -41,7 +41,7 @@ export default function StockKoreanFavoriteList() {
               <Text.PARAGRAPH text={DayjsUtil.of(createdAt).formatYYMMDDHHmm()} color="gray" />
             </div> */}
           </Link>
-        </Wrapper.SECTION>
+        </Card.SECTION>
       </li>
     );
   };

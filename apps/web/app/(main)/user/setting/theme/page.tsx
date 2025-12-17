@@ -1,10 +1,10 @@
 import { ThemeSwitcher } from '@/components/button';
-import { Wrapper } from '@/components/wrapper';
+import { Card } from '@/components/card';
 
 export default function UserSettingThemePage() {
   return (
-    <Wrapper.MAIN text="테마 설정">
+    <Card.MAIN text="테마 설정">
       <ThemeSwitcher />
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

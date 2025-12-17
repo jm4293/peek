@@ -16,21 +16,21 @@ describe('Text Component', () => {
     it('기본 스타일 클래스를 적용한다', () => {
       render(<Text.TITLE text="Title Text" />);
       const titleElement = screen.getByRole('heading', { level: 1 });
-      expect(titleElement).toHaveClass('text-xl', 'font-semibold', 'text-theme-txt-default');
+      expect(titleElement).toHaveClass('text-xl', 'font-semibold', 'text-theme-text-default');
     });
 
     it('color prop에 따라 색상 클래스를 적용한다', () => {
       const { rerender } = render(<Text.TITLE text="Title Text" color="gray" />);
       let titleElement = screen.getByRole('heading', { level: 1 });
-      expect(titleElement).toHaveClass('text-theme-txt-gray');
+      expect(titleElement).toHaveClass('text-theme-text-gray');
 
       rerender(<Text.TITLE text="Title Text" color="blue" />);
       titleElement = screen.getByRole('heading', { level: 1 });
-      expect(titleElement).toHaveClass('text-theme-txt-blue');
+      expect(titleElement).toHaveClass('text-theme-text-blue');
 
       rerender(<Text.TITLE text="Title Text" color="red" />);
       titleElement = screen.getByRole('heading', { level: 1 });
-      expect(titleElement).toHaveClass('text-theme-txt-red');
+      expect(titleElement).toHaveClass('text-theme-text-red');
 
       rerender(<Text.TITLE text="Title Text" color="main" />);
       titleElement = screen.getByRole('heading', { level: 1 });
@@ -61,17 +61,17 @@ describe('Text Component', () => {
     it('기본 스타일 클래스를 적용한다', () => {
       render(<Text.SUBTITLE text="Subtitle Text" />);
       const subtitleElement = screen.getByRole('heading', { level: 2 });
-      expect(subtitleElement).toHaveClass('text-lg', 'font-medium', 'text-theme-txt-default');
+      expect(subtitleElement).toHaveClass('text-lg', 'font-medium', 'text-theme-text-default');
     });
 
     it('color prop에 따라 색상 클래스를 적용한다', () => {
       const { rerender } = render(<Text.SUBTITLE text="Subtitle Text" color="gray" />);
       let subtitleElement = screen.getByRole('heading', { level: 2 });
-      expect(subtitleElement).toHaveClass('text-theme-txt-gray');
+      expect(subtitleElement).toHaveClass('text-theme-text-gray');
 
       rerender(<Text.SUBTITLE text="Subtitle Text" color="blue" />);
       subtitleElement = screen.getByRole('heading', { level: 2 });
-      expect(subtitleElement).toHaveClass('text-theme-txt-blue');
+      expect(subtitleElement).toHaveClass('text-theme-text-blue');
     });
 
     it('커스텀 className을 추가한다', () => {
@@ -92,13 +92,13 @@ describe('Text Component', () => {
     it('기본 스타일 클래스를 적용한다', () => {
       render(<Text.HEADING text="Heading Text" />);
       const headingElement = screen.getByRole('heading', { level: 3 });
-      expect(headingElement).toHaveClass('text-base', 'font-medium', 'text-theme-txt-default');
+      expect(headingElement).toHaveClass('text-base', 'font-medium', 'text-theme-text-default');
     });
 
     it('color prop에 따라 색상 클래스를 적용한다', () => {
       const { rerender } = render(<Text.HEADING text="Heading Text" color="red" />);
       let headingElement = screen.getByRole('heading', { level: 3 });
-      expect(headingElement).toHaveClass('text-theme-txt-red');
+      expect(headingElement).toHaveClass('text-theme-text-red');
 
       rerender(<Text.HEADING text="Heading Text" color="main" />);
       headingElement = screen.getByRole('heading', { level: 3 });
@@ -123,17 +123,17 @@ describe('Text Component', () => {
     it('기본 스타일 클래스를 적용한다', () => {
       render(<Text.PARAGRAPH text="Paragraph Text" />);
       const paragraphElement = screen.getByText('Paragraph Text');
-      expect(paragraphElement).toHaveClass('text-sm', 'text-theme-txt-default');
+      expect(paragraphElement).toHaveClass('text-sm', 'text-theme-text-default');
     });
 
     it('color prop에 따라 색상 클래스를 적용한다', () => {
       const { rerender } = render(<Text.PARAGRAPH text="Paragraph Text" color="gray" />);
       let paragraphElement = screen.getByText('Paragraph Text');
-      expect(paragraphElement).toHaveClass('text-theme-txt-gray');
+      expect(paragraphElement).toHaveClass('text-theme-text-gray');
 
       rerender(<Text.PARAGRAPH text="Paragraph Text" color="blue" />);
       paragraphElement = screen.getByText('Paragraph Text');
-      expect(paragraphElement).toHaveClass('text-theme-txt-blue');
+      expect(paragraphElement).toHaveClass('text-theme-text-blue');
     });
 
     it('커스텀 className을 추가한다', () => {
@@ -160,17 +160,17 @@ describe('Text Component', () => {
     it('기본 스타일 클래스를 적용한다 (italic 포함)', () => {
       render(<Text.CAPTION text="Caption Text" />);
       const captionElement = screen.getByText('Caption Text');
-      expect(captionElement).toHaveClass('text-xs', 'italic', 'text-theme-txt-default');
+      expect(captionElement).toHaveClass('text-xs', 'italic', 'text-theme-text-default');
     });
 
     it('color prop에 따라 색상 클래스를 적용한다', () => {
       const { rerender } = render(<Text.CAPTION text="Caption Text" color="gray" />);
       let captionElement = screen.getByText('Caption Text');
-      expect(captionElement).toHaveClass('text-theme-txt-gray');
+      expect(captionElement).toHaveClass('text-theme-text-gray');
 
       rerender(<Text.CAPTION text="Caption Text" color="red" />);
       captionElement = screen.getByText('Caption Text');
-      expect(captionElement).toHaveClass('text-theme-txt-red');
+      expect(captionElement).toHaveClass('text-theme-text-red');
     });
 
     it('커스텀 className을 추가한다', () => {

@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 
+import { Card } from '@/components/card';
 import { LineSkeleton } from '@/components/skeleton';
 import { NetworkErrorText, Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import { useStockUsIndex } from '@/hooks/socket';
 
@@ -15,7 +15,7 @@ export const StockUsIndex = () => {
 
   const StockUsIndexWrapper = ({ children }: { children: React.ReactNode }) => {
     return (
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Text.HEADING text="미국 지수" />
@@ -26,7 +26,7 @@ export const StockUsIndex = () => {
           {/* {isConnected && kospi && <Text.CAPTION text="10초마다 갱신됩니다." color="gray" className="text-end" />} */}
         </div>
         {children}
-      </Wrapper.SECTION>
+      </Card.SECTION>
     );
   };
 

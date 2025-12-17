@@ -3,11 +3,11 @@
 import { DayjsUtil, ValidationUtil } from '@/utils';
 import { useEffect, useState } from 'react';
 
+import { Card } from '@/components/card';
 import { Thumbnail } from '@/components/image';
 import { Input } from '@/components/input';
 import { LineSkeleton } from '@/components/skeleton';
 import { Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import { useToast } from '@/hooks/modal';
 
@@ -71,7 +71,7 @@ export default function BoardComment(props: Props) {
   }, [isReply]);
 
   return (
-    <Wrapper.SECTION>
+    <Card.SECTION>
       <Text.HEADING text="댓글" />
 
       {isSuccess ? (
@@ -163,6 +163,6 @@ export default function BoardComment(props: Props) {
           {isFetchingNextPage ? <LineSkeleton h={2} /> : '더보기'}
         </button>
       )}
-    </Wrapper.SECTION>
+    </Card.SECTION>
   );
 }

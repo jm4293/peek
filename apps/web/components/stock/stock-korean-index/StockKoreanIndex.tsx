@@ -3,9 +3,9 @@
 import { DayjsUtil } from '@/utils';
 import Link from 'next/link';
 
+import { Card } from '@/components/card';
 import { LineSkeleton } from '@/components/skeleton';
 import { KoreanStockIndexText, NetworkErrorText, Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import { useStockKoreanIndex } from '@/hooks/socket';
 
@@ -24,7 +24,7 @@ export const StockKoreanIndex = () => {
 
   const StockKoreanIndexWrapper = ({ children }: { children: React.ReactNode }) => {
     return (
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Text.HEADING text="한국 지수" />
@@ -35,7 +35,7 @@ export const StockKoreanIndex = () => {
           {isConnected && kospi && <Text.CAPTION text="10초마다 갱신됩니다." color="gray" className="text-end" />}
         </div>
         {children}
-      </Wrapper.SECTION>
+      </Card.SECTION>
     );
   };
 

@@ -1,4 +1,4 @@
-import { NotAuthView, Wrapper } from '@/components/wrapper';
+import { Card, NotAuthView } from '@/components/card';
 
 import { getUserInfo } from '@/services/user';
 
@@ -12,8 +12,8 @@ export default async function BoardRegisterPage() {
   }
 
   return (
-    <Wrapper.MAIN text="게시글 등록">
+    <Card.MAIN text="게시글 등록">
       <BoardRegister />
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

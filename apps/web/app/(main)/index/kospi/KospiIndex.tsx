@@ -1,9 +1,9 @@
 'use client';
 
+import { Card } from '@/components/card';
 import { ChartStockIndex } from '@/components/chart/stock-index';
 import { LineSkeleton } from '@/components/skeleton';
 import { Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import { useStockKoreanIndex } from '@/hooks/socket';
 
@@ -24,7 +24,7 @@ export default function KospiIndex() {
   }
 
   return (
-    <Wrapper.SECTION>
+    <Card.SECTION>
       <div>
         <div className="flex items-center gap-2">
           <Text.HEADING text="코스피" className="text-nowrap text-end" />
@@ -51,6 +51,6 @@ export default function KospiIndex() {
       </div>
 
       {kospi && <ChartStockIndex data={kospi} />}
-    </Wrapper.SECTION>
+    </Card.SECTION>
   );
 }

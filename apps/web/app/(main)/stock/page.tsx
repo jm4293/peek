@@ -1,22 +1,22 @@
+import { Card } from '@/components/card';
 import { CurrentTimeText, Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import RecentStockList from './RecentStockList';
 
 export default function Page() {
   return (
-    <Wrapper.MAIN
+    <Card.MAIN
       text={
         <div className="flex items-center justify-between">
           <Text.TITLE text="주식" />
           <CurrentTimeText />
         </div>
       }>
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <RecentStockList />
-      </Wrapper.SECTION>
+      </Card.SECTION>
 
       {/* <PopularStock /> */}
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

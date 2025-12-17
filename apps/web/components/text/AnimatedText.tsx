@@ -10,10 +10,10 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 }
 
 const textColor = {
-  default: 'text-theme-txt-default',
-  gray: 'text-theme-txt-gray',
-  blue: 'text-theme-txt-blue',
-  red: 'text-theme-txt-red',
+  default: 'text-theme-text-default',
+  gray: 'text-theme-text-gray',
+  blue: 'text-theme-text-blue',
+  red: 'text-theme-text-red',
   main: 'text-theme-main-color',
 };
 

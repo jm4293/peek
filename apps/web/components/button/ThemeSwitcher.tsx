@@ -4,7 +4,7 @@ import { Monitor, Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
-import { Wrapper } from '../wrapper';
+import { Card } from '../card';
 
 export const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
@@ -25,7 +25,7 @@ export const ThemeSwitcher = () => {
   ];
 
   return (
-    <Wrapper.SECTION text="테마">
+    <Card.SECTION text="테마">
       <div className="flex flex-col gap-3">
         {themes.map(({ value, icon: Icon, label }) => {
           const isActive = theme === value;
@@ -49,6 +49,6 @@ export const ThemeSwitcher = () => {
           );
         })}
       </div>
-    </Wrapper.SECTION>
+    </Card.SECTION>
   );
 };

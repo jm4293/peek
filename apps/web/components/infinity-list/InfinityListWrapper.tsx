@@ -2,8 +2,8 @@
 
 import { JSX } from 'react';
 
+import { Card } from '../card';
 import { Text } from '../text';
-import { Wrapper } from '../wrapper';
 
 interface Props {
   total: number | undefined;
@@ -16,12 +16,12 @@ export const InfinityListWrapper = (props: Props) => {
 
   return (
     <div className="w-full flex flex-col gap-4">
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <div className="flex justify-between items-center">
           <div>{title && title}</div>
           <Text.PARAGRAPH text={`${String(total)}개`} />
         </div>
-      </Wrapper.SECTION>
+      </Card.SECTION>
 
       <>{children}</>
     </div>

@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 
 import { Button } from '@/components/button';
+import { Card, InternalErrorView } from '@/components/card';
 import { Input } from '@/components/input';
 import { SkeletonSuspense } from '@/components/skeleton';
 import { Text } from '@/components/text';
 import { Textarea } from '@/components/textarea';
-import { InternalErrorView, Wrapper } from '@/components/wrapper';
 
 import { CreateBoardReq, createBoardReqSchema, useBoardMutation } from '@/services/board';
 import { useStockCategoryList } from '@/services/stock';
@@ -41,15 +41,15 @@ export default function BoardRegister() {
 
   if (!isSuccess) {
     return (
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <InternalErrorView />
-      </Wrapper.SECTION>
+      </Card.SECTION>
     );
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-      <Wrapper.SECTION text="카테고리">
+      <Card.SECTION text="카테고리">
         <div className="flex items-center gap-4">
           {data.map((cur) => {
             return (
@@ -60,9 +60,9 @@ export default function BoardRegister() {
           })}
         </div>
         {errors.categoryId && <Text.PARAGRAPH text={errors.categoryId.message} color="red" />}
-      </Wrapper.SECTION>
+      </Card.SECTION>
 
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <div className="flex flex-col gap-12">
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
@@ -83,7 +83,7 @@ export default function BoardRegister() {
             <Button.CONTAINER text="등록하기" type="submit" disabled={createBoardMutation.isPending} />
           </div>
         </div>
-      </Wrapper.SECTION>
+      </Card.SECTION>
     </form>
   );
 }

@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 
+import { Card } from '@/components/card';
 import { SkeletonSuspense } from '@/components/skeleton';
-import { Wrapper } from '@/components/wrapper';
 
 import { getInquiryDetail } from '@/services/inquiry/server';
 
@@ -17,10 +17,10 @@ export default async function UserInquiryDetailPage(props: Props) {
   const inquiry = getInquiryDetail(id);
 
   return (
-    <Wrapper.MAIN text="문의">
+    <Card.MAIN text="문의">
       <Suspense fallback={<SkeletonSuspense />}>
         <InquiryDetail inquiry={inquiry} />
       </Suspense>
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

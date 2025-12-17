@@ -1,8 +1,8 @@
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
+import { Card, InternalErrorView, NotAuthView } from '@/components/card';
 import { Text } from '@/components/text';
-import { InternalErrorView, NotAuthView, Wrapper } from '@/components/wrapper';
 
 import { getUserInfo } from '@/services/user';
 
@@ -20,15 +20,15 @@ export default async function UserDetailPage() {
 
   if (!data) {
     return (
-      <Wrapper.MAIN text="유저 상세">
+      <Card.MAIN text="유저 상세">
         <InternalErrorView />
-      </Wrapper.MAIN>
+      </Card.MAIN>
     );
   }
 
   return (
-    <Wrapper.MAIN text="유저 상세">
-      <Wrapper.SECTION text="상세">
+    <Card.MAIN text="유저 상세">
+      <Card.SECTION text="상세">
         <div className="flex items-center gap-2">
           <Text.PARAGRAPH text="가입경로:" />
           <Text.HEADING text={`${userAccountTypeDescription[data.userAccountType]}`} />
@@ -49,9 +49,9 @@ export default async function UserDetailPage() {
             <Text.PARAGRAPH text="생년월일:" />
             <Text.HEADING text={`${my.user.birth || '-'}`} />
           </div> */}
-      </Wrapper.SECTION>
+      </Card.SECTION>
 
-      <Wrapper.SECTION text="변경">
+      <Card.SECTION text="변경">
         <Link href="/user/detail/modify" className="flex items-center justify-between">
           <Text.HEADING text="유저정보 변경" />
           <ChevronRight />
@@ -60,9 +60,9 @@ export default async function UserDetailPage() {
             <Text.HEADING text="비밀번호 변경" />
             <ChevronRight />
           </Link> */}
-      </Wrapper.SECTION>
+      </Card.SECTION>
 
       <UserWithdraw />
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

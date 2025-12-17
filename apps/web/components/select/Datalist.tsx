@@ -31,7 +31,7 @@ export const Datalist = (props: Props) => {
         list={datalistId}
         id={name}
         name={name}
-        className={`border-b-theme-txt-gray ${isError ? 'border-red-500' : ''}`}
+        className={`border-b-theme-text-gray ${isError ? 'border-red-500' : ''}`}
         placeholder={`${placeholder ?? title} ${isOptional ? '[선택] ' : ''}`}
         {...rest}
       />

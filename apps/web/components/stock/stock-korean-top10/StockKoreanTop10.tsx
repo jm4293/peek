@@ -3,9 +3,9 @@
 import { DayjsUtil } from '@/utils';
 import Link from 'next/link';
 
+import { Card } from '@/components/card';
 import { LineSkeleton } from '@/components/skeleton';
 import { KoreanStockIndexText, NetworkErrorText, Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import { useStockKoreanTop10 } from '@/hooks/socket';
 
@@ -16,7 +16,7 @@ export const StockKoreanTop10 = () => {
 
   const StockKoreanTop10Wrapper = ({ children }: { children: React.ReactNode }) => {
     return (
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <Link className="flex justify-between items-center" href="/stock/korean/top10">
           <div className="flex items-center gap-2">
             <Text.HEADING text="한국 시가총액" />
@@ -27,7 +27,7 @@ export const StockKoreanTop10 = () => {
           {isConnected && data && <Text.CAPTION text="10초마다 갱신됩니다." color="gray" className="text-end" />}
         </Link>
         {children}
-      </Wrapper.SECTION>
+      </Card.SECTION>
     );
   };
 

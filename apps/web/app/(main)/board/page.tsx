@@ -1,4 +1,4 @@
-import { Wrapper } from '@/components/wrapper';
+import { Card } from '@/components/card';
 
 import { getUserInfo } from '@/services/user';
 
@@ -10,12 +10,12 @@ export default async function BoardPage() {
   const { data: userInfo } = await getUserInfo();
 
   return (
-    <Wrapper.MAIN text="커뮤니티">
+    <Card.MAIN text="커뮤니티">
       <div className="flex flex-col gap-4">
         <BoardCategory />
         <BoardList />
         <BoardRegisterButton userInfo={userInfo} />
       </div>
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

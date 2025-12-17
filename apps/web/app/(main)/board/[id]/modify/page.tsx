@@ -1,4 +1,4 @@
-import { EmptyDataView, InternalErrorView, Wrapper } from '@/components/wrapper';
+import { Card, EmptyDataView, InternalErrorView } from '@/components/card';
 
 import { getBoardDetail } from '@/services/board';
 
@@ -15,23 +15,23 @@ export default async function BoardModifyPage(props: Props) {
 
   if (!success) {
     return (
-      <Wrapper.MAIN text="게시글 수정">
+      <Card.MAIN text="게시글 수정">
         <InternalErrorView />
-      </Wrapper.MAIN>
+      </Card.MAIN>
     );
   }
 
   if (!data) {
     return (
-      <Wrapper.MAIN text="게시글 수정">
+      <Card.MAIN text="게시글 수정">
         <EmptyDataView text="게시글" />
-      </Wrapper.MAIN>
+      </Card.MAIN>
     );
   }
 
   return (
-    <Wrapper.MAIN text="게시글 수정">
+    <Card.MAIN text="게시글 수정">
       <BoardModify data={data} id={id} />
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

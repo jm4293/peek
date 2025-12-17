@@ -4,10 +4,10 @@ import { DayjsUtil } from '@/utils';
 import { Heart, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
+import { Card, EmptyDataView, InternalErrorView, LoadingView } from '@/components/card';
 import { Thumbnail } from '@/components/image';
 import { InfinityList } from '@/components/infinity-list';
 import { Text } from '@/components/text';
-import { EmptyDataView, InternalErrorView, LoadingView, Wrapper } from '@/components/wrapper';
 
 import { useQueryParams } from '@/hooks/queryParams';
 
@@ -26,7 +26,7 @@ export default function BoardList() {
 
     return (
       <li key={id}>
-        <Wrapper.SECTION>
+        <Card.SECTION>
           <Link href={`/board/${id}`} className="flex flex-col gap-2">
             <div className="w-full flex justify-between items-center">
               <div className="w-full flex items-center gap-2">
@@ -56,7 +56,7 @@ export default function BoardList() {
               </div>
             </div>
           </Link>
-        </Wrapper.SECTION>
+        </Card.SECTION>
       </li>
     );
   };

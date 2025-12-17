@@ -1,12 +1,12 @@
 import { ExternalLink, Globe, Mail, Phone } from 'lucide-react';
 import Link from 'next/link';
 
+import { Card } from '@/components/card';
 import { Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 export default function PrivacyPolicyPage() {
   return (
-    <Wrapper.SECTION>
+    <Card.SECTION>
       <div className="bg-theme-bg-card shadow-sm border border-theme-border-light rounded-lg p-4 md:p-8 break-words overflow-hidden">
         {/* 헤더 섹션 */}
         <div className="text-center pb-8 border-b border-theme-border-light mb-8">
@@ -328,7 +328,7 @@ export default function PrivacyPolicyPage() {
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-theme-txt-blue hover:text-blue-700 dark:hover:text-blue-400 underline text-sm">
+                          className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline text-sm">
                           <Text.CAPTION text={link.text} color="blue" className="break-words" />
                           <ExternalLink size={12} />
                         </Link>
@@ -477,7 +477,7 @@ export default function PrivacyPolicyPage() {
                           href="https://policies.google.com/privacy"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-theme-txt-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
+                          className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
                           <Text.PARAGRAPH text="자세히 보기" color="blue" className="break-words" />
                           <ExternalLink size={14} />
                         </Link>
@@ -574,22 +574,22 @@ export default function PrivacyPolicyPage() {
                   <Text.SUBTITLE text="개인정보 보호책임자:" className="font-medium mb-3 break-words" />
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="flex items-center flex-wrap">
-                      <span className="font-medium mr-2 text-theme-txt-default">성명:</span>
-                      <span className="px-3 py-1 bg-theme-bg-main rounded-md break-words text-theme-txt-default">
+                      <span className="font-medium mr-2 text-theme-text-default">성명:</span>
+                      <span className="px-3 py-1 bg-theme-bg-main rounded-md break-words text-theme-text-default">
                         [담당자명]
                       </span>
                     </div>
                     <div className="flex items-center flex-wrap">
-                      <span className="font-medium mr-2 text-theme-txt-default">직책:</span>
-                      <span className="px-3 py-1 bg-theme-bg-main rounded-md break-words text-theme-txt-default">
+                      <span className="font-medium mr-2 text-theme-text-default">직책:</span>
+                      <span className="px-3 py-1 bg-theme-bg-main rounded-md break-words text-theme-text-default">
                         [직책]
                       </span>
                     </div>
                     <div className="flex items-center flex-wrap gap-2">
-                      <span className="font-medium text-theme-txt-default">이메일:</span>
+                      <span className="font-medium text-theme-text-default">이메일:</span>
                       <Link
                         href="mailto:[이메일 주소]"
-                        className="flex items-center gap-1 px-3 py-1 bg-theme-bg-main rounded-md text-theme-txt-blue hover:text-blue-700 dark:hover:text-blue-400 hover:bg-theme-bg-card-hover transition-colors">
+                        className="flex items-center gap-1 px-3 py-1 bg-theme-bg-main rounded-md text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 hover:bg-theme-bg-card-hover transition-colors">
                         <Mail size={14} />
                         <span className="break-all">[이메일 주소]</span>
                       </Link>
@@ -623,16 +623,16 @@ export default function PrivacyPolicyPage() {
                       className="text-gray-700 font-medium break-words"
                     />
                     <div className="flex items-center gap-2 mt-1">
-                      <Phone size={14} className="text-theme-txt-gray flex-shrink-0" />
+                      <Phone size={14} className="text-theme-text-gray flex-shrink-0" />
                       <Text.CAPTION text="전화: (국번없이) 118" color="gray" className="ml-0 break-words" />
                     </div>
                     <div className="flex items-center gap-2 mt-1">
-                      <Globe size={14} className="text-theme-txt-gray flex-shrink-0" />
+                      <Globe size={14} className="text-theme-text-gray flex-shrink-0" />
                       <Link
                         href="https://privacy.kisa.or.kr"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-theme-txt-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
+                        className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
                         <Text.CAPTION text="privacy.kisa.or.kr" color="blue" className="ml-0 break-all" />
                         <ExternalLink size={12} />
                       </Link>
@@ -644,16 +644,16 @@ export default function PrivacyPolicyPage() {
                   <div className="break-words">
                     <Text.PARAGRAPH text="개인정보 분쟁조정위원회" className="font-medium break-words" />
                     <div className="flex items-center gap-2 mt-1">
-                      <Phone size={14} className="text-theme-txt-gray flex-shrink-0" />
+                      <Phone size={14} className="text-theme-text-gray flex-shrink-0" />
                       <Text.CAPTION text="전화: (국번없이) 1833-6972" color="gray" className="ml-0 break-words" />
                     </div>
                     <div className="flex items-center gap-2 mt-1">
-                      <Globe size={14} className="text-theme-txt-gray flex-shrink-0" />
+                      <Globe size={14} className="text-theme-text-gray flex-shrink-0" />
                       <Link
                         href="https://www.kopico.go.kr"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-theme-txt-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
+                        className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
                         <Text.CAPTION text="www.kopico.go.kr" color="blue" className="ml-0 break-all" />
                         <ExternalLink size={12} />
                       </Link>
@@ -665,16 +665,16 @@ export default function PrivacyPolicyPage() {
                   <div className="break-words">
                     <Text.PARAGRAPH text="대검찰청 사이버범죄수사단" className="font-medium break-words" />
                     <div className="flex items-center gap-2 mt-1">
-                      <Phone size={14} className="text-theme-txt-gray flex-shrink-0" />
+                      <Phone size={14} className="text-theme-text-gray flex-shrink-0" />
                       <Text.CAPTION text="전화: (국번없이) 1301" color="gray" className="ml-0 break-words" />
                     </div>
                     <div className="flex items-center gap-2 mt-1">
-                      <Globe size={14} className="text-theme-txt-gray flex-shrink-0" />
+                      <Globe size={14} className="text-theme-text-gray flex-shrink-0" />
                       <Link
                         href="https://www.spo.go.kr"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-theme-txt-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
+                        className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
                         <Text.CAPTION text="www.spo.go.kr" color="blue" className="ml-0 break-all" />
                         <ExternalLink size={12} />
                       </Link>
@@ -686,16 +686,16 @@ export default function PrivacyPolicyPage() {
                   <div className="break-words">
                     <Text.PARAGRAPH text="경찰청 사이버안전국" className="font-medium break-words" />
                     <div className="flex items-center gap-2 mt-1">
-                      <Phone size={14} className="text-theme-txt-gray flex-shrink-0" />
+                      <Phone size={14} className="text-theme-text-gray flex-shrink-0" />
                       <Text.CAPTION text="전화: (국번없이) 182" color="gray" className="ml-0 break-words" />
                     </div>
                     <div className="flex items-center gap-2 mt-1">
-                      <Globe size={14} className="text-theme-txt-gray flex-shrink-0" />
+                      <Globe size={14} className="text-theme-text-gray flex-shrink-0" />
                       <Link
                         href="https://cyberbureau.police.go.kr"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-theme-txt-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
+                        className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
                         <Text.CAPTION text="cyberbureau.police.go.kr" color="blue" className="ml-0 break-all" />
                         <ExternalLink size={12} />
                       </Link>
@@ -725,7 +725,7 @@ export default function PrivacyPolicyPage() {
         <div className="mt-12 pt-6 border-t border-theme-border-light text-center">
           <div className="inline-flex items-center px-4 py-2 bg-theme-bg-main rounded-lg">
             <svg
-              className="w-5 h-5 text-theme-txt-gray mr-2 flex-shrink-0"
+              className="w-5 h-5 text-theme-text-gray mr-2 flex-shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24">
@@ -740,6 +740,6 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
       </div>
-    </Wrapper.SECTION>
+    </Card.SECTION>
   );
 }

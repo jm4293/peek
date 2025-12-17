@@ -1,11 +1,11 @@
-import { Wrapper } from '@/components/wrapper';
+import { Card } from '@/components/card';
 
 import KospiChart from './KospiIndex';
 
 export default function KospiIndexPage() {
   return (
-    <Wrapper.MAIN text="코스피 상세">
+    <Card.MAIN text="코스피 상세">
       <KospiChart />
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

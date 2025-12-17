@@ -1,5 +1,5 @@
+import { Card, InternalErrorView, NotAuthView } from '@/components/card';
 import { Text } from '@/components/text';
-import { InternalErrorView, NotAuthView, Wrapper } from '@/components/wrapper';
 
 import { getUserInfo } from '@/services/user';
 
@@ -17,25 +17,25 @@ export default async function ModifyPasswordPage() {
 
   if (!data) {
     return (
-      <Wrapper.MAIN text="비밀번호 변경">
+      <Card.MAIN text="비밀번호 변경">
         <InternalErrorView />
-      </Wrapper.MAIN>
+      </Card.MAIN>
     );
   }
 
   if (data.userAccountType !== UserAccountTypeEnum.EMAIL) {
     return (
-      <Wrapper.MAIN text="비밀번호 변경">
-        <Wrapper.SECTION>
+      <Card.MAIN text="비밀번호 변경">
+        <Card.SECTION>
           <Text.HEADING text="이메일 회원만 비밀번호 변경이 가능합니다." />
-        </Wrapper.SECTION>
-      </Wrapper.MAIN>
+        </Card.SECTION>
+      </Card.MAIN>
     );
   }
 
   return (
-    <Wrapper.MAIN text="비밀번호 변경">
+    <Card.MAIN text="비밀번호 변경">
       <ModifyPassword />
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

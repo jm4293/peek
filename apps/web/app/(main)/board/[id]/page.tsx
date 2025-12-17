@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 
+import { Card } from '@/components/card';
 import { SkeletonSuspense } from '@/components/skeleton';
-import { Wrapper } from '@/components/wrapper';
 
 import { getBoardDetail } from '@/services/board';
 import { getUserInfo } from '@/services/user';
@@ -22,13 +22,13 @@ export default async function BoardDetailPage(props: Props) {
   const board = getBoardDetail(id);
 
   return (
-    <Wrapper.MAIN text="게시글">
+    <Card.MAIN text="게시글">
       <Suspense fallback={<SkeletonSuspense />}>
         <BoardDetail board={board} userInfo={userInfo} />
       </Suspense>
 
       <BoardComment id={id} userInfo={userInfo} />
       <BoardCommentRegister id={id} userInfo={userInfo} />
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

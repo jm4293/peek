@@ -4,9 +4,9 @@ import { ValidationUtil } from '@/utils';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
+import { Card } from '@/components/card';
 import { Input } from '@/components/input';
 import { Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import { useModal } from '@/hooks/modal';
 
@@ -71,7 +71,7 @@ export default function BoardCommentRegister(props: Props) {
 
   return (
     <div className="w-full max-w-screen-xl fixed left-1/2 bottom-0 transform -translate-x-1/2">
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <Input
           className="pb-4"
           name="comment"
@@ -85,7 +85,7 @@ export default function BoardCommentRegister(props: Props) {
             />
           </div>
         </Input>
-      </Wrapper.SECTION>
+      </Card.SECTION>
     </div>
   );
 }

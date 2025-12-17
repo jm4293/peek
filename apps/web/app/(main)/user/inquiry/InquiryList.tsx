@@ -3,9 +3,9 @@
 import { DayjsUtil } from '@/utils';
 import Link from 'next/link';
 
+import { Card, EmptyDataView, InternalErrorView, LoadingView } from '@/components/card';
 import { InfinityList } from '@/components/infinity-list';
 import { Text } from '@/components/text';
-import { EmptyDataView, InternalErrorView, LoadingView, Wrapper } from '@/components/wrapper';
 
 import { InquiryModel, useInquiryList } from '@/services/inquiry';
 
@@ -17,12 +17,12 @@ export default function InquiryList() {
 
     return (
       <li key={id}>
-        <Wrapper.SECTION>
+        <Card.SECTION>
           <Link href={`/inquiry/${id}`} className="flex flex-col gap-1">
             <Text.HEADING text={title} />
             <Text.PARAGRAPH text={DayjsUtil.of(createdAt).formatYYMMDDHHmm()} color="gray" />
           </Link>
-        </Wrapper.SECTION>
+        </Card.SECTION>
       </li>
     );
   };

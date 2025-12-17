@@ -4,8 +4,8 @@ import { DayjsUtil } from '@/utils';
 import Image from 'next/image';
 import { use } from 'react';
 
+import { Card, EmptyDataView, InternalErrorView } from '@/components/card';
 import { PreText, Text } from '@/components/text';
-import { EmptyDataView, InternalErrorView, Wrapper } from '@/components/wrapper';
 
 import { InquiryModel } from '@/services/inquiry';
 
@@ -30,18 +30,18 @@ export default function InquiryDetail(props: Props) {
 
   return (
     <>
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <Text.HEADING text="제목" />
 
         <Text.HEADING text={data.title} />
         <Text.PARAGRAPH text={DayjsUtil.of(data.createdAt).formatYYMMDDHHmm()} className="text-end" color="gray" />
-      </Wrapper.SECTION>
-      <Wrapper.SECTION>
+      </Card.SECTION>
+      <Card.SECTION>
         <Text.HEADING text="내용" />
 
         <PreText text={data.content} />
-      </Wrapper.SECTION>
-      <Wrapper.SECTION>
+      </Card.SECTION>
+      <Card.SECTION>
         <Text.HEADING text="첨부 이미지" />
 
         {data.inquiryImages.length > 0 ? (
@@ -60,9 +60,9 @@ export default function InquiryDetail(props: Props) {
         ) : (
           <Text.PARAGRAPH text="첨부된 이미지가 없습니다." color="gray" />
         )}
-      </Wrapper.SECTION>
+      </Card.SECTION>
 
-      <Wrapper.SECTION>
+      <Card.SECTION>
         <Text.HEADING text="답변" />
 
         {data.inquiryReply ? (
@@ -77,7 +77,7 @@ export default function InquiryDetail(props: Props) {
         ) : (
           <Text.PARAGRAPH text="아직 답변이 등록되지 않았습니다." color="gray" />
         )}
-      </Wrapper.SECTION>
+      </Card.SECTION>
     </>
   );
 }

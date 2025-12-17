@@ -1,7 +1,7 @@
 'use client';
 
+import { Card } from '@/components/card';
 import { Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import { useModal } from '@/hooks/modal';
 
@@ -31,10 +31,10 @@ export default function UserLogout() {
   };
 
   return (
-    <Wrapper.SECTION>
+    <Card.SECTION>
       <div className="cursor-pointer" onClick={logoutHandler}>
         <Text.HEADING text="로그아웃" color="red" />
       </div>
-    </Wrapper.SECTION>
+    </Card.SECTION>
   );
 }

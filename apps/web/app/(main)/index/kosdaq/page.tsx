@@ -1,13 +1,13 @@
 'use client';
 
-import { Wrapper } from '@/components/wrapper';
+import { Card } from '@/components/card';
 
 import KosdaqIndex from './KosdaqIndex';
 
 export default function KosdaqIndexPage() {
   return (
-    <Wrapper.MAIN text="코스닥 상세">
+    <Card.MAIN text="코스닥 상세">
       <KosdaqIndex />
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

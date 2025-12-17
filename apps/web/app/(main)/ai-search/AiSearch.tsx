@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import { Card } from '@/components/card';
 import { Text } from '@/components/text';
-import { Wrapper } from '@/components/wrapper';
 
 import type { ChatMessage } from '@/services/ai/types';
 
@@ -123,10 +123,10 @@ export default function AiSearch() {
   );
 
   return (
-    <Wrapper.MAIN text="AI 국내 주식 검색">
-      <Wrapper.SECTION text="추천 질문">
+    <Card.MAIN text="AI 국내 주식 검색">
+      <Card.SECTION text="추천 질문">
         <SuggestionChips onSelect={handleSuggestionSelect} />
-      </Wrapper.SECTION>
+      </Card.SECTION>
 
       <div className="flex h-[65vh] flex-col overflow-hidden rounded-xl border border-theme-main-color/10 bg-theme-bg-section shadow-md">
         <div className="flex-1 space-y-4 overflow-y-auto p-4">
@@ -143,6 +143,6 @@ export default function AiSearch() {
         text="※ 본 서비스는 참고용 정보만 제공합니다. 최종 투자 판단과 책임은 사용자에게 있습니다."
         className="text-center"
       />
-    </Wrapper.MAIN>
+    </Card.MAIN>
   );
 }

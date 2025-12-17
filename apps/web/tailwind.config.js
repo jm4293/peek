@@ -8,13 +8,11 @@ module.exports = {
         // Main Brand Colors
         'theme-main-color': 'var(--main-color)',
         'theme-main-color-light': 'var(--main-color-light)',
-        'theme-main-color-dark': 'var(--main-color-dark)',
 
         // Backgrounds
         'theme-bg-header': 'var(--bg-header)',
         'theme-bg-main': 'var(--bg-main)',
         'theme-bg-section': 'var(--bg-section)',
-        'theme-bg-blue': 'var(--bg-blue)',
         'theme-bg-card': 'var(--bg-card)',
         'theme-bg-card-hover': 'var(--bg-card-hover)',
 
@@ -23,11 +21,11 @@ module.exports = {
         'theme-border-medium': 'var(--border-medium)',
 
         // Text
-        'theme-txt-default': 'var(--txt-default)',
-        'theme-txt-secondary': 'var(--txt-secondary)',
-        'theme-txt-gray': 'var(--txt-gray)',
-        'theme-txt-blue': 'var(--txt-blue)',
-        'theme-txt-red': 'var(--txt-red)',
+        'theme-text-main': 'var(--text-main)',
+        'theme-text-default': 'var(--text-default)',
+        'theme-text-gray': 'var(--text-gray)',
+        'theme-text-blue': 'var(--text-blue)',
+        'theme-text-red': 'var(--text-red)',
 
         // Other
         'theme-skeleton-bg': 'var(--skeleton-bg)',
