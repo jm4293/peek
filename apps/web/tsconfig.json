@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"],
+      "@/app/board/*": ["./app/(main)/board/*"],
+      "@/app/home/*": ["./app/(main)/home/*"],
+      "@/app/stock/*": ["./app/(main)/stock/*"],
+      "@/app/user/*": ["./app/(main)/user/*"],
+      "@/app/auth/login/*": ["app/(auth)/auth/login/*"],
+      "@/app/auth/register/*": ["app/(auth)/auth/register/*"],
+
+      "@/assets": ["./assets"],
+      "@/assets/*": ["./assets/*"],
+
+      "@/components": ["./components"],
+      "@/components/*": ["./components/*"],
+
+      "@/hooks": ["./hooks"],
+      "@/hooks/*": ["./hooks/*"],
+
+      "@/lib": ["./lib"],
+      "@/lib/*": ["./lib/*"],
+
+      "@/public": ["./public"],
+      "@/public/*": ["./public/*"],
+
+      "@/services": ["./services"],
+      "@/services/*": ["./services/*"],
+
+      "@/shared": ["./shared"],
+      "@/shared/*": ["./shared/*"],
+
+      "@/stores": ["./stores"],
+      "@/stores/*": ["./stores/*"],
+
+      "@/types": ["./types"],
+      "@/types/*": ["./types/*"],
+
+      "@/utils": ["./utils"],
+      "@/utils/*": ["./utils/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

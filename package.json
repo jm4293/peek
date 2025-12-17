@@ -1,0 +1,47 @@
+{
+  "name": "peek",
+  "version": "1.0.0",
+  "private": true,
+  "author": "jm4293",
+  "scripts": {
+    "format": "prettier --write \"apps/**/*.ts\" \"packages/**/*.ts\"",
+    "dev": "concurrently --names \"API,ADMIN\" -c \"blue,green\" \"pnpm dev:api\" \"pnpm dev:api-admin\"",
+    "dev:api": "nest start --watch api",
+    "dev:api-admin": "nest start --watch api-admin",
+    "dev:web": "pnpm --filter @peek/web dev",
+    "dev:web-admin": "pnpm --filter @peek/web-admin dev",
+    "build": "pnpm -r run build",
+    "build:api": "nest build api",
+    "build:api-admin": "nest build api-admin",
+    "build:web": "pnpm --filter @peek/web build",
+    "build:web-admin": "pnpm --filter @peek/web-admin build",
+    "start:prod": "node dist/apps/api/main",
+    "lint": "pnpm -r run lint",
+    "clean": "rm -rf dist",
+    "clean:modules": "find . -name 'node_modules' -type d -prune -exec rm -rf {} +",
+    "clean:all": "pnpm clean && pnpm clean:modules",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.38.0",
+    "@nestjs/cli": "^11.0.10",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^15.15.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "bash -c 'if grep -n \"console\\.log\" \"$@\" 2>/dev/null; then echo \"\\n❌ console.log 발견! 제거 후 커밋하세요.\"; exit 1; fi' _"
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+input,
+button,
+textarea {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  border-width: 1px;
+  border-radius: 0.5rem;
+  resize: none;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+
+button {
+  border: none;
+  border-radius: 0.5rem;
+}
+
+table {
+  /*width: 100%;*/
+  /*border-collapse: collapse;*/
+  /*table-layout: fixed;*/
+  /*max-height: 100px;*/
+  /*overflow-y: auto;*/
+}
+
+thead,
+tbody {
+  /*width: 100%;*/
+  display: block;
+}
+
+thead {
+  /*width: calc(100% - 1em);*/
+  /*width: 100%;*/
+}
+
+thead > tr {
+  background-color: #f0f0f0;
+}
+
+tbody {
+  /*width: 100%;*/
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
+tbody > tr:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+tr {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+th {
+  padding: 0.5rem;
+  border: 2px solid #ddd;
+}
+
+td {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+.layout {
+  min-width: 768px;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.layout > .header-container {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.header-desktop {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  z-index: 10;
+}
+
+.header-mobile {
+  width: 14rem;
+  height: 100%;
+  background-color: beige;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0 1.5rem;
+}
+
+.header-mobile.active {
+  transform: translateX(0);
+}
+
+.header-mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+}
+
+.layout > .outlet {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f0f0f0;
+  padding: 0.8rem 0.6rem;
+  height: 100%;
+  z-index: 20;
+}
+
+.layout > .outlet > div {
+  padding: 1rem;
+  background-color: white;
+}
+
+.loading-spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #fff;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
