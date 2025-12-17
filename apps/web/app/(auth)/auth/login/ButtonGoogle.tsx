@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 
+import { Text } from '@/components/text';
+
 const GoogleLogo = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -37,7 +39,7 @@ export const ButtonGoogle = () => {
         transition-all duration-200
       ">
       <GoogleLogo />
-      <span className="font-medium">Login with Google</span>
+      <Text.HEADING text="구글 로그인" />
     </Link>
   );
 };

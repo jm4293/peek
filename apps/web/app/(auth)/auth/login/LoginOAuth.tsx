@@ -15,23 +15,9 @@ import { UserAccountTypeEnum } from '@/shared/enum/user';
 import { ButtonGoogle } from './ButtonGoogle';
 import { ButtonKakao } from './ButtonKakao';
 import { ButtonNaver } from './ButtonNaver';
+import { LastLoginCheck } from './LastLoginCheck';
 
 gsap.registerPlugin(useGSAP);
-
-const LastLoginCheck = () => {
-  return (
-    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
-      <div
-        className="relative text-white px-4 py-1 rounded-full text-sm font-medium shadow-md"
-        style={{ backgroundColor: 'var(--main-color)' }}>
-        최근 로그인
-        <div
-          className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[4px] border-r-[4px] border-t-[5px] border-l-transparent border-r-transparent"
-          style={{ borderTopColor: 'var(--main-color)' }}></div>
-      </div>
-    </div>
-  );
-};
 
 const getTimeBasedMessage = () => {
   const hour = new Date().getHours();
@@ -145,11 +131,8 @@ export function LoginOAuth() {
           />
         </div>
 
-        <button
-          ref={backButtonRef}
-          onClick={() => router.back()}
-          className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200 text-sm underline">
-          돌아가기
+        <button ref={backButtonRef} onClick={() => router.back()}>
+          <Text.PARAGRAPH text="뒤로가기" className="underline" />
         </button>
       </div>
     </div>
