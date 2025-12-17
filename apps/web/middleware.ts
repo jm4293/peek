@@ -6,8 +6,9 @@ const REFRESH_TOKEN_NAME = 'RTKN';
 
 /**
  * Refresh token으로 새로운 access token을 발급받습니다.
+ * NestJS에서 설정한 Set-Cookie 헤더를 반환합니다.
  */
-async function refreshAccessToken(refreshToken: string): Promise<string | null> {
+async function refreshAccessToken(refreshToken: string): Promise<Response | null> {
   try {
     const response = await fetch(`${API_URL}/auth/refresh`, {
       method: 'POST',
@@ -21,15 +22,7 @@ async function refreshAccessToken(refreshToken: string): Promise<string | null> 
       return null;
     }
 
-    const data = await response.json();
-
-    // NestJS ResponseInterceptor로 래핑된 응답에서 data 추출
-    const responseData = data.data || data;
-
-    // 다양한 응답 형식 지원
-    const accessToken = responseData.accessToken || responseData.tkn || responseData.access_token;
-
-    return accessToken || null;
+    return response;
   } catch {
     // 토큰 갱신 실패 시 null 반환
     return null;
@@ -55,17 +48,16 @@ export async function middleware(request: NextRequest) {
   }
 
   if (!accessToken && refreshToken) {
-    const newAccessToken = await refreshAccessToken(refreshToken.value);
+    const refreshResponse = await refreshAccessToken(refreshToken.value);
 
-    if (newAccessToken) {
+    if (refreshResponse) {
+      // NestJS에서 설정한 Set-Cookie 헤더를 클라이언트에 전달
       const response = NextResponse.next();
-      response.cookies.set(ACCESS_TOKEN_NAME, newAccessToken, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'lax',
-        maxAge: 60 * 15, // 15분
-        path: '/',
-      });
+      const setCookie = refreshResponse.headers.get('set-cookie');
+
+      if (setCookie) {
+        response.headers.set('set-cookie', setCookie);
+      }
 
       return response;
     }
