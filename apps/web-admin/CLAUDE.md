@@ -42,6 +42,7 @@ src/
 ## 상태 관리
 
 ### TanStack Query (서버 상태)
+
 ```typescript
 const { data } = useQuery({
   queryKey: ['users'],
@@ -50,6 +51,7 @@ const { data } = useQuery({
 ```
 
 ### Zustand (클라이언트 상태)
+
 ```typescript
 // 로딩 스피너 등 UI 상태
 const { isLoading } = useLoadingSpinnerStore();
@@ -58,6 +60,7 @@ const { isLoading } = useLoadingSpinnerStore();
 ## 라우팅
 
 React Router 기반 SPA
+
 - `/auth/login` - 로그인
 - `/board` - 게시판 관리
 - `/user` - 사용자 관리

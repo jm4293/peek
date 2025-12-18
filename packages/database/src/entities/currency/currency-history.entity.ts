@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, Generated, PrimaryGeneratedColumn } from 'typeorm';
 
-import { CurrencyUnit, CurrencyUnitValue } from '@libs/shared/const/currency';
+import { CurrencyUnit, CurrencyUnitValue } from '@packages/shared/constant';
 
 // result: number; // 조회 결과, 1 : 성공, 2 : DATA코드 오류, 3 : 인증코드 오류, 4 : 일일제한횟수 마감
 // cur_unit: string; // 통화코드

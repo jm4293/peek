@@ -1,8 +1,7 @@
+import { Injectable } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 
-import { Injectable } from '@nestjs/common';
-
-import { InquiryImage } from '@libs/database/entities/inquiry';
+import { InquiryImage } from '@packages/database/entities';
 
 @Injectable()
 export class InquiryImageRepository extends Repository<InquiryImage> {

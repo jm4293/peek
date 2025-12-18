@@ -1,7 +1,6 @@
-import { Server, Socket } from 'socket.io';
-
 import { Logger } from '@nestjs/common';
 import { OnGatewayConnection, OnGatewayDisconnect, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
+import { Server, Socket } from 'socket.io';
 
 @WebSocketGateway({
   cors: { origin: ['http://localhost:3000', 'https://stock.peek.run'] },

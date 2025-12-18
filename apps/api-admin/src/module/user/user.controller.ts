@@ -1,9 +1,7 @@
-import { Response } from 'express';
-
 import { Controller, Delete, Get, Param, ParseIntPipe, Patch, Put, Query, Res } from '@nestjs/common';
-
 import { ResConfig } from '@peek-admin/config/_res.config';
 import { GetUserDto, GetUserListDto } from '@peek-admin/type/dto';
+import { Response } from 'express';
 
 import { UserService } from './user.service';
 

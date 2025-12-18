@@ -25,7 +25,8 @@ export const ButtonKakao = () => {
         active:scale-[0.98]
         text-theme-text-main
         transition-all duration-200
-      ">
+      "
+    >
       <KakaoLogo />
       <Text.HEADING text="카카오 로그인" />
     </Link>

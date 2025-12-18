@@ -1,26 +1,11 @@
-import { Cache } from 'cache-manager';
-import { Request } from 'express';
-import { DataSource } from 'typeorm';
-
 import { HttpService } from '@nestjs/axios';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectDataSource } from '@nestjs/typeorm';
-
-import { BcryptHandler } from '@peek/handler/bcrypt';
-
-import {
-  UserAccountRepository,
-  UserNotificationRepository,
-  UserOauthTokenRepository,
-  UserPushTokenRepository,
-  UserRepository,
-  UserVisitRepository,
-} from '@libs/database/repositories/user';
-
-import { EntityName } from '@libs/shared/const/entity';
-import { UserAccountType } from '@libs/shared/const/user';
+import { Cache } from 'cache-manager';
+import { Request } from 'express';
+import { DataSource } from 'typeorm';
 
 import { CheckEmailCodeDto, CheckEmailDto } from '../auth/dto';
 import { AWSService } from '../aws';
@@ -33,6 +18,19 @@ import {
   UpdateUserPasswordDto,
   UpdateUserThumbnailDto,
 } from './dto';
+
+import { BcryptHandler } from '@app/api/handler';
+
+import {
+  UserAccountRepository,
+  UserNotificationRepository,
+  UserOauthTokenRepository,
+  UserPushTokenRepository,
+  UserRepository,
+  UserVisitRepository,
+} from '@packages/database/repositories';
+
+import { EntityName, UserAccountType } from '@packages/shared/constant';
 
 @Injectable()
 export class UserService {

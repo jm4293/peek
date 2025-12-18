@@ -51,6 +51,7 @@
 ## 상태 관리
 
 ### TanStack Query (서버 상태)
+
 ```typescript
 // 데이터 페칭, 캐싱, 동기화
 const { data } = useQuery({
@@ -60,6 +61,7 @@ const { data } = useQuery({
 ```
 
 ### Jotai (클라이언트 상태)
+
 ```typescript
 // UI 상태 (모달, 토스트 등)
 const [isOpen, setIsOpen] = useAtom(modalAtom);

@@ -1,11 +1,11 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 
-import { Public } from '@peek/decorator/public';
-
-import { Notice } from '@libs/database/entities/notice';
-
 import { GetNoticeDto, GetNoticeListDto } from './dto';
 import { NoticeService } from './notice.service';
+
+import { Public } from '@app/api/decorator';
+
+import { Notice } from '@packages/database/entities';
 
 @Controller('notice')
 export class NoticeController {

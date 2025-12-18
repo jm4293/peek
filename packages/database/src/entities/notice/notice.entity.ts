@@ -11,10 +11,10 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-import { NoticeType, NoticeTypeValue } from '@libs/shared/const/notice';
-
 import { UserAccount } from '../user';
 import { NoticeImage } from './notice-images.entity';
+
+import { NoticeType, NoticeTypeValue } from '@packages/shared/constant';
 
 @Entity()
 export class Notice {

@@ -11,7 +11,8 @@ export default function Page() {
           <Text.TITLE text="주식" />
           <CurrentTimeText />
         </div>
-      }>
+      }
+    >
       <Card.SECTION>
         <RecentStockList />
       </Card.SECTION>

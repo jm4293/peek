@@ -1,10 +1,9 @@
+import { Injectable } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 
-import { Injectable } from '@nestjs/common';
+import { securitiesToken } from '@packages/database/entities';
 
-import { securitiesToken } from '@libs/database/entities/stock';
-
-import { TokenProviderValue, TokenType } from '@libs/shared/const/token';
+import { TokenProviderValue, TokenType } from '@packages/shared/constant';
 
 @Injectable()
 export class SecuritiesTokenRepository extends Repository<securitiesToken> {

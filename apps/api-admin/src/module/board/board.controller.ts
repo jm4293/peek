@@ -1,9 +1,7 @@
-import { Response } from 'express';
-
 import { Controller, Delete, Get, Param, Query, Res } from '@nestjs/common';
-
 import { ResConfig } from '@peek-admin/config/_res.config';
 import { GetBoardDto, GetBoardListDto } from '@peek-admin/type/dto';
+import { Response } from 'express';
 
 import { BoardService } from './board.service';
 

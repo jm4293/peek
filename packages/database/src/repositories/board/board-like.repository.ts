@@ -1,8 +1,7 @@
+import { Injectable } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 
-import { Injectable } from '@nestjs/common';
-
-import { BoardLike } from '@libs/database/entities/board';
+import { BoardLike } from '@packages/database/entities';
 
 @Injectable()
 export class BoardLikeRepository extends Repository<BoardLike> {

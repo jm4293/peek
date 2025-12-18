@@ -1,5 +1,5 @@
 {
-  "name": "@peek/api-admin",
+  "name": "@apps/api-admin",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,8 @@
     "start:prod": "node ../../dist/apps/api-admin/main"
   },
   "dependencies": {
-    "@peek/database": "workspace:*",
-    "@peek/shared": "workspace:*",
+    "@packages/database": "workspace:*",
+    "@packages/shared": "workspace:*",
     "@aws-sdk/client-s3": "^3.914.0",
     "@nestjs/axios": "^4.0.1",
     "@nestjs/cache-manager": "^3.0.1",

@@ -123,7 +123,8 @@ export default function BoardComment(props: Props) {
                       {reply.userAccount.uuid === userInfo?.uuid && (
                         <div
                           className="flex justify-end cursor-pointer"
-                          onClick={() => onDeleteCommentHandler(reply.id)}>
+                          onClick={() => onDeleteCommentHandler(reply.id)}
+                        >
                           <Text.PARAGRAPH text="삭제" color="red" />
                         </div>
                       )}
@@ -137,7 +138,8 @@ export default function BoardComment(props: Props) {
                   name="reply"
                   value={replyComment}
                   onChange={(event) => setReplyComment(event.target.value)}
-                  placeholder="답글을 입력해주세요">
+                  placeholder="답글을 입력해주세요"
+                >
                   <div className="cursor-pointer" onClick={() => onCreateReplyCommentHandler(boardComment.id)}>
                     <Text.HEADING
                       text={createBoardCommentMutation.isPending ? '등록 중...' : '등록'}

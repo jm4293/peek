@@ -34,8 +34,8 @@ import { KisWebSocketModule, KiwoomWebSocketModule, LsWebSocketModule } from './
 @Module({
   imports: [
     ConfigModule.forRoot(configModuleConfig),
-    TypeOrmModule.forRootAsync(typeormModuleConfig),
     ScheduleModule.forRoot(),
+    TypeOrmModule.forRootAsync(typeormModuleConfig),
     CacheModule.register(cacheModuleConfig),
     LoggerModule,
 

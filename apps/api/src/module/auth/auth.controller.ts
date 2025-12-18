@@ -1,18 +1,17 @@
+import { Body, Controller, HttpCode, Post, Req, Res } from '@nestjs/common';
 import { CookieOptions, Request, Response } from 'express';
 
-import { Body, Controller, HttpCode, Post, Req, Res } from '@nestjs/common';
+import { AuthService } from './auth.service';
+import { CheckEmailCodeDto, CheckEmailDto, LoginEmailDto, LoginOauthDto, SignupEmailDto } from './dto';
 
-import { Public } from '@peek/decorator/public';
-import { ParseReqHandler } from '@peek/handler/parseReq';
+import { Public } from '@app/api/decorator';
+import { ParseReqHandler } from '@app/api/handler';
 import {
   ACCESS_TOKEN_COOKIE_TIME,
   ACCESS_TOKEN_NAME,
   REFRESH_TOKEN_COOKIE_TIME,
   REFRESH_TOKEN_NAME,
-} from '@peek/shared/constants/cookie';
-
-import { AuthService } from './auth.service';
-import { CheckEmailCodeDto, CheckEmailDto, LoginEmailDto, LoginOauthDto, SignupEmailDto } from './dto';
+} from '@app/api/shared';
 
 @Controller('auth')
 export class AuthController {

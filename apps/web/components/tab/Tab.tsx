@@ -58,7 +58,8 @@ export const Tab = (props: Props) => {
                   ? 'bg-white dark:bg-gray-300 text-gray-900 dark:text-gray-900 shadow-sm'
                   : 'bg-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
               }
-            `}>
+            `}
+          >
             {item.label}
           </button>
         );

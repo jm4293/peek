@@ -12,13 +12,6 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-import {
-  UserAccountStatus,
-  UserAccountStatusValue,
-  UserAccountType,
-  UserAccountTypeValue,
-} from '@libs/shared/const/user';
-
 import { Board, BoardComment, BoardLike } from '../board';
 import { Inquiry } from '../inquiry';
 import { Notice } from '../notice';
@@ -28,6 +21,13 @@ import { UserPushToken } from './user-push-token.entity';
 import { UserStockFavorite } from './user-stock-favorite.entity';
 import { UserVisit } from './user-visit.entity';
 import { User } from './user.entity';
+
+import {
+  UserAccountStatus,
+  UserAccountStatusValue,
+  UserAccountType,
+  UserAccountTypeValue,
+} from '@packages/shared/constant';
 
 @Entity()
 export class UserAccount {

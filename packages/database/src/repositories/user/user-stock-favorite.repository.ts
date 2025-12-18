@@ -1,8 +1,7 @@
+import { Injectable } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 
-import { Injectable } from '@nestjs/common';
-
-import { UserStockFavorite } from '@libs/database/entities/user';
+import { UserStockFavorite } from '@packages/database/entities';
 
 @Injectable()
 export class UserStockFavoriteRepository extends Repository<UserStockFavorite> {

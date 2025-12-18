@@ -1,8 +1,7 @@
+import { Injectable } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 
-import { Injectable } from '@nestjs/common';
-
-import { StockKoreanIndexHistory } from '@libs/database/entities/stock';
+import { StockKoreanIndexHistory } from '@packages/database/entities';
 
 @Injectable()
 export class StockKoreanIndexHistoryRepository extends Repository<StockKoreanIndexHistory> {

@@ -1,8 +1,7 @@
+import { Injectable } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 
-import { Injectable } from '@nestjs/common';
-
-import { UserPushToken } from '@libs/database/entities/user';
+import { UserPushToken } from '@packages/database/entities';
 
 @Injectable()
 export class UserPushTokenRepository extends Repository<UserPushToken> {

@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 
-import { SecuritiesTokenRepository, StockKoreanIndexHistoryRepository } from '@libs/database/repositories/stock';
-
 import { KisKoreanIndexGateway } from './kis-korean-index.gateway';
+
+import { SecuritiesTokenRepository, StockKoreanIndexHistoryRepository } from '@packages/database/repositories';
 
 @Module({
   imports: [],

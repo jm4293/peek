@@ -9,9 +9,9 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-import { UserType, UserTypeValue } from '@libs/shared/const/user';
-
 import { UserAccount } from './user-account.entity';
+
+import { UserType, UserTypeValue } from '@packages/shared/constant';
 
 @Entity()
 export class User {

@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, Generated, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
-import { StockKoreanIndexType, StockKoreanIndexTypeValue } from '@libs/shared/const/stock';
+import { StockKoreanIndexType, StockKoreanIndexTypeValue } from '@packages/shared/constant';
 
 @Entity()
 export class StockKoreanIndexHistory {

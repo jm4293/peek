@@ -1,11 +1,10 @@
-import { Server, Socket } from 'socket.io';
-
 import { Logger } from '@nestjs/common';
 import { OnGatewayConnection, OnGatewayDisconnect, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
+import { Server, Socket } from 'socket.io';
 
-import { SecuritiesTokenRepository } from '@libs/database/repositories/stock';
+import { SecuritiesTokenRepository } from '@packages/database/repositories';
 
-import { TokenProvider } from '@libs/shared/const/token';
+import { TokenProvider } from '@packages/shared/constant';
 
 const TR_CD = 'MK2';
 

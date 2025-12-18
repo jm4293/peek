@@ -1,10 +1,9 @@
 {
-  "name": "@peek/database",
+  "name": "@packages/database",
   "version": "1.0.0",
   "private": true,
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
   "dependencies": {
+    "@packages/shared": "workspace:*",
     "@nestjs/common": "^11.1.7",
     "@nestjs/typeorm": "^11.0.0",
     "class-transformer": "^0.5.1",

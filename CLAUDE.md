@@ -18,12 +18,12 @@ peek/
 
 ## 기술 스택
 
-| 앱 | 프레임워크 | 상태관리 | 스타일 |
-|----|-----------|---------|--------|
-| api | NestJS 11, TypeORM | DI | - |
-| api-admin | NestJS 11, TypeORM | DI | - |
-| web | Next.js 15, React 19 | TanStack Query + Jotai | Tailwind |
-| web-admin | Vite, React 19 | TanStack Query + Zustand | Tailwind |
+| 앱        | 프레임워크           | 상태관리                 | 스타일   |
+| --------- | -------------------- | ------------------------ | -------- |
+| api       | NestJS 11, TypeORM   | DI                       | -        |
+| api-admin | NestJS 11, TypeORM   | DI                       | -        |
+| web       | Next.js 15, React 19 | TanStack Query + Jotai   | Tailwind |
+| web-admin | Vite, React 19       | TanStack Query + Zustand | Tailwind |
 
 ## 주요 명령어
 
@@ -66,35 +66,39 @@ pnpm clean:all        # dist + node_modules 삭제
 @peek/web-admin   → @peek/shared (향후)
 ```
 
+## TypeScript 설정 규칙
+
+- `baseUrl`은 사용하지 않음 (paths만 사용)
+
 ## 코드 컨벤션
 
 ### 파일 네이밍
 
-| 패턴 | 용도 |
-|------|------|
-| `*.module.ts` | NestJS 모듈 |
-| `*.controller.ts` | NestJS 컨트롤러 |
-| `*.service.ts` | NestJS 서비스 |
-| `*.repository.ts` | DB 레포지토리 |
-| `*.entity.ts` | TypeORM 엔티티 |
-| `*.dto.ts` | DTO |
-| `*.const.ts` | 상수 |
-| `*.atom.ts` | Jotai 상태 |
-| `*.store.ts` | Zustand 상태 |
-| `Component.tsx` | React 컴포넌트 (PascalCase) |
+| 패턴              | 용도                        |
+| ----------------- | --------------------------- |
+| `*.module.ts`     | NestJS 모듈                 |
+| `*.controller.ts` | NestJS 컨트롤러             |
+| `*.service.ts`    | NestJS 서비스               |
+| `*.repository.ts` | DB 레포지토리               |
+| `*.entity.ts`     | TypeORM 엔티티              |
+| `*.dto.ts`        | DTO                         |
+| `*.const.ts`      | 상수                        |
+| `*.atom.ts`       | Jotai 상태                  |
+| `*.store.ts`      | Zustand 상태                |
+| `Component.tsx`   | React 컴포넌트 (PascalCase) |
 
 ### 폴더 구조
 
-| 폴더 | 용도 |
-|------|------|
-| `module/` | NestJS 기능 모듈 |
-| `components/` | React 컴포넌트 |
-| `hooks/` | Custom Hooks |
-| `lib/` | 유틸리티 라이브러리 |
-| `services/` | API 클라이언트 |
-| `stores/` | 상태 관리 |
-| `shared/` | 공유 타입/상수 |
-| `utils/` | 유틸 함수 |
+| 폴더          | 용도                |
+| ------------- | ------------------- |
+| `module/`     | NestJS 기능 모듈    |
+| `components/` | React 컴포넌트      |
+| `hooks/`      | Custom Hooks        |
+| `lib/`        | 유틸리티 라이브러리 |
+| `services/`   | API 클라이언트      |
+| `stores/`     | 상태 관리           |
+| `shared/`     | 공유 타입/상수      |
+| `utils/`      | 유틸 함수           |
 
 ## Git 커밋 규칙
 
@@ -104,6 +108,7 @@ pnpm clean:all        # dist + node_modules 삭제
 ## 환경변수
 
 각 앱별 환경변수 파일 필요:
+
 - `apps/api/.env`
 - `apps/api-admin/.env`
 - `apps/web/.env.local`

@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "outDir": "../../dist/packages/database",
+    "paths": {
+      "@packages/database/entities": ["./src/entities"],
+      "@packages/database/repositories": ["./src/repositories"],
+
+      "@packages/shared/constant": ["../shared/src/constants"]
+    }
+  },
+  "references": [{ "path": "../../packages/shared" }],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
+}

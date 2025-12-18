@@ -48,7 +48,8 @@ const ChatInput = ({ onSubmit, disabled }: ChatInputProps) => {
             type="submit"
             aria-label="메시지 전송"
             disabled={disabled || !value.trim()}
-            className="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center rounded-full bg-theme-main-color text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:bg-theme-main-color/40">
+            className="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center rounded-full bg-theme-main-color text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:bg-theme-main-color/40"
+          >
             <Send className="h-4 w-4" />
           </button>
         </div>

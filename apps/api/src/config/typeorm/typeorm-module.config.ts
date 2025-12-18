@@ -3,6 +3,7 @@ import { TypeOrmModuleAsyncOptions } from '@nestjs/typeorm';
 
 export const typeormModuleConfig: TypeOrmModuleAsyncOptions = {
   imports: [ConfigModule],
+  inject: [ConfigService],
   useFactory: (configService: ConfigService) => ({
     type: 'mysql',
     host: configService.get('DB_HOST'),
@@ -20,7 +21,6 @@ export const typeormModuleConfig: TypeOrmModuleAsyncOptions = {
       authPlugin: 'mysql_native_password',
     },
   }),
-  inject: [ConfigService],
 };
 
 // Docker mysql 연결 오류

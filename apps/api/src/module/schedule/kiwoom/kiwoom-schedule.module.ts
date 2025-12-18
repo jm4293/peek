@@ -1,9 +1,9 @@
 import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 
-import { SecuritiesTokenRepository } from '@libs/database/repositories/stock';
-
 import { KiwoomTokenScheduleService } from './kiwoom-token-schedule.service';
+
+import { SecuritiesTokenRepository } from '@packages/database/repositories';
 
 @Module({
   imports: [HttpModule],

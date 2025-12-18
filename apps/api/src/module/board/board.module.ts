@@ -1,20 +1,22 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { NotificationHandler } from '@peek/handler/notification';
+import { BoardController } from './board.controller';
+import { BoardService } from './board.service';
 
-import { UserNotification } from '@libs/database/entities/user';
+import { NotificationHandler } from '@app/api/handler';
+
+import { UserNotification } from '@packages/database/entities';
 import {
   BoardArticleRepository,
   BoardCommentRepository,
   BoardLikeRepository,
   BoardRepository,
-} from '@libs/database/repositories/board';
-import { StockCategoryRepository } from '@libs/database/repositories/stock';
-import { UserAccountRepository, UserPushTokenRepository, UserRepository } from '@libs/database/repositories/user';
-
-import { BoardController } from './board.controller';
-import { BoardService } from './board.service';
+  StockCategoryRepository,
+  UserAccountRepository,
+  UserPushTokenRepository,
+  UserRepository,
+} from '@packages/database/repositories';
 
 @Module({
   imports: [TypeOrmModule.forFeature([UserNotification])],

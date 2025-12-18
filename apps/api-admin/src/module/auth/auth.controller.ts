@@ -1,7 +1,4 @@
-import { Request, Response } from 'express';
-
 import { Body, Controller, Post, Req, Res } from '@nestjs/common';
-
 import {
   ADMIN_ACCESS_TOKEN_COOKIE_TIME,
   ADMIN_ACCESS_TOKEN_NAME,
@@ -9,6 +6,7 @@ import {
   ADMIN_REFRESH_TOKEN_NAME,
 } from '@peek-admin/shared/cookie';
 import { LoginDto } from '@peek-admin/type/dto';
+import { Request, Response } from 'express';
 
 import { AuthService } from './auth.service';
 

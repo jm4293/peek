@@ -77,7 +77,8 @@ export default function BoardCommentRegister(props: Props) {
           name="comment"
           value={comment}
           onChange={(event) => setComment(event.target.value)}
-          placeholder="댓글을 입력해주세요">
+          placeholder="댓글을 입력해주세요"
+        >
           <div className="cursor-pointer" onClick={onCreateCommentHandler}>
             <Text.HEADING
               text={createBoardCommentMutation.isPending ? '등록 중...' : '등록'}

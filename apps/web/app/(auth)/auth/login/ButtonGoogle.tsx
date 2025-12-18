@@ -37,7 +37,8 @@ export const ButtonGoogle = () => {
         active:scale-[0.98]
         text-theme-text-main
         transition-all duration-200
-      ">
+      "
+    >
       <GoogleLogo />
       <Text.HEADING text="구글 로그인" />
     </Link>

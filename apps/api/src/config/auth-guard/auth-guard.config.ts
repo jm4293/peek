@@ -1,13 +1,12 @@
-import { Request } from 'express';
-
 import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Reflector } from '@nestjs/core';
 import { JwtService } from '@nestjs/jwt';
+import { Request } from 'express';
 
-import { IS_PUBLIC_KEY } from '@peek/decorator/public';
-import { ACCESS_TOKEN_NAME } from '@peek/shared/constants/cookie';
-import { IJwtToken } from '@peek/type/interface';
+import { IS_PUBLIC_KEY } from '@app/api/decorator';
+import { ACCESS_TOKEN_NAME } from '@app/api/shared';
+import { IJwtToken } from '@app/api/type';
 
 @Injectable()
 export class AuthGuardConfig implements CanActivate {

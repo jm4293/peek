@@ -1,8 +1,7 @@
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 
-import { BadRequestException, Injectable } from '@nestjs/common';
-
-import { StockCategory } from '@libs/database/entities/stock';
+import { StockCategory } from '@packages/database/entities';
 
 @Injectable()
 export class StockCategoryRepository extends Repository<StockCategory> {

@@ -1,14 +1,11 @@
+import { StockKoreanCompany } from '@libs/database/entities/stock';
+import { StockCategoryRepository, StockCompanyRepository } from '@libs/database/repositories/stock';
+import { BadRequestException, Injectable } from '@nestjs/common';
+import { ADMIN_LIST_LIMIT } from '@peek-admin/shared/list';
+import { GetStockCodeListDto } from '@peek-admin/type/dto';
 import dayjs from 'dayjs';
 import { FindOptionsOrder, Like } from 'typeorm';
 import * as XLSX from 'xlsx';
-
-import { BadRequestException, Injectable } from '@nestjs/common';
-
-import { ADMIN_LIST_LIMIT } from '@peek-admin/shared/list';
-import { GetStockCodeListDto } from '@peek-admin/type/dto';
-
-import { StockKoreanCompany } from '@libs/database/entities/stock';
-import { StockCategoryRepository, StockCompanyRepository } from '@libs/database/repositories/stock';
 
 @Injectable()
 export class StockService {

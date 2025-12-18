@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 
-import { BoardRepository } from '@libs/database/repositories/board';
-
 import { HomeController } from './home.controller';
 import { HomeService } from './home.service';
+
+import { BoardRepository } from '@packages/database/repositories';
 
 @Module({
   imports: [],

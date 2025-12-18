@@ -106,7 +106,8 @@ export default function StockSearch() {
             <InfinityList
               hasNextPage={hasNextPage}
               isFetchingNextPage={isFetchingNextPage}
-              fetchNextPage={fetchNextPage}>
+              fetchNextPage={fetchNextPage}
+            >
               {data.stockKoreanList.map(renderItem)}
             </InfinityList>
           ) : (

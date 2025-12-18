@@ -5,12 +5,11 @@
   "tabWidth": 2,
   "printWidth": 120,
   "importOrder": [
-    "^@nestjs/(.*)$",
-    "^@peek/(.*)$",
-    "^@peek-admin/(.*)$",
-    "^@libs/database/(.*)$",
-    "^@libs/shared/(.*)$",
-    "^[./]"
+    "^[./]",
+    "^@app/api/(.*)$",
+    "^@app/api-admin/(.*)$",
+    "^@packages/database/(.*)$",
+    "^@packages/shared/(.*)$"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,

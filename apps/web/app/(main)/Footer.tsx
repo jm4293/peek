@@ -64,13 +64,15 @@ export const Footer = () => {
       className={`
           px-4 transition-transform duration-500 ease-in-out
           ${isVisible ? 'translate-y-0' : 'translate-y-full'}
-        `}>
+        `}
+    >
       <div
         className={`px-6 py-3 flex justify-between items-center 
         backdrop-blur-md bg-white/50 dark:bg-[#1f1f22]/50 
         border border-white/30 dark:border-white/20 rounded-full shadow-md
         ${platform === 'ios' ? 'mb-6' : 'mb-2'}
-        `}>
+        `}
+      >
         {menuItems.map(({ path, icon: Icon, label, basePath }) => {
           const isActive = pathname.startsWith(basePath);
 

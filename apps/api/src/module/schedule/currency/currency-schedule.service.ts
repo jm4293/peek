@@ -3,9 +3,9 @@ import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Cron } from '@nestjs/schedule';
 
-import { CurrencyHistoryRepository } from '@libs/database/repositories/currency';
+import { CurrencyHistoryRepository } from '@packages/database/repositories';
 
-import { CurrencyUnit, CurrencyUnitValue } from '@libs/shared/const/currency';
+import { CurrencyUnit, CurrencyUnitValue } from '@packages/shared/constant';
 
 interface IResponse {
   result: number; // 조회 결과, 1 : 성공, 2 : DATA코드 오류, 3 : 인증코드 오류, 4 : 일일제한횟수 마감

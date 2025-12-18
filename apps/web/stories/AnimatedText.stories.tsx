@@ -39,12 +39,14 @@ const ManualControlWrapper = ({ Component }: any) => {
       <div className="flex gap-2">
         <button
           onClick={() => setCount(count - 10)}
-          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+        >
           -10
         </button>
         <button
           onClick={() => setCount(count - 1)}
-          className="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500">
+          className="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500"
+        >
           -1
         </button>
         <button onClick={() => setCount(0)} className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">
@@ -52,12 +54,14 @@ const ManualControlWrapper = ({ Component }: any) => {
         </button>
         <button
           onClick={() => setCount(count + 1)}
-          className="px-4 py-2 bg-blue-400 text-white rounded hover:bg-blue-500">
+          className="px-4 py-2 bg-blue-400 text-white rounded hover:bg-blue-500"
+        >
           +1
         </button>
         <button
           onClick={() => setCount(count + 10)}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
           +10
         </button>
       </div>

@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "outDir": "../../dist/apps/api",
+    "paths": {
+      "@app/api/config": ["./src/config"],
+      "@app/api/decorator": ["./src/decorator"],
+      "@app/api/handler": ["./src/handler"],
+      "@app/api/module/*": ["./src/module/*"],
+      "@app/api/shared": ["./src/shared"],
+      "@app/api/type": ["./src/type"],
+
+      "@packages/database/entities": ["../../packages/database/src/entities"],
+      "@packages/database/repositories": ["../../packages/database/src/repositories"],
+      "@packages/shared/constant": ["../../packages/shared/src/constants"]
+    }
+  },
+  "references": [{ "path": "../../packages/database" }, { "path": "../../packages/shared" }],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
+}

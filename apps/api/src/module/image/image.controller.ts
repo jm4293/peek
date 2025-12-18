@@ -1,6 +1,3 @@
-import { Response } from 'express';
-import pLimit from 'p-limit';
-
 import {
   BadRequestException,
   Controller,
@@ -14,11 +11,13 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
-
-import { Public } from '@peek/decorator/public';
-import { IMAGE_TYPE } from '@peek/shared/constants/image-type';
+import { Response } from 'express';
+import pLimit from 'p-limit';
 
 import { ImageService } from './image.service';
+
+import { Public } from '@app/api/decorator';
+import { IMAGE_TYPE } from '@app/api/shared';
 
 @Controller('image')
 export class ImageController {

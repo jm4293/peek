@@ -4,12 +4,12 @@
 
 ## 기술 스택
 
-| 영역 | 기술 |
-|------|------|
-| Backend | NestJS 11, TypeORM, MySQL |
-| Frontend | Next.js 15, React 19 |
-| Admin | Vite, React 19, Zustand |
-| Package Manager | pnpm |
+| 영역            | 기술                      |
+| --------------- | ------------------------- |
+| Backend         | NestJS 11, TypeORM, MySQL |
+| Frontend        | Next.js 15, React 19      |
+| Admin           | Vite, React 19, Zustand   |
+| Package Manager | pnpm                      |
 
 ## 프로젝트 구조
 
@@ -75,21 +75,21 @@ pnpm dev:web-admin
 
 ## 스크립트
 
-| 명령어 | 설명 |
-|--------|------|
-| `pnpm dev` | API + Admin API 동시 실행 |
-| `pnpm dev:api` | API 개발 서버 |
-| `pnpm dev:api-admin` | Admin API 개발 서버 |
-| `pnpm dev:web` | 웹 개발 서버 |
-| `pnpm dev:web-admin` | 어드민 웹 개발 서버 |
-| `pnpm build` | 전체 빌드 |
-| `pnpm build:api` | API 빌드 |
-| `pnpm build:web` | 웹 빌드 |
-| `pnpm lint` | 전체 린트 |
-| `pnpm format` | 코드 포맷팅 |
-| `pnpm clean` | 빌드 파일 삭제 |
-| `pnpm clean:modules` | 모든 node_modules 삭제 |
-| `pnpm clean:all` | 빌드 + node_modules 삭제 |
+| 명령어               | 설명                      |
+| -------------------- | ------------------------- |
+| `pnpm dev`           | API + Admin API 동시 실행 |
+| `pnpm dev:api`       | API 개발 서버             |
+| `pnpm dev:api-admin` | Admin API 개발 서버       |
+| `pnpm dev:web`       | 웹 개발 서버              |
+| `pnpm dev:web-admin` | 어드민 웹 개발 서버       |
+| `pnpm build`         | 전체 빌드                 |
+| `pnpm build:api`     | API 빌드                  |
+| `pnpm build:web`     | 웹 빌드                   |
+| `pnpm lint`          | 전체 린트                 |
+| `pnpm format`        | 코드 포맷팅               |
+| `pnpm clean`         | 빌드 파일 삭제            |
+| `pnpm clean:modules` | 모든 node_modules 삭제    |
+| `pnpm clean:all`     | 빌드 + node_modules 삭제  |
 
 ## 패키지 의존 관계
 

@@ -1,36 +1,35 @@
-import { Request } from 'express';
-import { DataSource, EntityManager } from 'typeorm';
-
 import { HttpService } from '@nestjs/axios';
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { InjectDataSource } from '@nestjs/typeorm';
+import { Request } from 'express';
+import { DataSource, EntityManager } from 'typeorm';
 
-import { BcryptHandler } from '@peek/handler/bcrypt';
-import { ACCESS_TOKEN_TIME, REFRESH_TOKEN_NAME, REFRESH_TOKEN_TIME } from '@peek/shared/constants/cookie';
-import { IJwtToken } from '@peek/type/interface';
+import { AWSService } from '../aws';
+import { EmailVerificationService } from '../email-verification';
+import { CheckEmailCodeDto, CheckEmailDto, LoginEmailDto, LoginOauthDto, SignupEmailDto } from './dto';
 
-import { User, UserAccount } from '@libs/database/entities/user';
+import { BcryptHandler } from '@app/api/handler';
+import { ACCESS_TOKEN_TIME, REFRESH_TOKEN_NAME, REFRESH_TOKEN_TIME } from '@app/api/shared';
+import { IJwtToken } from '@app/api/type';
+
+import { User, UserAccount } from '@packages/database/entities';
 import {
   UserAccountRepository,
   UserOauthTokenRepository,
   UserRepository,
   UserVisitRepository,
-} from '@libs/database/repositories/user';
+} from '@packages/database/repositories';
 
-import { EntityName } from '@libs/shared/const/entity';
 import {
+  EntityName,
   UserAccountType,
   UserAccountTypeValue,
   UserVisitType,
   UserVisitTypeValue,
   userAccountTypeDescription,
-} from '@libs/shared/const/user';
-
-import { AWSService } from '../aws';
-import { EmailVerificationService } from '../email-verification';
-import { CheckEmailCodeDto, CheckEmailDto, LoginEmailDto, LoginOauthDto, SignupEmailDto } from './dto';
+} from '@packages/shared/constant';
 
 @Injectable()
 export class AuthService {

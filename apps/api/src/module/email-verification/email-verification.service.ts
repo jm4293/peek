@@ -1,9 +1,8 @@
-import { Cache } from 'cache-manager';
-import * as nodemailer from 'nodemailer';
-
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { Cache } from 'cache-manager';
+import * as nodemailer from 'nodemailer';
 
 @Injectable()
 export class EmailVerificationService {

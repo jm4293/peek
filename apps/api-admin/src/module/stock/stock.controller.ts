@@ -1,10 +1,8 @@
-import { Response } from 'express';
-
 import { Controller, Delete, Get, Param, Post, Query, Res, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-
 import { ResConfig } from '@peek-admin/config/_res.config';
 import { GetStockCodeDto, GetStockCodeListDto } from '@peek-admin/type/dto';
+import { Response } from 'express';
 
 import { StockService } from './stock.service';
 

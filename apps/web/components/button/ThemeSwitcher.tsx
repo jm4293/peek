@@ -41,7 +41,8 @@ export const ThemeSwitcher = () => {
                     : 'bg-theme-bg-sub border-theme-border-light text-theme-text-sub hover:border-[#9470dc]/50 hover:text-theme-text-main'
                 }
               `}
-              title={label}>
+              title={label}
+            >
               <Icon size={24} className={isActive ? 'text-[#9470dc]' : ''} />
               <span className="text-base font-medium">{label}</span>
               {isActive && <div className="ml-auto w-2 h-2 rounded-full bg-[#9470dc]" />}

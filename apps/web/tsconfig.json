@@ -13,50 +13,29 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": ".",
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "@/app/board/*": ["./app/(main)/board/*"],
-      "@/app/home/*": ["./app/(main)/home/*"],
-      "@/app/stock/*": ["./app/(main)/stock/*"],
-      "@/app/user/*": ["./app/(main)/user/*"],
-      "@/app/auth/login/*": ["app/(auth)/auth/login/*"],
-      "@/app/auth/register/*": ["app/(auth)/auth/register/*"],
+      // "@/*": ["./*"],
+      "@app/web/board/*": ["./app/(main)/board/*"],
+      "@app/web/home/*": ["./app/(main)/home/*"],
+      "@app/web/stock/*": ["./app/(main)/stock/*"],
+      "@app/web/user/*": ["./app/(main)/user/*"],
+      "@app/web/auth/*": ["./app/(auth)/auth/*"],
 
-      "@/assets": ["./assets"],
-      "@/assets/*": ["./assets/*"],
-
-      "@/components": ["./components"],
-      "@/components/*": ["./components/*"],
-
-      "@/hooks": ["./hooks"],
-      "@/hooks/*": ["./hooks/*"],
-
-      "@/lib": ["./lib"],
-      "@/lib/*": ["./lib/*"],
-
-      "@/public": ["./public"],
-      "@/public/*": ["./public/*"],
-
-      "@/services": ["./services"],
-      "@/services/*": ["./services/*"],
-
-      "@/shared": ["./shared"],
-      "@/shared/*": ["./shared/*"],
-
-      "@/stores": ["./stores"],
-      "@/stores/*": ["./stores/*"],
-
-      "@/types": ["./types"],
-      "@/types/*": ["./types/*"],
-
-      "@/utils": ["./utils"],
-      "@/utils/*": ["./utils/*"]
+      "@app/web/assets/*": ["./assets/*"],
+      "@app/web/components/*": ["./components/*"],
+      "@app/web/hooks/*": ["./hooks/*"],
+      "@app/web/lib/*": ["./lib/*"],
+      "@app/web/public/*": ["./public/*"],
+      "@app/web/services/*": ["./services/*"],
+      "@app/web/shared/*": ["./shared/*"],
+      "@app/web/stores/*": ["./stores/*"],
+      "@app/web/types/*": ["./types/*"],
+      "@app/web/utils/*": ["./utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

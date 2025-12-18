@@ -101,7 +101,8 @@ export default function InquiryRegister() {
                       <button
                         type="button"
                         className="absolute top-0 right-0 bg-white text-black rounded-full w-5 h-5 flex items-center justify-center"
-                        onClick={() => setImages((prevImages) => prevImages.filter((img) => img !== file))}>
+                        onClick={() => setImages((prevImages) => prevImages.filter((img) => img !== file))}
+                      >
                         &times;
                       </button>
                     </div>

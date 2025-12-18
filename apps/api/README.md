@@ -98,11 +98,11 @@ nest start --watch api
 
 ## 주요 스크립트
 
-| 명령어 | 설명 |
-|--------|------|
-| `pnpm dev:api` | 개발 서버 (watch 모드) |
-| `pnpm build:api` | 프로덕션 빌드 |
-| `pnpm start:prod` | 프로덕션 서버 실행 |
+| 명령어            | 설명                   |
+| ----------------- | ---------------------- |
+| `pnpm dev:api`    | 개발 서버 (watch 모드) |
+| `pnpm build:api`  | 프로덕션 빌드          |
+| `pnpm start:prod` | 프로덕션 서버 실행     |
 
 ## 프로젝트 구조
 
@@ -140,33 +140,33 @@ src/
 
 ### 기능 모듈
 
-| 모듈 | 설명 | 엔드포인트 |
-|------|------|-----------|
-| auth | 인증 (로그인, 회원가입, OAuth) | `/auth/*` |
-| board | 게시판 CRUD | `/board/*` |
-| stock | 주식 정보 조회 | `/stock/*` |
-| user | 사용자 정보 | `/user/*` |
-| currency | 환율 정보 | `/currency/*` |
-| notice | 공지사항 | `/notice/*` |
-| inquiry | 문의사항 | `/inquiry/*` |
-| image | 이미지 업로드 | `/image/*` |
+| 모듈     | 설명                           | 엔드포인트    |
+| -------- | ------------------------------ | ------------- |
+| auth     | 인증 (로그인, 회원가입, OAuth) | `/auth/*`     |
+| board    | 게시판 CRUD                    | `/board/*`    |
+| stock    | 주식 정보 조회                 | `/stock/*`    |
+| user     | 사용자 정보                    | `/user/*`     |
+| currency | 환율 정보                      | `/currency/*` |
+| notice   | 공지사항                       | `/notice/*`   |
+| inquiry  | 문의사항                       | `/inquiry/*`  |
+| image    | 이미지 업로드                  | `/image/*`    |
 
 ### 스케줄 모듈
 
-| 모듈 | 설명 |
-|------|------|
+| 모듈              | 설명             |
+| ----------------- | ---------------- |
 | schedule/currency | 환율 데이터 수집 |
-| schedule/kis | KIS API 스케줄 |
-| schedule/kiwoom | 키움 API 스케줄 |
-| schedule/ls | LS API 스케줄 |
+| schedule/kis      | KIS API 스케줄   |
+| schedule/kiwoom   | 키움 API 스케줄  |
+| schedule/ls       | LS API 스케줄    |
 
 ### WebSocket 모듈
 
-| 모듈 | 설명 |
-|------|------|
-| websocket/kis | KIS 실시간 데이터 |
+| 모듈             | 설명               |
+| ---------------- | ------------------ |
+| websocket/kis    | KIS 실시간 데이터  |
 | websocket/kiwoom | 키움 실시간 데이터 |
-| websocket/ls | LS 실시간 데이터 |
+| websocket/ls     | LS 실시간 데이터   |
 
 ## API 인증
 

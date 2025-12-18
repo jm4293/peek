@@ -1,8 +1,7 @@
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 
-import { BadRequestException, Injectable } from '@nestjs/common';
-
-import { Inquiry } from '@libs/database/entities/inquiry';
+import { Inquiry } from '@packages/database/entities';
 
 @Injectable()
 export class InquiryRepository extends Repository<Inquiry> {

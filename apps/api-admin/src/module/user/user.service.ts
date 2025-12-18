@@ -1,11 +1,8 @@
+import { UserRepository } from '@libs/database/repositories/user';
 import { Injectable } from '@nestjs/common';
-
 import { ADMIN_LIST_LIMIT } from '@peek-admin/shared/list';
 import { GetUserListDto } from '@peek-admin/type/dto';
-
-import { UserRepository } from '@libs/database/repositories/user';
-
-import { EntityName } from '@libs/shared/const/entity';
+import { EntityName } from 'packages/shared/src/constant/entity';
 
 @Injectable()
 export class UserService {

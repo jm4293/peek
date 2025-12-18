@@ -1,8 +1,7 @@
+import { Injectable } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 
-import { Injectable } from '@nestjs/common';
-
-import { Notice } from '@libs/database/entities/notice';
+import { Notice } from '@packages/database/entities';
 
 @Injectable()
 export class NoticeRepository extends Repository<Notice> {

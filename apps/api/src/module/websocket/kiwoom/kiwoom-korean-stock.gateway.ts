@@ -1,6 +1,3 @@
-import { Server, Socket } from 'socket.io';
-import { WebSocket } from 'ws';
-
 import { Logger, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import {
@@ -12,10 +9,12 @@ import {
   WebSocketGateway,
   WebSocketServer,
 } from '@nestjs/websockets';
+import { Server, Socket } from 'socket.io';
+import { WebSocket } from 'ws';
 
-import { SecuritiesTokenRepository } from '@libs/database/repositories/stock';
+import { SecuritiesTokenRepository } from '@packages/database/repositories';
 
-import { TokenProvider } from '@libs/shared/const/token';
+import { TokenProvider } from '@packages/shared/constant';
 
 interface IStockPrice {
   symbol: string; // 종목 코드 (예: 005930)

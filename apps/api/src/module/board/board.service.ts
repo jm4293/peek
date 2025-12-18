@@ -1,25 +1,7 @@
-import { Request } from 'express';
-import { DataSource } from 'typeorm';
-
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectDataSource } from '@nestjs/typeorm';
-
-import { NotificationHandler } from '@peek/handler/notification';
-import { LIST_LIMIT } from '@peek/shared/constants/list';
-
-import { Board, BoardArticle, BoardComment, BoardLike } from '@libs/database/entities/board';
-import {
-  BoardArticleRepository,
-  BoardCommentRepository,
-  BoardLikeRepository,
-  BoardRepository,
-} from '@libs/database/repositories/board';
-import { StockCategoryRepository } from '@libs/database/repositories/stock';
-import { UserAccountRepository, UserPushTokenRepository, UserRepository } from '@libs/database/repositories/user';
-
-import { BoardType } from '@libs/shared/const/board';
-import { EntityName, EntityRelation } from '@libs/shared/const/entity';
-import { UserNotificationType } from '@libs/shared/const/user';
+import { Request } from 'express';
+import { DataSource } from 'typeorm';
 
 import {
   CreateBoardCommentDto,
@@ -29,6 +11,23 @@ import {
   UpdateBoardCommentDto,
   UpdateBoardDto,
 } from './dto';
+
+import { NotificationHandler } from '@app/api/handler';
+import { LIST_LIMIT } from '@app/api/shared';
+
+import { Board, BoardArticle, BoardComment, BoardLike } from '@packages/database/entities';
+import {
+  BoardArticleRepository,
+  BoardCommentRepository,
+  BoardLikeRepository,
+  BoardRepository,
+  StockCategoryRepository,
+  UserAccountRepository,
+  UserPushTokenRepository,
+  UserRepository,
+} from '@packages/database/repositories';
+
+import { BoardType, EntityName, EntityRelation, UserNotificationType } from '@packages/shared/constant';
 
 @Injectable()
 export class BoardService {

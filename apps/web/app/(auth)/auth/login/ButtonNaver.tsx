@@ -22,7 +22,8 @@ export const ButtonNaver = () => {
         active:scale-[0.98]
         text-theme-text-main
         transition-all duration-200
-      ">
+      "
+    >
       <NaverLogo />
       <Text.HEADING text="네이버 로그인" />
     </Link>

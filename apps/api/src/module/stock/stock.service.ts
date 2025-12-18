@@ -1,22 +1,7 @@
-import { FindOptionsOrder, Like } from 'typeorm';
-
 import { HttpService } from '@nestjs/axios';
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-
-import { LIST_LIMIT } from '@peek/shared/constants/list';
-
-import { StockKoreanCompany } from '@libs/database/entities/stock';
-import {
-  SecuritiesTokenRepository,
-  StockCategoryRepository,
-  StockCompanyRepository,
-  StockKoreanIndexHistoryRepository,
-} from '@libs/database/repositories/stock';
-import { UserStockFavoriteRepository } from '@libs/database/repositories/user';
-
-import { EntityName } from '@libs/shared/const/entity';
-import { TokenProvider } from '@libs/shared/const/token';
+import { FindOptionsOrder, Like } from 'typeorm';
 
 import {
   GetStockCandleDto,
@@ -25,6 +10,19 @@ import {
   GetStockKoreanRankDto,
   UpdateStockFavoriteDto,
 } from './dto';
+
+import { LIST_LIMIT } from '@app/api/shared';
+
+import { StockKoreanCompany } from '@packages/database/entities';
+import {
+  SecuritiesTokenRepository,
+  StockCategoryRepository,
+  StockCompanyRepository,
+  StockKoreanIndexHistoryRepository,
+  UserStockFavoriteRepository,
+} from '@packages/database/repositories';
+
+import { EntityName, TokenProvider } from '@packages/shared/constant';
 
 @Injectable()
 export class StockService implements OnModuleInit {

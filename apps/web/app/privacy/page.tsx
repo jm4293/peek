@@ -88,7 +88,8 @@ export default function PrivacyPolicyPage() {
                       href="https://policies.google.com/privacy"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 underline text-sm">
+                      className="flex items-center gap-1 text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 underline text-sm"
+                    >
                       <Text.CAPTION text="구글 개인정보 처리방침" className="break-words" />
                       <ExternalLink size={12} />
                     </Link>
@@ -97,7 +98,8 @@ export default function PrivacyPolicyPage() {
                       href="https://www.kakaocorp.com/page/privacy"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 underline text-sm">
+                      className="flex items-center gap-1 text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 underline text-sm"
+                    >
                       <Text.CAPTION text="카카오 개인정보 처리방침" className="break-words" />
                       <ExternalLink size={12} />
                     </Link>
@@ -106,7 +108,8 @@ export default function PrivacyPolicyPage() {
                       href="https://policy.naver.com/policy/privacy.html"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 underline text-sm">
+                      className="flex items-center gap-1 text-green-700 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 underline text-sm"
+                    >
                       <Text.CAPTION text="네이버 개인정보 처리방침" className="break-words" />
                       <ExternalLink size={12} />
                     </Link>
@@ -328,7 +331,8 @@ export default function PrivacyPolicyPage() {
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline text-sm">
+                          className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline text-sm"
+                        >
                           <Text.CAPTION text={link.text} color="blue" className="break-words" />
                           <ExternalLink size={12} />
                         </Link>
@@ -477,7 +481,8 @@ export default function PrivacyPolicyPage() {
                           href="https://policies.google.com/privacy"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
+                          className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline"
+                        >
                           <Text.PARAGRAPH text="자세히 보기" color="blue" className="break-words" />
                           <ExternalLink size={14} />
                         </Link>
@@ -589,7 +594,8 @@ export default function PrivacyPolicyPage() {
                       <span className="font-medium text-theme-text-default">이메일:</span>
                       <Link
                         href="mailto:[이메일 주소]"
-                        className="flex items-center gap-1 px-3 py-1 bg-theme-bg-main rounded-md text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 hover:bg-theme-bg-card-hover transition-colors">
+                        className="flex items-center gap-1 px-3 py-1 bg-theme-bg-main rounded-md text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 hover:bg-theme-bg-card-hover transition-colors"
+                      >
                         <Mail size={14} />
                         <span className="break-all">[이메일 주소]</span>
                       </Link>
@@ -632,7 +638,8 @@ export default function PrivacyPolicyPage() {
                         href="https://privacy.kisa.or.kr"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
+                        className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline"
+                      >
                         <Text.CAPTION text="privacy.kisa.or.kr" color="blue" className="ml-0 break-all" />
                         <ExternalLink size={12} />
                       </Link>
@@ -653,7 +660,8 @@ export default function PrivacyPolicyPage() {
                         href="https://www.kopico.go.kr"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
+                        className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline"
+                      >
                         <Text.CAPTION text="www.kopico.go.kr" color="blue" className="ml-0 break-all" />
                         <ExternalLink size={12} />
                       </Link>
@@ -674,7 +682,8 @@ export default function PrivacyPolicyPage() {
                         href="https://www.spo.go.kr"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
+                        className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline"
+                      >
                         <Text.CAPTION text="www.spo.go.kr" color="blue" className="ml-0 break-all" />
                         <ExternalLink size={12} />
                       </Link>
@@ -695,7 +704,8 @@ export default function PrivacyPolicyPage() {
                         href="https://cyberbureau.police.go.kr"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline">
+                        className="flex items-center gap-1 text-theme-text-blue hover:text-blue-700 dark:hover:text-blue-400 underline"
+                      >
                         <Text.CAPTION text="cyberbureau.police.go.kr" color="blue" className="ml-0 break-all" />
                         <ExternalLink size={12} />
                       </Link>
@@ -728,7 +738,8 @@ export default function PrivacyPolicyPage() {
               className="w-5 h-5 text-theme-text-gray mr-2 flex-shrink-0"
               fill="none"
               stroke="currentColor"
-              viewBox="0 0 24 24">
+              viewBox="0 0 24 24"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

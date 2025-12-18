@@ -40,7 +40,8 @@ export const InquiryRegisterButton = (props: Props) => {
   return (
     <div
       className="bg-theme-main-color rounded-full p-4 fixed bottom-16 right-0 -translate-x-1/2 -translate-y-1/2"
-      onClick={clickHandler}>
+      onClick={clickHandler}
+    >
       <Plus color="white" />
     </div>
   );

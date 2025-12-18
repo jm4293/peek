@@ -1,6 +1,11 @@
 import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 
+import { AWSService } from '../aws';
+import { EmailVerificationService } from '../email-verification';
+import { UserController } from './user.controller';
+import { UserService } from './user.service';
+
 import {
   UserAccountRepository,
   UserNotificationRepository,
@@ -8,12 +13,7 @@ import {
   UserPushTokenRepository,
   UserRepository,
   UserVisitRepository,
-} from '@libs/database/repositories/user';
-
-import { AWSService } from '../aws';
-import { EmailVerificationService } from '../email-verification';
-import { UserController } from './user.controller';
-import { UserService } from './user.service';
+} from '@packages/database/repositories';
 
 @Module({
   imports: [HttpModule],

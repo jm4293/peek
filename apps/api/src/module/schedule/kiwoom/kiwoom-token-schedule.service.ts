@@ -1,14 +1,13 @@
-import { DataSource } from 'typeorm';
-
 import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Cron } from '@nestjs/schedule';
 import { InjectDataSource } from '@nestjs/typeorm';
+import { DataSource } from 'typeorm';
 
-import { SecuritiesTokenRepository } from '@libs/database/repositories/stock';
+import { SecuritiesTokenRepository } from '@packages/database/repositories';
 
-import { TokenProvider, TokenType } from '@libs/shared/const/token';
+import { TokenProvider, TokenType } from '@packages/shared/constant';
 
 @Injectable()
 export class KiwoomTokenScheduleService implements OnModuleInit {

@@ -86,7 +86,8 @@ export const Select = (props: Props) => {
             isError ? 'border-red-500' : 'border-theme-border-light/50 dark:border-white/10'
           } bg-theme-bg-card/30 dark:bg-theme-bg-section/30 backdrop-blur-md text-theme-text-default focus:outline-none focus:ring-2 focus:ring-theme-main-color/20 focus:border-theme-main-color transition-all duration-200 ${
             disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'
-          } shadow-lg shadow-black/5 dark:shadow-black/20`}>
+          } shadow-lg shadow-black/5 dark:shadow-black/20`}
+        >
           <span className={`${!selectedOption && placeholder ? 'text-theme-text-gray' : ''}`}>{displayText}</span>
           <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
             <ChevronDown
@@ -99,7 +100,8 @@ export const Select = (props: Props) => {
         {isOpen && (
           <div
             ref={dropdownRef}
-            className="absolute z-50 w-full mt-2 rounded-xl border border-theme-border-light/50 dark:border-white/10 bg-theme-bg-card dark:bg-theme-bg-section backdrop-blur-md shadow-lg shadow-black/10 dark:shadow-black/30 overflow-hidden max-h-60 overflow-y-auto">
+            className="absolute z-50 w-full mt-2 rounded-xl border border-theme-border-light/50 dark:border-white/10 bg-theme-bg-card dark:bg-theme-bg-section backdrop-blur-md shadow-lg shadow-black/10 dark:shadow-black/30 overflow-hidden max-h-60 overflow-y-auto"
+          >
             {options.map((option) => (
               <button
                 key={option.value}
@@ -109,7 +111,8 @@ export const Select = (props: Props) => {
                   selectedValue === option.value
                     ? 'bg-theme-main-color/20 text-theme-main-color font-medium'
                     : 'text-theme-text-default hover:bg-theme-bg-card/50 dark:hover:bg-theme-bg-card-hover'
-                }`}>
+                }`}
+              >
                 {option.label}
               </button>
             ))}

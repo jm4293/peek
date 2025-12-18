@@ -9,7 +9,6 @@
     "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
@@ -17,44 +16,6 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "esModuleInterop": true,
-    "paths": {
-      "@peek/config": ["apps/api/src/config"],
-      "@peek/config/*": ["apps/api/src/config/*"],
-      "@peek/decorator": ["apps/api/src/decorator"],
-      "@peek/decorator/*": ["apps/api/src/decorator/*"],
-      "@peek/handler": ["apps/api/src/handler"],
-      "@peek/handler/*": ["apps/api/src/handler/*"],
-      "@peek/module": ["apps/api/src/module"],
-      "@peek/module/*": ["apps/api/src/module/*"],
-      "@peek/shared": ["apps/api/src/shared"],
-      "@peek/shared/*": ["apps/api/src/shared/*"],
-      "@peek/type": ["apps/api/src/type"],
-      "@peek/type/*": ["apps/api/src/type/*"],
-
-      "@peek-admin/config": ["apps/api-admin/src/config"],
-      "@peek-admin/config/*": ["apps/api-admin/src/config/*"],
-      "@peek-admin/decorator": ["apps/api-admin/src/decorator"],
-      "@peek-admin/decorator/*": ["apps/api-admin/src/decorator/*"],
-      "@peek-admin/handler": ["apps/api-admin/src/handler"],
-      "@peek-admin/handler/*": ["apps/api-admin/src/handler/*"],
-      "@peek-admin/module": ["apps/api-admin/src/module"],
-      "@peek-admin/module/*": ["apps/api-admin/src/module/*"],
-      "@peek-admin/shared": ["apps/api-admin/src/shared/const"],
-      "@peek-admin/shared/*": ["apps/api-admin/src/shared/const/*"],
-      "@peek-admin/type": ["apps/api-admin/src/type"],
-      "@peek-admin/type/*": ["apps/api-admin/src/type/*"],
-
-      "@peek/database": ["packages/database/src"],
-      "@peek/database/*": ["packages/database/src/*"],
-
-      "@libs/shared/const": ["packages/shared/src/const"],
-      "@libs/shared/const/*": ["packages/shared/src/const/*"],
-
-      "@libs/database/entities": ["packages/database/src/entities"],
-      "@libs/database/entities/*": ["packages/database/src/entities/*"],
-      "@libs/database/repositories": ["packages/database/src/repositories"],
-      "@libs/database/repositories/*": ["packages/database/src/repositories/*"]
-    }
+    "esModuleInterop": true
   }
 }

@@ -70,7 +70,8 @@ const ToastController = ({ message = '테스트 토스트 메시지입니다!' }
     <div className="flex flex-col items-center gap-4">
       <button
         onClick={showToast}
-        className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-medium">
+        className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-medium"
+      >
         Toast 띄우기
       </button>
       <p className="text-sm text-gray-500">버튼을 클릭하면 토스트가 나타납니다</p>
@@ -109,7 +110,8 @@ export const SuccessType: Story = {
       <div className="flex flex-col items-center gap-4">
         <button
           onClick={() => openToast({ message: '성공적으로 완료되었습니다!', type: 'success' })}
-          className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-medium">
+          className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-medium"
+        >
           Success Toast 띄우기
         </button>
       </div>
@@ -126,7 +128,8 @@ export const ErrorType: Story = {
       <div className="flex flex-col items-center gap-4">
         <button
           onClick={() => openToast({ message: '오류가 발생했습니다!', type: 'error' })}
-          className="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium">
+          className="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium"
+        >
           Error Toast 띄우기
         </button>
       </div>
@@ -143,7 +146,8 @@ export const WarningType: Story = {
       <div className="flex flex-col items-center gap-4">
         <button
           onClick={() => openToast({ message: '주의가 필요합니다!', type: 'warning' })}
-          className="px-6 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-colors font-medium">
+          className="px-6 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-colors font-medium"
+        >
           Warning Toast 띄우기
         </button>
       </div>
@@ -160,7 +164,8 @@ export const InfoType: Story = {
       <div className="flex flex-col items-center gap-4">
         <button
           onClick={() => openToast({ message: '정보를 확인해주세요.', type: 'info' })}
-          className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-medium">
+          className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-medium"
+        >
           Info Toast 띄우기
         </button>
       </div>

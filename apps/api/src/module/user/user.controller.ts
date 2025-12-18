@@ -1,5 +1,3 @@
-import { Request, Response } from 'express';
-
 import {
   Body,
   Controller,
@@ -15,11 +13,7 @@ import {
   Req,
   Res,
 } from '@nestjs/common';
-
-import { Public } from '@peek/decorator/public';
-import { ParseReqHandler } from '@peek/handler/parseReq';
-
-import { UserAccount } from '@libs/database/entities/user';
+import { Request, Response } from 'express';
 
 import { CheckEmailCodeDto, CheckEmailDto } from '../auth/dto';
 import {
@@ -31,6 +25,11 @@ import {
   UpdateUserThumbnailDto,
 } from './dto';
 import { UserService } from './user.service';
+
+import { Public } from '@app/api/decorator';
+import { ParseReqHandler } from '@app/api/handler';
+
+import { UserAccount } from '@packages/database/entities';
 
 @Controller('user')
 export class UserController {

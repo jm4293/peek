@@ -74,7 +74,8 @@ export const Toast = () => {
     <div
       ref={toastRef}
       className={`fixed left-1/2 top-24 -translate-x-1/2 px-4 py-3 rounded-lg border shadow-lg z-[1100] ${toastStyles}`}
-      style={{ minWidth: 200, textAlign: 'center' }}>
+      style={{ minWidth: 200, textAlign: 'center' }}
+    >
       <p className="whitespace-pre-line w-full break-keep">{toast.message}</p>
     </div>,
     currentToastRoot,

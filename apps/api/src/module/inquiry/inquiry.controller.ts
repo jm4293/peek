@@ -1,13 +1,12 @@
-import { Request } from 'express';
-
 import { Body, Controller, Delete, Get, Param, Post, Put, Query, Req } from '@nestjs/common';
-
-import { ParseReqHandler } from '@peek/handler/parseReq';
-
-import { Inquiry } from '@libs/database/entities/inquiry';
+import { Request } from 'express';
 
 import { CreateInquiryDto, GetInquiryDto, GetInquiryListDto, UpdateInquiryDto } from './dto';
 import { InquiryService } from './inquiry.service';
+
+import { ParseReqHandler } from '@app/api/handler';
+
+import { Inquiry } from '@packages/database/entities';
 
 @Controller('inquiry')
 export class InquiryController {

@@ -56,7 +56,8 @@ export default function BoardRegisterButton(props: Props) {
         right: 'max(0rem, calc((100vw - min(100vw, 2345px)) / 2))',
         bottom: bottomValue,
       }}
-      onClick={clickHandler}>
+      onClick={clickHandler}
+    >
       <div className="relative backdrop-blur-xl bg-white/70 dark:bg-[#1f1f22]/70 border border-white/20 dark:border-white/10 rounded-full shadow-lg p-4 transition-all duration-300 ease-in-out hover:scale-110 active:scale-95 hover:shadow-xl hover:bg-white/80 dark:hover:bg-[#1f1f22]/80">
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-theme-main-color/20 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <PencilLine className="relative text-theme-main-color dark:text-theme-main-color-light" size={20} />

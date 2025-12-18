@@ -1,11 +1,5 @@
-import { Request } from 'express';
-
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, Query, Req } from '@nestjs/common';
-
-import { Public } from '@peek/decorator/public';
-import { ParseReqHandler } from '@peek/handler/parseReq';
-
-import { Board, BoardComment } from '@libs/database/entities/board';
+import { Request } from 'express';
 
 import { BoardService } from './board.service';
 import {
@@ -20,6 +14,11 @@ import {
   UpdateBoardCommentDto,
   UpdateBoardDto,
 } from './dto';
+
+import { Public } from '@app/api/decorator';
+import { ParseReqHandler } from '@app/api/handler';
+
+import { Board, BoardComment } from '@packages/database/entities';
 
 @Controller('board')
 export class BoardController {

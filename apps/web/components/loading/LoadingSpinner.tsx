@@ -51,7 +51,8 @@ export default function LoadingSpinner() {
               lettersRef.current[index] = el;
             }}
             className="text-2xl font-bold text-theme-main-color"
-            style={{ display: 'inline-block' }}>
+            style={{ display: 'inline-block' }}
+          >
             {letter}
           </span>
         ))}

@@ -43,7 +43,8 @@ export const Pagination = (props: IProps) => {
           key={index}
           onClick={() => handlePageChange(startPage + index)}
           disabled={page === startPage + index}
-          className={`mx-2 ${page === startPage + index ? 'text-white bg-[#007bff] p-1 rounded-3xl' : ''}`}>
+          className={`mx-2 ${page === startPage + index ? 'text-white bg-[#007bff] p-1 rounded-3xl' : ''}`}
+        >
           <p>{startPage + index}</p>
         </button>
       ))}

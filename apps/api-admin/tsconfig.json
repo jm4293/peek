@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": false,
+    "outDir": "../../dist/apps/api-admin",
+    "paths": {
+      "@app/api-admin/config/*": ["./src/config/*"],
+      "@app/api-admin/decorator/*": ["./src/decorator/*"],
+      "@app/api-admin/handler/*": ["./src/handler/*"],
+      "@app/api-admin/module/*": ["./src/module/*"],
+      "@app/api-admin/shared/*": ["./src/shared/const/*"],
+      "@app/api-admin/type/*": ["./src/type/*"],
+
+      "@packages/database/entities": ["../../packages/database/src/entities"],
+      "@packages/database/repositories": ["../../packages/database/src/repositories"],
+      "@packages/shared/constant": ["../../packages/shared/src/constant"]
+    }
+  },
+  "references": [{ "path": "../../packages/database" }, { "path": "../../packages/shared" }],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
+}

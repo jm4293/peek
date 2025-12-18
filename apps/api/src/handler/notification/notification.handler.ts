@@ -1,12 +1,11 @@
-import * as firebaseAdmin from 'firebase-admin';
-
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import * as firebaseAdmin from 'firebase-admin';
 
-import { UserNotification } from '@libs/database/entities/user';
-import { UserNotificationRepository } from '@libs/database/repositories/user';
+import { UserNotification } from '@packages/database/entities';
+import { UserNotificationRepository } from '@packages/database/repositories';
 
-import { UserNotificationTypeValue } from '@libs/shared/const/user';
+import { UserNotificationTypeValue } from '@packages/shared/constant';
 
 @Injectable()
 export class NotificationHandler {

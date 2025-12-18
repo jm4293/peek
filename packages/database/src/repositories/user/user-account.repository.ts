@@ -1,10 +1,9 @@
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { UserAccount } from '@packages/database/entities';
 
-import { UserAccount } from '@libs/database/entities/user';
-
-import { EntityName } from '@libs/shared/const/entity';
+import { EntityName } from '@packages/shared/constant';
 
 @Injectable()
 export class UserAccountRepository extends Repository<UserAccount> {

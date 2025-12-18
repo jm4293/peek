@@ -19,4 +19,3 @@ export const useNewsPanel = () => {
 
   return { isOpen, openPanel, closePanel, togglePanel };
 };
-

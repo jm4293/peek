@@ -1,8 +1,8 @@
 import { Column, CreateDateColumn, Entity, Generated, JoinColumn, OneToOne, PrimaryColumn } from 'typeorm';
 
-import { UserAccountType, UserAccountTypeValue } from '@libs/shared/const/user';
-
 import { UserAccount } from './user-account.entity';
+
+import { UserAccountType, UserAccountTypeValue } from '@packages/shared/constant';
 
 @Entity()
 export class UserOauthToken {

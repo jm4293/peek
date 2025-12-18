@@ -1,11 +1,9 @@
-import cookieParser from 'cookie-parser';
-
 import { ClassSerializerInterceptor } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory, Reflector } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-
 import { validationPipeConfig } from '@peek/config/validation-pipe';
+import cookieParser from 'cookie-parser';
 
 import { AppModule } from './app.module';
 

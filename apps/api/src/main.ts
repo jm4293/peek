@@ -1,12 +1,11 @@
-import cookieParser from 'cookie-parser';
-import * as admin from 'firebase-admin';
-import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
-
 import { ClassSerializerInterceptor } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory, Reflector } from '@nestjs/core';
 import { JwtService } from '@nestjs/jwt';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import cookieParser from 'cookie-parser';
+import * as admin from 'firebase-admin';
+import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
 
 import { AppModule } from './app.module';
 import { AuthGuardConfig } from './config/auth-guard';
@@ -105,7 +104,7 @@ async function bootstrap() {
   // Swagger 설정 끝
 
   const logger = app.get(WINSTON_MODULE_NEST_PROVIDER);
-  const port = configService.get('SERVER_PORT') as string;
+  const port = configService.get('SERVER_PORT');
 
   await app.listen(port, () => {
     logger.log(`서비스 서버가 포트 ${port}에서 시작되었습니다.`, 'Bootstrap');

@@ -12,13 +12,15 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-import { BoardType, BoardTypeValue } from '@libs/shared/const/board';
-
 import { StockCategory } from '../stock';
 import { UserAccount } from '../user';
 import { BoardArticle } from './board-article.entity';
 import { BoardComment } from './board-comment.entity';
 import { BoardLike } from './board-like.entity';
+
+import { BoardCommentRepository } from '@packages/database/repositories';
+
+import { BoardType, BoardTypeValue } from '@packages/shared/constant';
 
 @Entity()
 export class Board {
@@ -80,7 +82,7 @@ export class Board {
     cascade: true,
     onDelete: 'CASCADE',
   })
-  boardComments: BoardComment[];
+  boardComments: BoardCommentRepository[];
 
   @OneToMany(() => BoardLike, (boardLike) => boardLike.board, {
     cascade: true,

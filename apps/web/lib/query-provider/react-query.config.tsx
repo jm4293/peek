@@ -58,7 +58,8 @@ export default function QueryProvider(props: Props) {
                 <p>{handleError(error)}</p>
                 <button onClick={resetErrorBoundary}>재시도</button>
               </div>
-            )}>
+            )}
+          >
             {children}
           </ErrorBoundary>
         )}

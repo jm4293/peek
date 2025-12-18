@@ -1,8 +1,7 @@
+import { Injectable } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 
-import { Injectable } from '@nestjs/common';
-
-import { CurrencyHistory } from '@libs/database/entities/currency';
+import { CurrencyHistory } from '@packages/database/entities';
 
 @Injectable()
 export class CurrencyHistoryRepository extends Repository<CurrencyHistory> {

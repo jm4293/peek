@@ -1,14 +1,12 @@
-import { Server, Socket } from 'socket.io';
-import { WebSocket } from 'ws';
-
 import { Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { OnGatewayConnection, OnGatewayDisconnect, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
+import { Server, Socket } from 'socket.io';
+import { WebSocket } from 'ws';
 
-import { SecuritiesTokenRepository, StockKoreanIndexHistoryRepository } from '@libs/database/repositories/stock';
+import { SecuritiesTokenRepository, StockKoreanIndexHistoryRepository } from '@packages/database/repositories';
 
-import { StockKoreanIndexType } from '@libs/shared/const/stock';
-import { TokenProvider } from '@libs/shared/const/token';
+import { StockKoreanIndexType, TokenProvider } from '@packages/shared/constant';
 
 interface ILsIndex {
   time: string; // 시간

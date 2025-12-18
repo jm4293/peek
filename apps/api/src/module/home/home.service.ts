@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-import { BoardRepository } from '@libs/database/repositories/board';
+import { BoardRepository } from '@packages/database/repositories';
 
 @Injectable()
 export class HomeService {

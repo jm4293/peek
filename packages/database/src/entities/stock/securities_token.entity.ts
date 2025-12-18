@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, Generated, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
-import { TokenProvider, TokenProviderValue, TokenType, TokenTypeValue } from '@libs/shared/const/token';
+import { TokenProvider, TokenProviderValue, TokenType, TokenTypeValue } from '@packages/shared/constant';
 
 @Entity()
 export class securitiesToken {

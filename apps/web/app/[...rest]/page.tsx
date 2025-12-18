@@ -19,7 +19,8 @@ export default function CatchAllPage() {
 
         <Link
           href="/home"
-          className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200 text-sm underline">
+          className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200 text-sm underline"
+        >
           홈으로 돌아가기
         </Link>
       </div>

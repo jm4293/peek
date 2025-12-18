@@ -2,19 +2,19 @@ import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 
-import { jwtModuleConfig } from '@peek/config/jwt';
+import { AWSService } from '../aws';
+import { EmailVerificationService } from '../email-verification';
+import { AuthController } from './auth.controller';
+import { AuthService } from './auth.service';
+
+import { jwtModuleConfig } from '@app/api/config';
 
 import {
   UserAccountRepository,
   UserOauthTokenRepository,
   UserRepository,
   UserVisitRepository,
-} from '@libs/database/repositories/user';
-
-import { AWSService } from '../aws';
-import { EmailVerificationService } from '../email-verification';
-import { AuthController } from './auth.controller';
-import { AuthService } from './auth.service';
+} from '@packages/database/repositories';
 
 @Module({
   imports: [JwtModule.registerAsync(jwtModuleConfig), HttpModule],

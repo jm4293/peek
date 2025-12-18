@@ -42,7 +42,8 @@ export function PreText(props: Props) {
 
   return (
     <pre
-      className={`whitespace-pre-line ${textColor[color]} ${fontSize[size]} ${textAlign[align]} ${fontWeight[weight]} ${className}`}>
+      className={`whitespace-pre-line ${textColor[color]} ${fontSize[size]} ${textAlign[align]} ${fontWeight[weight]} ${className}`}
+    >
       {text}
     </pre>
   );

@@ -19,4 +19,3 @@ export const buildPromptFromMessages = (messages: ChatMessage[]) => {
 
   return `${SYSTEM_INSTRUCTION}\n\n[대화]\n${conversation}\n\n위 대화를 바탕으로 사용자에게 도움이 되는 구조화된 답변을 작성해 주세요.`;
 };
-

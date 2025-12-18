@@ -33,7 +33,8 @@ const CONTAINER = (props: Props) => {
         ${containerStyles[color]} 
         ${className}
       `}
-      {...rest}>
+      {...rest}
+    >
       <strong className="text-white disabled:text-theme-text-gray whitespace-nowrap font-semibold">{text}</strong>
     </button>
   );
@@ -56,9 +57,11 @@ const OUTLINE = (props: Props) => {
         ${outlineStyles[color]} 
         ${className}
       `}
-      {...rest}>
+      {...rest}
+    >
       <strong
-        className={`whitespace-nowrap font-semibold ${color === 'default' ? 'text-theme-main-color disabled:text-theme-text-gray' : 'text-[#FF5A5F]'}`}>
+        className={`whitespace-nowrap font-semibold ${color === 'default' ? 'text-theme-main-color disabled:text-theme-text-gray' : 'text-[#FF5A5F]'}`}
+      >
         {text}
       </strong>
     </button>

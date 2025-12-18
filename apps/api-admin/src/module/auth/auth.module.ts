@@ -1,9 +1,7 @@
+import { UserAccountRepository, UserVisitRepository } from '@libs/database/repositories/user';
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
-
 import { jwtModuleConfig } from '@peek-admin/config/jwt';
-
-import { UserAccountRepository, UserVisitRepository } from '@libs/database/repositories/user';
 
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
