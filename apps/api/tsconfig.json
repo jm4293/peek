@@ -17,7 +17,7 @@
       "@packages/shared/constant": ["../../packages/shared/src/constants"]
     }
   },
-  "references": [{ "path": "../../packages/database" }, { "path": "../../packages/shared" }],
+  "references": [{ "path": "../../packages/shared" }, { "path": "../../packages/database" }],
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
 }

@@ -11,5 +11,8 @@
     "typeorm": "^0.3.27",
     "mysql": "^2.18.1",
     "reflect-metadata": "^0.2.2"
+  },
+  "scripts": {
+    "build": "tsc -b && tsc-alias -p tsconfig.json"
   }
 }
