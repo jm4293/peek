@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "predev": "pnpm --filter @packages/shared build && pnpm --filter @packages/database build",
     "dev": "nest start --watch",
+    "prebuild": "pnpm --filter @packages/shared build && pnpm --filter @packages/database build",
     "build": "nest build",
+    "postbuild": "tsc-alias -p tsconfig.json",
     "start": "nest start",
-    "start:prod": "node ../../dist/apps/api/main"
+    "start:prod": "cd ../.. && NODE_ENV=production NODE_PATH=apps/api/node_modules node dist/apps/api/src/main"
   },
   "dependencies": {
     "@packages/database": "workspace:*",

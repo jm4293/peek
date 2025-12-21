@@ -3,7 +3,7 @@ import * as Joi from 'joi';
 
 export const configModuleConfig: ConfigModuleOptions = {
   isGlobal: true,
-  envFilePath: ['apps/api/.env'],
+  envFilePath: ['.env', 'apps/api/.env'],
   cache: true,
   validationOptions: {
     abortEarly: true, // 가장 처음 발견된 에러에서 멈춤
