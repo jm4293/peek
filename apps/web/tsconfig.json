@@ -13,31 +13,29 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "plugins": [{ "name": "next" }],
     "paths": {
-      // "@/*": ["./*"],
-      "@app/web/board/*": ["./app/(main)/board/*"],
-      "@app/web/home/*": ["./app/(main)/home/*"],
-      "@app/web/stock/*": ["./app/(main)/stock/*"],
-      "@app/web/user/*": ["./app/(main)/user/*"],
-      "@app/web/auth/*": ["./app/(auth)/auth/*"],
+      // "@*": ["./*"],
+      // "@app/web/board/*": ["./app/(main)/board/*"],
+      // "@app/web/home/*": ["./app/(main)/home/*"],
+      // "@app/web/stock/*": ["./app/(main)/stock/*"],
+      // "@app/web/user/*": ["./app/(main)/user/*"],
+      // "@app/web/auth/*": ["./app/(auth)/auth/*"],
 
-      "@app/web/assets/*": ["./assets/*"],
-      "@app/web/components/*": ["./components/*"],
-      "@app/web/hooks/*": ["./hooks/*"],
-      "@app/web/lib/*": ["./lib/*"],
-      "@app/web/public/*": ["./public/*"],
-      "@app/web/services/*": ["./services/*"],
-      "@app/web/shared/*": ["./shared/*"],
-      "@app/web/stores/*": ["./stores/*"],
-      "@app/web/types/*": ["./types/*"],
-      "@app/web/utils/*": ["./utils/*"]
+      "@app/web/components": ["./components"],
+      "@app/web/features": ["./features"],
+      "@app/web/hooks": ["./hooks"],
+      "@app/web/lib": ["./lib"],
+      "@app/web/shared": ["./shared"],
+      "@app/web/stores": ["./stores"],
+      "@app/web/utils": ["./utils"],
+
+      "@packages/database/entities": ["../../packages/database/src/entities"],
+      "@packages/database/repositories": ["../../packages/database/src/repositories"],
+      "@packages/shared/constant": ["../../packages/shared/src/constants"]
     }
   },
+  "references": [{ "path": "../../packages/shared" }, { "path": "../../packages/database" }],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

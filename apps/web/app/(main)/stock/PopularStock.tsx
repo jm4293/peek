@@ -1,14 +1,6 @@
 'use client';
 
-import { LocalStorageUtil, StockSignMarkUtil } from '@/utils';
 import { useRouter } from 'next/navigation';
-
-import { InternalErrorView, LoadingView } from '@/components/card';
-import { InfinityList } from '@/components/infinity-list';
-import { Text } from '@/components/text';
-
-import { LocalStorageKey } from '@/shared/constant/local-storage-key';
-import { StockRankEnum } from '@/shared/enum/stock';
 
 export default function PopularStock() {
   const router = useRouter();

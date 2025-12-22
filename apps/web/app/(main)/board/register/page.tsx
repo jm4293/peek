@@ -1,6 +1,5 @@
-import { Card, NotAuthView } from '@/components/card';
-
-import { getUserInfo } from '@/services/user';
+import { Card, NotAuthView } from '@app/web/components';
+import { getUserInfo } from '@app/web/features';
 
 import BoardRegister from './BoardRegister';
 

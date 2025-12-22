@@ -333,11 +333,9 @@ peek-fe/
 `tsconfig.json`에 정의된 경로 별칭을 적극 활용:
 
 ```typescript
-import { useApiError } from '@/hooks';
-
-import { Button } from '@/components/button';
-
-import { API_URL } from '@/shared/constant/api-url';
+import { Button } from '@app/web/components/button';
+import { useApiError } from '@app/web/hooks';
+import { API_URL } from '@app/web/shared';
 ```
 
 #### 모듈 내보내기

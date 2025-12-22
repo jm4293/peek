@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
-import { useToast } from '@/hooks/modal';
+import { useToast } from '@app/web/hooks';
 
 export const Toast = () => {
   const toastRef = useRef<HTMLDivElement>(null);

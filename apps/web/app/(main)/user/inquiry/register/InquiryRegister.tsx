@@ -4,19 +4,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
 
-import { Button } from '@/components/button';
-import { Card } from '@/components/card';
-import { Input } from '@/components/input';
-import { Text } from '@/components/text';
-import { Textarea } from '@/components/textarea';
-
-import { useModal, useToast } from '@/hooks/modal';
-
-import { useImageMutation } from '@/services/image';
-import { CreateInquiryReq, createInquiryReqSchema } from '@/services/inquiry';
-import { useInquiryMutation } from '@/services/inquiry/mutation/useInquiryMutation';
+import { Button, Card, Input, Text, Textarea } from '@app/web/components';
+import { CreateInquiryReq, createInquiryReqSchema, useImageMutation, useInquiryMutation } from '@app/web/features';
+import { useToast } from '@app/web/hooks';
 
 export default function InquiryRegister() {
   const imageInputRef = useRef<HTMLInputElement>(null);

@@ -1,10 +1,7 @@
 import { Suspense } from 'react';
 
-import { Card } from '@/components/card';
-import { SkeletonSuspense } from '@/components/skeleton';
-
-import { getBoardDetail } from '@/services/board';
-import { getUserInfo } from '@/services/user';
+import { Card, SkeletonSuspense } from '@app/web/components';
+import { getBoardDetail, getUserInfo } from '@app/web/features';
 
 import BoardComment from './BoardComment';
 import BoardCommentRegister from './BoardCommentRegister';

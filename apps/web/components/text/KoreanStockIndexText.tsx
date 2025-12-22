@@ -1,4 +1,4 @@
-import { AnimatedText } from '@/components/text';
+import { AnimatedText } from './AnimatedText';
 
 interface Props {
   price: string;

@@ -1,8 +1,9 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 
-import { API_URL } from '@/shared/constant/api-url';
-import { KoreanStockTop10 } from '@/shared/types/stock';
+import { API_URL, KoreanStockTop10 } from '@app/web/shared';
 
 export const useStockKoreanTop10 = () => {
   const [loading, setLoading] = useState(true);

@@ -1,18 +1,12 @@
 'use client';
 
-import { DayjsUtil } from '@/utils';
 import Link from 'next/link';
 import { use } from 'react';
 
-import { ShareButton } from '@/components/button';
-import { Card, EmptyDataView, InternalErrorView } from '@/components/card';
-import { Thumbnail } from '@/components/image';
-import { PreText, Text } from '@/components/text';
-
-import { BoardModel, useBoardMutation } from '@/services/board';
-import { UserAccountModel } from '@/services/user';
-
-import { ResponseType } from '@/shared/types';
+import { Card, EmptyDataView, InternalErrorView, PreText, ShareButton, Text, Thumbnail } from '@app/web/components';
+import { BoardModel, UserAccountModel, useBoardMutation } from '@app/web/features';
+import { ResponseType } from '@app/web/shared';
+import { DayjsUtil } from '@app/web/utils';
 
 interface Props {
   board: Promise<ResponseType<BoardModel | null>>;

@@ -1,4 +1,4 @@
-import { Card } from '@/components/card';
+import { Card } from '@app/web/components';
 
 import StockKoreanFavoriteList from './StockKoreanFavoriteList';
 

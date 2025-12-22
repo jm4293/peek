@@ -1,15 +1,13 @@
 'use client';
 
-import { DayjsUtil, LocalStorageUtil } from '@/utils';
 import { X } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-import { Text } from '@/components/text';
-
-import { StockKoreanCompanyModel } from '@/services/stock';
-
-import { LocalStorageKey } from '@/shared/constant/local-storage-key';
+import { Text } from '@app/web/components';
+import { StockKoreanCompanyModel } from '@app/web/features';
+import { LocalStorageKey } from '@app/web/shared';
+import { DayjsUtil, LocalStorageUtil } from '@app/web/utils';
 
 export default function RecentStockList() {
   const [searches, setSearches] = useState<(StockKoreanCompanyModel & { timestamp: Date })[]>([]);

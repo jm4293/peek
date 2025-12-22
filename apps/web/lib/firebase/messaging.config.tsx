@@ -3,15 +3,15 @@
 import { useSetAtom } from 'jotai';
 import { useEffect, useRef } from 'react';
 
-import { requestForToken } from '@/lib/firebase/firebase.config';
+import { notificationTokenAtom } from '@app/web/stores';
 
-import { notificationTokenAtom } from '@/stores/notification-token.atom';
+import { requestForToken } from './firebase.config';
 
 interface Props {
   children: React.ReactNode;
 }
 
-export default function MessagingConfig(props: Props) {
+export function MessagingConfig(props: Props) {
   const { children } = props;
 
   const hasRequested = useRef(false);

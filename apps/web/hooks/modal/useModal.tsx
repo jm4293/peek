@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai';
 
-import { ModalState, modalAtom } from '@/stores/modal.atom';
+import { ModalState, modalAtom } from '@app/web/stores';
 
 export const useModal = () => {
   const [modal, setModal] = useAtom(modalAtom);

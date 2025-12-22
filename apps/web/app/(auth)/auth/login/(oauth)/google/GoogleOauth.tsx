@@ -3,11 +3,10 @@
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
-import { useToast } from '@/hooks/modal';
+import { useAuthMutation } from '@app/web/features';
+import { useToast } from '@app/web/hooks';
 
-import { useAuthMutation } from '@/services/auth';
-
-import { UserAccountTypeEnum } from '@/shared/enum/user';
+import { UserAccountType } from '@packages/shared/constant';
 
 export default function GoogleOauth() {
   const router = useRouter();
@@ -32,7 +31,7 @@ export default function GoogleOauth() {
 
     oauthSignInMutation.mutate({
       token,
-      userAccountType: UserAccountTypeEnum.GOOGLE,
+      userAccountType: UserAccountType.GOOGLE,
       tokenType,
       expire: expire ? Number(expire) : null,
     });

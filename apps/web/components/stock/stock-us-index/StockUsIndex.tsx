@@ -2,13 +2,9 @@
 
 import Link from 'next/link';
 
-import { Card } from '@/components/card';
-import { LineSkeleton } from '@/components/skeleton';
-import { NetworkErrorText, Text } from '@/components/text';
-
-import { useStockUsIndex } from '@/hooks/socket';
-
-import { UsStockIndex } from '@/shared/types/stock';
+import { Card, LineSkeleton, NetworkErrorText, Text } from '@app/web/components';
+import { useStockUsIndex } from '@app/web/hooks';
+import { UsStockIndex } from '@app/web/shared';
 
 export const StockUsIndex = () => {
   const { dowJones, sp500, nasdaq, indexNasdaq, loading, isConnected } = useStockUsIndex();

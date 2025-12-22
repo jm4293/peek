@@ -4,13 +4,13 @@ import { QueryClient, QueryClientProvider, QueryErrorResetBoundary } from '@tans
 import { useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { useApiError } from '@/hooks/useApiError';
+import { useApiError } from '@app/web/hooks';
 
 interface Props {
   children: React.ReactNode;
 }
 
-export default function QueryProvider(props: Props) {
+export function QueryProvider(props: Props) {
   const { children } = props;
 
   const [queryClient] = useState(

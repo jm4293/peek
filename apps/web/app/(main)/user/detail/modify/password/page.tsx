@@ -1,10 +1,8 @@
-import { Card, InternalErrorView, NotAuthView } from '@/components/card';
-import { Text } from '@/components/text';
+import { Card, InternalErrorView, NotAuthView, Text } from '@app/web/components';
+import { getUserInfo } from '@app/web/features';
+import { ERROR_CODE } from '@app/web/shared';
 
-import { getUserInfo } from '@/services/user';
-
-import { ERROR_CODE } from '@/shared/constant/error-code/error-code';
-import { UserAccountTypeEnum } from '@/shared/enum/user';
+import { UserAccountType } from '@packages/shared/constant';
 
 import ModifyPassword from './ModifyPassword';
 
@@ -23,7 +21,7 @@ export default async function ModifyPasswordPage() {
     );
   }
 
-  if (data.userAccountType !== UserAccountTypeEnum.EMAIL) {
+  if (data.userAccountType !== UserAccountType.EMAIL) {
     return (
       <Card.MAIN text="비밀번호 변경">
         <Card.SECTION>

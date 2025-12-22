@@ -1,15 +1,12 @@
 'use client';
 
-import { DayjsUtil } from '@/utils';
 import Image from 'next/image';
 import { use } from 'react';
 
-import { Card, EmptyDataView, InternalErrorView } from '@/components/card';
-import { PreText, Text } from '@/components/text';
-
-import { InquiryModel } from '@/services/inquiry';
-
-import { ResponseType } from '@/shared/types';
+import { Card, EmptyDataView, InternalErrorView, PreText, Text } from '@app/web/components';
+import { InquiryModel } from '@app/web/features';
+import { ResponseType } from '@app/web/shared';
+import { DayjsUtil } from '@app/web/utils';
 
 interface Props {
   inquiry: Promise<ResponseType<InquiryModel | null>>;

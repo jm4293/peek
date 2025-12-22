@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 
-import { AnimatedBackground } from '@/components/canvas';
-import { Text } from '@/components/text';
+import { AnimatedBackground, Text } from '@app/web/components';
 
 export default function CatchAllPage() {
   return (

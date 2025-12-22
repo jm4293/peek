@@ -1,13 +1,10 @@
 'use client';
 
-import { DayjsUtil } from '@/utils';
 import Link from 'next/link';
 
-import { Card, EmptyDataView, InternalErrorView, LoadingView } from '@/components/card';
-import { InfinityList } from '@/components/infinity-list';
-import { Text } from '@/components/text';
-
-import { InquiryModel, useInquiryList } from '@/services/inquiry';
+import { InfinityList, Card, EmptyDataView, InternalErrorView, LoadingView, Text } from '@app/web/components';
+import { InquiryModel, useInquiryList } from '@app/web/features';
+import { DayjsUtil } from '@app/web/utils';
 
 export default function InquiryList() {
   const { data, hasNextPage, fetchNextPage, isFetchingNextPage, isPending, isSuccess } = useInquiryList({});

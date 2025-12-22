@@ -1,15 +1,10 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 
-import { ThemeProvider } from '@/app/providers';
-
-import { Modal, Toast } from '@/components/modal';
-
-import MessagingConfig from '@/lib/firebase/messaging.config';
-import { NetworkError } from '@/lib/network-error';
-import QueryProvider from '@/lib/query-provider';
-
+import { Modal, Toast } from '../components';
+import { MessagingConfig, NetworkError, QueryProvider } from '../lib';
 import './globals.css';
+import { ThemeProvider } from './providers';
 
 export const metadata: Metadata = {
   title: `${process.env.NODE_ENV === 'production' ? '' : '[DEV] '}PEEK`,

@@ -1,9 +1,16 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 
-import { API_URL } from '@/shared/constant/api-url';
-import { DOWJONES_TR_KEY, INDEXNASDAQ_TR_KEY, NASDAQ_TR_KEY, SP500_TR_KEY } from '@/shared/constant/stock-code';
-import { UsStockIndex } from '@/shared/types/stock';
+import {
+  API_URL,
+  DOWJONES_TR_KEY,
+  INDEXNASDAQ_TR_KEY,
+  NASDAQ_TR_KEY,
+  SP500_TR_KEY,
+  UsStockIndex,
+} from '@app/web/shared';
 
 export const useStockUsIndex = () => {
   const [loading, setLoading] = useState(true);

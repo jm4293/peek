@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { useStockKorean } from '@/hooks/socket';
+import { useStockKorean } from '@app/web/hooks';
 
 interface Props {
   code: string;

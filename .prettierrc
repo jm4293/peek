@@ -5,11 +5,15 @@
   "tabWidth": 2,
   "printWidth": 120,
   "importOrder": [
-    "^[./]",
     "^@app/api/(.*)$",
     "^@app/api-admin/(.*)$",
+    "^@app/web/(.*)$",
+    "^@app/web-admin/(.*)$",
+
     "^@packages/database/(.*)$",
-    "^@packages/shared/(.*)$"
+    "^@packages/shared/(.*)$",
+
+    "^[./]"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,

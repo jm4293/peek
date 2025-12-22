@@ -2,12 +2,8 @@
 
 import Link from 'next/link';
 
-import { Card, EmptyDataView, InternalErrorView, LoadingView } from '@/components/card';
-import { InfinityList } from '@/components/infinity-list';
-import { Text } from '@/components/text';
-
-import { useStockKoreanFavoriteList } from '@/services/stock';
-import { UserStockFavoriteModel } from '@/services/user';
+import { InfinityList, Card, EmptyDataView, InternalErrorView, LoadingView, Text } from '@app/web/components';
+import { UserStockFavoriteModel, useStockKoreanFavoriteList } from '@app/web/features';
 
 export default function StockKoreanFavoriteList() {
   const { data, hasNextPage, fetchNextPage, isFetchingNextPage, isPending, isSuccess } = useStockKoreanFavoriteList();

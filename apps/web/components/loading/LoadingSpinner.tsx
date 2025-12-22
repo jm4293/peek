@@ -3,7 +3,7 @@
 import { gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
 
-export default function LoadingSpinner() {
+export function LoadingSpinner() {
   const lettersRef = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {

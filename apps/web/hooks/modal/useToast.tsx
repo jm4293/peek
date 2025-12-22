@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai';
 
-import { ToastState, toastAtom } from '@/stores/toast.atom';
+import { ToastState, toastAtom } from '@app/web/stores';
 
 export const useToast = () => {
   const [toast, setToast] = useAtom(toastAtom);

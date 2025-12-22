@@ -1,5 +1,4 @@
-import { NoticeTypeEnum } from '@/shared/enum/notice';
-import { StockRankEnum } from '@/shared/enum/stock';
+import { NoticeTypeValue, StockRankValue } from '@packages/shared/constant';
 
 export const QueryKeys = {
   user: {
@@ -27,12 +26,12 @@ export const QueryKeys = {
     stockCategoryList: () => ['stock', 'category-list'],
     stockKorean: (code: string) => ['stock', 'korean', code],
     stockKoreanList: (text?: string) => ['stock', 'korean-list', text],
-    stockKoreanRankList: (type: StockRankEnum) => ['stock', 'korean-rank-list', type],
+    stockKoreanRankList: (type: StockRankValue) => ['stock', 'korean-rank-list', type],
     stockKoreanIndexCandleList: (code: string) => ['stock', 'korean-index-candle-list', code],
     stockKoreanFavoriteList: () => ['stock', 'korean-favorite-list'],
   },
   notice: {
-    list: (type?: NoticeTypeEnum) => ['notice', 'list', type],
+    list: (type?: NoticeTypeValue) => ['notice', 'list', type],
   },
   inquiry: {
     list: () => ['inquiry', 'list'],

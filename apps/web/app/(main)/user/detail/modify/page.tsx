@@ -1,8 +1,6 @@
-import { Card, InternalErrorView, NotAuthView } from '@/components/card';
-
-import { getUserInfo } from '@/services/user';
-
-import { ERROR_CODE } from '@/shared/constant/error-code/error-code';
+import { Card, InternalErrorView, NotAuthView } from '@app/web/components';
+import { getUserInfo } from '@app/web/features';
+import { ERROR_CODE } from '@app/web/shared';
 
 import ModifyUser from './ModifyUser';
 

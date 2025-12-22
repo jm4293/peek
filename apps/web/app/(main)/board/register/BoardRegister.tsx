@@ -4,15 +4,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 
-import { Button } from '@/components/button';
-import { Card, InternalErrorView } from '@/components/card';
-import { Input } from '@/components/input';
-import { SkeletonSuspense } from '@/components/skeleton';
-import { Text } from '@/components/text';
-import { Textarea } from '@/components/textarea';
-
-import { CreateBoardReq, createBoardReqSchema, useBoardMutation } from '@/services/board';
-import { useStockCategoryList } from '@/services/stock';
+import { Button, Card, Input, InternalErrorView, SkeletonSuspense, Text, Textarea } from '@app/web/components';
+import { CreateBoardReq, createBoardReqSchema, useBoardMutation, useStockCategoryList } from '@app/web/features';
 
 export default function BoardRegister() {
   const {

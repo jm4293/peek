@@ -1,13 +1,9 @@
 import { ChevronRight, FileText, HelpCircle, MessageSquare, Palette, Shield, Star } from 'lucide-react';
 import Link from 'next/link';
 
-import { Card, InternalErrorView, NotAuthView } from '@/components/card';
-import { Thumbnail } from '@/components/image';
-import { Text } from '@/components/text';
-
-import { getUserInfo } from '@/services/user';
-
-import { ERROR_CODE } from '@/shared/constant/error-code/error-code';
+import { Card, InternalErrorView, NotAuthView, Text, Thumbnail } from '@app/web/components';
+import { getUserInfo } from '@app/web/features';
+import { ERROR_CODE } from '@app/web/shared';
 
 import UserLogout from './Logout';
 import { NewsButton } from './NewsButton';

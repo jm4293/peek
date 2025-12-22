@@ -2,10 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { Card } from '@/components/card';
-import { Text } from '@/components/text';
-
-import type { ChatMessage } from '@/services/ai/types';
+import { Card, Text } from '@app/web/components';
+import { ChatMessage } from '@app/web/features';
 
 import ChatInput from './components/ChatInput';
 import ChatMessageBubble, { type ChatMessageWithMeta } from './components/ChatMessage';

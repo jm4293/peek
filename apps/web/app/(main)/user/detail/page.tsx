@@ -1,13 +1,11 @@
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
-import { Card, InternalErrorView, NotAuthView } from '@/components/card';
-import { Text } from '@/components/text';
+import { Card, InternalErrorView, NotAuthView, Text } from '@app/web/components';
+import { getUserInfo } from '@app/web/features';
+import { ERROR_CODE } from '@app/web/shared';
 
-import { getUserInfo } from '@/services/user';
-
-import { ERROR_CODE } from '@/shared/constant/error-code/error-code';
-import { userAccountTypeDescription } from '@/shared/enum/user';
+import { userAccountTypeDescription } from '@packages/shared/constant';
 
 import UserWithdraw from './Withdraw';
 

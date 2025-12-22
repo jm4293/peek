@@ -116,3 +116,9 @@ pnpm build:api
 pnpm start:prod
 # 또는 PM2: pm2 start dist/apps/api/main.js
 ```
+
+## Stitch
+
+### Stitch 프로젝트
+
+- https://stitch.withgoogle.com/projects/3303104355315839888

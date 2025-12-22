@@ -1,20 +1,17 @@
 'use client';
 
-import { DayjsUtil } from '@/utils';
 import Image from 'next/image';
 
-import auFlag from '@/assets/country/au.png';
-import cnFlag from '@/assets/country/cn.png';
-import euFlag from '@/assets/country/eu.png';
-import jpFlag from '@/assets/country/jp.png';
-import ukFlag from '@/assets/country/uk.png';
-import usFlag from '@/assets/country/us.png';
+import { Card, LineSkeleton, NetworkErrorText, Text } from '@app/web/components';
+import { useCurrencyList } from '@app/web/features';
+import { DayjsUtil } from '@app/web/utils';
 
-import { Card } from '@/components/card';
-import { LineSkeleton } from '@/components/skeleton';
-import { NetworkErrorText, Text } from '@/components/text';
-
-import { useCurrencyList } from '@/services/currency/query';
+import auFlag from './au.png';
+import cnFlag from './cn.png';
+import euFlag from './eu.png';
+import jpFlag from './jp.png';
+import ukFlag from './uk.png';
+import usFlag from './us.png';
 
 const currencyMap = {
   USD: usFlag,

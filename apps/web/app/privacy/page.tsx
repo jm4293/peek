@@ -1,8 +1,7 @@
 import { ExternalLink, Globe, Mail, Phone } from 'lucide-react';
 import Link from 'next/link';
 
-import { Card } from '@/components/card';
-import { Text } from '@/components/text';
+import { Card, Text } from '@app/web/components';
 
 export default function PrivacyPolicyPage() {
   return (

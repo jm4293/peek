@@ -3,13 +3,9 @@
 import Link from 'next/link';
 import { FormEvent } from 'react';
 
-import { Button } from '@/components/button';
-import { Card } from '@/components/card';
-import { Input } from '@/components/input';
-
-import { useModal } from '@/hooks/modal';
-
-import { useUserMutation } from '@/services/user';
+import { Button, Card, Input } from '@app/web/components';
+import { useUserMutation } from '@app/web/features';
+import { useModal } from '@app/web/hooks';
 
 export default function ModifyPassword() {
   const { openModal, closeModal } = useModal();

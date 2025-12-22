@@ -2,7 +2,7 @@
 
 import { InputHTMLAttributes } from 'react';
 
-import { Text } from '@/components/text';
+import { Text } from '@app/web/components';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   name: string;

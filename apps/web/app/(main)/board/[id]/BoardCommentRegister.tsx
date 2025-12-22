@@ -1,17 +1,12 @@
 'use client';
 
-import { ValidationUtil } from '@/utils';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import { Card } from '@/components/card';
-import { Input } from '@/components/input';
-import { Text } from '@/components/text';
-
-import { useModal } from '@/hooks/modal';
-
-import { useBoardCommentMutation } from '@/services/board';
-import { UserAccountModel } from '@/services/user';
+import { Card, Input, Text } from '@app/web/components';
+import { UserAccountModel, useBoardCommentMutation } from '@app/web/features';
+import { useModal } from '@app/web/hooks';
+import { ValidationUtil } from '@app/web/utils';
 
 interface Props {
   id: string;

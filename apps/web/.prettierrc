@@ -6,16 +6,13 @@
   "tabWidth": 2,
   "printWidth": 120,
   "importOrder": [
-    "^@/app/(.*)$",
-    "^@/assets/(.*)$",
-    "^@/components/(.*)$",
-    "^@/hooks/(.*)$",
-    "^@/lib/(.*)$",
-    "^@/services/(.*)$",
-    "^@/shared/(.*)$",
-    "^@/stores/(.*)$",
-    "^@/types/(.*)$",
-    "^@/utils/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+
+    "^@app/web/(components|hooks|features|assets|lib|shared|stores|types|utils)",
+
+    "^@packages/database/(.*)$",
+    "^@packages/shared/(.*)$",
+
     "^[./]"
   ],
   "importOrderSeparation": true,

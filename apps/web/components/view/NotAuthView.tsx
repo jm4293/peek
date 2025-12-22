@@ -1,11 +1,11 @@
 import { ChevronRight, Palette, Shield } from 'lucide-react';
 import Link from 'next/link';
 
-import { NewsButton } from '@/app/(main)/user/NewsButton';
-import { NewsPanel } from '@/app/(main)/user/NewsPanel';
+import { Text } from '@app/web/components';
+import { Card } from '@app/web/components';
 
-import { Card } from '@/components/card';
-import { Text } from '@/components/text';
+import { NewsButton } from '../../app/(main)/user/NewsButton';
+import { NewsPanel } from '../../app/(main)/user/NewsPanel';
 
 interface Props {
   text: string;

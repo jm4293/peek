@@ -1,4 +1,4 @@
-import { TokenManager } from '@/lib/auth/token-manager';
+import { TokenManager } from '../lib';
 
 // Next.js cookies()에서 가져온 토큰을 검증하고 필요시 갱신합니다.
 export const getOrRefreshAccessToken = async (

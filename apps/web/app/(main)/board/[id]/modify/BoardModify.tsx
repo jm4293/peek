@@ -4,13 +4,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 
-import { Button } from '@/components/button';
-import { Card } from '@/components/card';
-import { Input } from '@/components/input';
-import { Text } from '@/components/text';
-import { Textarea } from '@/components/textarea';
-
-import { BoardModel, UpdateBoardReq, updateBoardReqSchema, useBoardMutation } from '@/services/board';
+import { Button, Card, Input, Text, Textarea } from '@app/web/components';
+import { BoardModel, UpdateBoardReq, updateBoardReqSchema, useBoardMutation } from '@app/web/features';
 
 interface Props {
   data: BoardModel;

@@ -1,9 +1,9 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 
-import { API_URL } from '@/shared/constant/api-url';
-import { KOSDAQ_CODE, KOSPI_CODE } from '@/shared/constant/stock-code';
-import { KoreanStockIndex } from '@/shared/types/stock';
+import { API_URL, KOSDAQ_CODE, KOSPI_CODE, KoreanStockIndex } from '@app/web/shared';
 
 interface Props {
   isKospi: boolean;

@@ -4,9 +4,9 @@ import { CandlestickSeries, ColorType, createChart } from 'lightweight-charts';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 
-import { useStockKoreanIndexCandleList } from '@/services/stock';
+import { KoreanStockIndex } from '@app/web/shared';
 
-import { KoreanStockIndex } from '@/shared/types/stock';
+import { useStockKoreanIndexCandleList } from '../../../features/stock';
 
 interface Props {
   data: KoreanStockIndex;

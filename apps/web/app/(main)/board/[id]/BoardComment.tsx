@@ -1,18 +1,11 @@
 'use client';
 
-import { DayjsUtil, ValidationUtil } from '@/utils';
 import { useEffect, useState } from 'react';
 
-import { Card } from '@/components/card';
-import { Thumbnail } from '@/components/image';
-import { Input } from '@/components/input';
-import { LineSkeleton } from '@/components/skeleton';
-import { Text } from '@/components/text';
-
-import { useToast } from '@/hooks/modal';
-
-import { useBoardCommentList, useBoardCommentMutation } from '@/services/board';
-import { UserAccountModel } from '@/services/user';
+import { Card, Input, LineSkeleton, Text, Thumbnail } from '@app/web/components';
+import { UserAccountModel, useBoardCommentList, useBoardCommentMutation } from '@app/web/features';
+import { useToast } from '@app/web/hooks';
+import { DayjsUtil, ValidationUtil } from '@app/web/utils';
 
 interface Props {
   id: string;

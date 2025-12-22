@@ -3,11 +3,10 @@
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
-import { useToast } from '@/hooks/modal';
+import { useAuthMutation } from '@app/web/features';
+import { useToast } from '@app/web/hooks';
 
-import { useAuthMutation } from '@/services/auth';
-
-import { UserAccountTypeEnum } from '@/shared/enum/user';
+import { UserAccountType } from '@packages/shared/constant';
 
 export default function KakaoOauth() {
   const router = useRouter();
@@ -28,7 +27,7 @@ export default function KakaoOauth() {
 
     oauthSignInMutation.mutate({
       token,
-      userAccountType: UserAccountTypeEnum.KAKAO,
+      userAccountType: UserAccountType.KAKAO,
       tokenType: null,
       expire: null,
     });

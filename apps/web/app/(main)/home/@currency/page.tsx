@@ -1,4 +1,4 @@
-import { Currency } from '@/components/stock';
+import { Currency } from '@app/web/components';
 
 export default function HomeCurrencyPage() {
   return <Currency />;

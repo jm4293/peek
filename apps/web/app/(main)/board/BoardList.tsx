@@ -1,17 +1,20 @@
 'use client';
 
-import { DayjsUtil } from '@/utils';
 import { Heart, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
-import { Card, EmptyDataView, InternalErrorView, LoadingView } from '@/components/card';
-import { Thumbnail } from '@/components/image';
-import { InfinityList } from '@/components/infinity-list';
-import { Text } from '@/components/text';
-
-import { useQueryParams } from '@/hooks/queryParams';
-
-import { BoardModel, useBoardList } from '@/services/board';
+import {
+  InfinityList,
+  Card,
+  EmptyDataView,
+  InternalErrorView,
+  LoadingView,
+  Text,
+  Thumbnail,
+} from '@app/web/components';
+import { BoardModel, useBoardList } from '@app/web/features';
+import { useQueryParams } from '@app/web/hooks';
+import { DayjsUtil } from '@app/web/utils';
 
 export default function BoardList() {
   const { getQuery } = useQueryParams();

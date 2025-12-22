@@ -1,17 +1,16 @@
 'use client';
 
-import { useDeviceLayout, useDevicePlatform, useFooterVisibility } from '@/hooks';
 import { ChartCandlestick, House, MessagesSquare, User } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 
-import { Text } from '@/components/text';
+import { Text } from '@app/web/components';
+import { useDeviceLayout, useDevicePlatform, useFooterVisibility } from '@app/web/hooks';
+import { LocalStorageKey } from '@app/web/shared';
+import { LocalStorageUtil } from '@app/web/utils';
 
-import { LocalStorageKey } from '@/shared/constant/local-storage-key';
-import { StockCategoryEnum } from '@/shared/enum/stock/stock-category.enum';
-
-import { LocalStorageUtil } from '@/utils/local-storage.util';
+import { StockCategory } from '@packages/shared/constant';
 
 export const Footer = () => {
   const pathname = usePathname();
@@ -23,7 +22,7 @@ export const Footer = () => {
   // 로컬스토리지 값 변경을 감지하기 위한 state
   const [boardStockCategory, setBoardStockCategory] = useState(() => {
     const savedCategory = LocalStorageUtil.getItem(LocalStorageKey.boardStockCategory);
-    return savedCategory || StockCategoryEnum.KOSPI.toString();
+    return savedCategory || StockCategory.KOSPI.toString();
   });
 
   const boardPath = useMemo(() => {
@@ -40,7 +39,7 @@ export const Footer = () => {
   useEffect(() => {
     const handleCustomStorageChange = () => {
       const savedCategory = LocalStorageUtil.getItem(LocalStorageKey.boardStockCategory);
-      setBoardStockCategory(savedCategory || StockCategoryEnum.KOSPI.toString());
+      setBoardStockCategory(savedCategory || StockCategory.KOSPI.toString());
     };
 
     window.addEventListener('stockCategoryChange', handleCustomStorageChange);

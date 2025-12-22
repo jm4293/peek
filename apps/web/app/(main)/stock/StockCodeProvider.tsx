@@ -2,7 +2,7 @@
 
 import { Dispatch, SetStateAction, createContext, useContext, useState } from 'react';
 
-import { StockKoreanCompanyModel } from '@/services/stock';
+import { StockKoreanCompanyModel } from '@app/web/features';
 
 interface ContextType {
   stock: StockKoreanCompanyModel | null;

@@ -1,16 +1,16 @@
 'use client';
 
-import { useDeviceLayout } from '@/hooks';
-import { LocalStorageUtil } from '@/utils';
 import { ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 
-import { Text } from '@/components/text';
+import { Text } from '@app/web/components';
+import { useDeviceLayout } from '@app/web/hooks';
+import { LocalStorageKey } from '@app/web/shared';
+import { LocalStorageUtil } from '@app/web/utils';
 
-import { LocalStorageKey } from '@/shared/constant/local-storage-key';
-import { StockCategoryEnum } from '@/shared/enum/stock';
+import { StockCategory } from '@packages/shared/constant';
 
 const Logo = () => {
   return <Text.TITLE text="PEEK" className="text-center" />;
@@ -24,7 +24,7 @@ export const Header = () => {
 
   const [boardStockCategory, setBoardStockCategory] = useState(() => {
     const savedCategory = LocalStorageUtil.getItem(LocalStorageKey.boardStockCategory);
-    return savedCategory || StockCategoryEnum.KOSPI.toString();
+    return savedCategory || StockCategory.KOSPI.toString();
   });
 
   const boardPath = useMemo(() => {
@@ -41,7 +41,7 @@ export const Header = () => {
   useEffect(() => {
     const handleCustomStorageChange = () => {
       const savedCategory = LocalStorageUtil.getItem(LocalStorageKey.boardStockCategory);
-      setBoardStockCategory(savedCategory || StockCategoryEnum.KOSPI.toString());
+      setBoardStockCategory(savedCategory || StockCategory.KOSPI.toString());
     };
 
     window.addEventListener('stockCategoryChange', handleCustomStorageChange);

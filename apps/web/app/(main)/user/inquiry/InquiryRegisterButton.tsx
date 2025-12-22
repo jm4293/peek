@@ -1,10 +1,9 @@
 'use client';
 
-import { useDeviceLayout } from '@/hooks';
 import { Plus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
-import { useModal } from '@/hooks/modal';
+import { useDeviceLayout, useModal } from '@app/web/hooks';
 
 interface Props {
   isAuth: boolean;

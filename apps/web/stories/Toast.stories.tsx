@@ -1,11 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import { useEffect } from 'react';
 
-import { ThemeProvider } from '@/app/providers';
-
-import { Toast } from '@/components/modal';
-
-import { useToast } from '@/hooks/modal';
+import { ThemeProvider } from '../app/providers';
+import { Toast } from '../components';
+import { useToast } from '../hooks';
 
 // Toast 환경을 제공하는 Decorator 컴포넌트
 const ToastDecorator = ({ children }: { children: React.ReactNode }) => {

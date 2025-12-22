@@ -1,9 +1,7 @@
 import { Suspense } from 'react';
 
-import { Card } from '@/components/card';
-import { SkeletonSuspense } from '@/components/skeleton';
-
-import { getInquiryDetail } from '@/services/inquiry/server';
+import { Card, SkeletonSuspense } from '@app/web/components';
+import { getInquiryDetail } from '@app/web/features';
 
 import InquiryDetail from './InquiryDetail';
 

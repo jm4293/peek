@@ -1,3 +1,5 @@
+'use client';
+
 import DOMPurify from 'dompurify';
 import { useState } from 'react';
 

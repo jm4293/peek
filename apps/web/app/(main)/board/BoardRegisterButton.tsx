@@ -1,14 +1,11 @@
 'use client';
 
-import { useDeviceLayout, useFooterVisibility } from '@/hooks';
 import { PencilLine } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
-import { Text } from '@/components/text';
-
-import { useModal } from '@/hooks/modal';
-
-import { UserAccountModel } from '@/services/user';
+import { Text } from '@app/web/components';
+import { UserAccountModel } from '@app/web/features';
+import { useDeviceLayout, useFooterVisibility, useModal } from '@app/web/hooks';
 
 interface Props {
   userInfo: UserAccountModel | null;

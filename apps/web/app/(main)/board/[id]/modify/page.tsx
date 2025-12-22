@@ -1,6 +1,5 @@
-import { Card, EmptyDataView, InternalErrorView } from '@/components/card';
-
-import { getBoardDetail } from '@/services/board';
+import { Card, EmptyDataView, InternalErrorView } from '@app/web/components';
+import { getBoardDetail } from '@app/web/features';
 
 import BoardModify from './BoardModify';
 

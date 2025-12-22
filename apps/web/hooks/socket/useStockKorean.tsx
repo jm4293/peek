@@ -1,7 +1,9 @@
+'use client';
+
 import { useEffect, useRef } from 'react';
 import { Socket, io } from 'socket.io-client';
 
-import { API_URL } from '@/shared/constant/api-url';
+import { API_URL } from '@app/web/shared';
 
 interface StockData {
   symbol: string;

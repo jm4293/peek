@@ -2,7 +2,7 @@
 
 import { forwardRef } from 'react';
 
-import { Text } from '@/components/text';
+import { Text } from '@app/web/components';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;

@@ -1,16 +1,15 @@
 'use client';
 
-import { LocalStorageUtil } from '@/utils';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
-import { AnimatedBackground } from '@/components/canvas';
-import { Text } from '@/components/text';
+import { AnimatedBackground, Text } from '@app/web/components';
+import { LocalStorageKey } from '@app/web/shared';
+import { LocalStorageUtil } from '@app/web/utils';
 
-import { LocalStorageKey } from '@/shared/constant/local-storage-key';
-import { UserAccountTypeEnum } from '@/shared/enum/user';
+import { UserAccountType, UserAccountTypeValue } from '@packages/shared/constant';
 
 import { ButtonGoogle } from './ButtonGoogle';
 import { ButtonKakao } from './ButtonKakao';
@@ -48,7 +47,7 @@ export function LoginOAuth() {
   const buttonsRef = useRef<HTMLDivElement>(null);
   const backButtonRef = useRef<HTMLButtonElement>(null);
 
-  const [lastLoginMethod, setLastLoginMethod] = useState<UserAccountTypeEnum | null>(null);
+  const [lastLoginMethod, setLastLoginMethod] = useState<UserAccountTypeValue | null>(null);
 
   useGSAP(
     () => {
@@ -111,17 +110,17 @@ export function LoginOAuth() {
 
         <div className="flex flex-col gap-8 w-full px-8" ref={buttonsRef}>
           <div className="relative w-full">
-            {lastLoginMethod === UserAccountTypeEnum.GOOGLE && <LastLoginCheck />}
+            {lastLoginMethod === UserAccountType.GOOGLE && <LastLoginCheck />}
             <ButtonGoogle />
           </div>
 
           <div className="relative w-full">
-            {lastLoginMethod === UserAccountTypeEnum.NAVER && <LastLoginCheck />}
+            {lastLoginMethod === UserAccountType.NAVER && <LastLoginCheck />}
             <ButtonNaver />
           </div>
 
           <div className="relative w-full">
-            {lastLoginMethod === UserAccountTypeEnum.KAKAO && <LastLoginCheck />}
+            {lastLoginMethod === UserAccountType.KAKAO && <LastLoginCheck />}
             <ButtonKakao />
           </div>
 

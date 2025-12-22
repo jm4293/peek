@@ -4,13 +4,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 
-import { Button } from '@/components/button';
-import { Card } from '@/components/card';
-import { Input } from '@/components/input';
-import { Text } from '@/components/text';
-
-import { UserAccountModel, useUserMutation } from '@/services/user';
-import { UpdateUserInfoReq, updateUserInfoReqSchema } from '@/services/user/type';
+import { Button, Input, Text } from '@app/web/components';
+import { Card } from '@app/web/components';
+import { UpdateUserInfoReq, UserAccountModel, updateUserInfoReqSchema, useUserMutation } from '@app/web/features';
 
 interface Props {
   userInfo: UserAccountModel;

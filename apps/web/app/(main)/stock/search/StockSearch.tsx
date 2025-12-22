@@ -1,20 +1,13 @@
 'use client';
 
-import { LocalStorageUtil } from '@/utils';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import { Card } from '@/components/card';
-import { InfinityList } from '@/components/infinity-list';
-import { Input } from '@/components/input';
-import { LineSkeleton } from '@/components/skeleton';
-import { NetworkErrorText, Text } from '@/components/text';
-
-import { useDebounce } from '@/hooks/useDebounce';
-
-import { StockKoreanCompanyModel, useStockKoreanList } from '@/services/stock';
-
-import { LocalStorageKey } from '@/shared/constant/local-storage-key';
+import { InfinityList, Card, Input, LineSkeleton, NetworkErrorText, Text } from '@app/web/components';
+import { StockKoreanCompanyModel, useStockKoreanList } from '@app/web/features';
+import { useDebounce } from '@app/web/hooks';
+import { LocalStorageKey } from '@app/web/shared';
+import { LocalStorageUtil } from '@app/web/utils';
 
 import { useStockProvider } from '../StockCodeProvider';
 

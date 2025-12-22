@@ -1,11 +1,8 @@
 'use client';
 
-import { Card } from '@/components/card';
-import { Text } from '@/components/text';
-
-import { useModal } from '@/hooks/modal';
-
-import { useUserMutation } from '@/services/user';
+import { Card, Text } from '@app/web/components';
+import { useUserMutation } from '@app/web/features';
+import { useModal } from '@app/web/hooks';
 
 export default function UserWithdraw() {
   const { withdrawMutation } = useUserMutation();

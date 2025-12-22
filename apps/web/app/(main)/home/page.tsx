@@ -1,5 +1,4 @@
-import { Card } from '@/components/card';
-import { CurrentTimeText, Text } from '@/components/text';
+import { Card, CurrentTimeText, Text } from '@app/web/components';
 
 export default async function HomePage() {
   return (

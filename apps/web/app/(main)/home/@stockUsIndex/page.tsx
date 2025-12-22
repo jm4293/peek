@@ -1,4 +1,4 @@
-import { StockUsIndex } from '@/components/stock';
+import { StockUsIndex } from '@app/web/components';
 
 export default function HomeStockUsIndexPage() {
   return <StockUsIndex />;

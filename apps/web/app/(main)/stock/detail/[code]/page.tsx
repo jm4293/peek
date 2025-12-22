@@ -1,10 +1,3 @@
-import { StockSignMarkUtil } from '@/utils';
-
-import { Card, EmptyDataView, InternalErrorView } from '@/components/card';
-import { Text } from '@/components/text';
-
-import { getStockKoreanDetail } from '@/services/stock';
-
 interface Props {
   params: Promise<{ code: string }>;
 }

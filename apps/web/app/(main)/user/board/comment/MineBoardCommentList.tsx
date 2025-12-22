@@ -1,13 +1,10 @@
 'use client';
 
-import { DayjsUtil } from '@/utils';
 import Link from 'next/link';
 
-import { Card, EmptyDataView, InternalErrorView, LoadingView } from '@/components/card';
-import { InfinityList } from '@/components/infinity-list';
-import { Text } from '@/components/text';
-
-import { BoardCommentModel, useBoardCommentListMine } from '@/services/board';
+import { InfinityList, Card, EmptyDataView, InternalErrorView, LoadingView, Text } from '@app/web/components';
+import { BoardCommentModel, useBoardCommentListMine } from '@app/web/features';
+import { DayjsUtil } from '@app/web/utils';
 
 export default function MineBoardCommentList() {
   const { data, hasNextPage, fetchNextPage, isFetchingNextPage, isPending, isSuccess } = useBoardCommentListMine();

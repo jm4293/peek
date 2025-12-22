@@ -1,11 +1,7 @@
 'use client';
 
-import { Card } from '@/components/card';
-import { ChartStockIndex } from '@/components/chart/stock-index';
-import { LineSkeleton } from '@/components/skeleton';
-import { Text } from '@/components/text';
-
-import { useStockKoreanIndex } from '@/hooks/socket';
+import { Card, ChartStockIndex, LineSkeleton, Text } from '@app/web/components';
+import { useStockKoreanIndex } from '@app/web/hooks';
 
 export default function KospiIndex() {
   const { kospi, loading } = useStockKoreanIndex({ isKospi: true, isKosdaq: false });

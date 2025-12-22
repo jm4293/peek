@@ -1,4 +1,4 @@
-import { Text } from '@/components/text';
+import { Text } from '@app/web/components';
 
 interface Props {
   id?: string;

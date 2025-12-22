@@ -1,5 +1,4 @@
-import { ThemeSwitcher } from '@/components/button';
-import { Card } from '@/components/card';
+import { Card, ThemeSwitcher } from '@app/web/components';
 
 export default function UserSettingThemePage() {
   return (

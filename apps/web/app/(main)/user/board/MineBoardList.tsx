@@ -1,14 +1,11 @@
 'use client';
 
-import { DayjsUtil } from '@/utils';
 import { Heart, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
-import { Card, EmptyDataView, InternalErrorView, LoadingView } from '@/components/card';
-import { InfinityList } from '@/components/infinity-list';
-import { Text } from '@/components/text';
-
-import { BoardModel, useMineBoardList } from '@/services/board';
+import { InfinityList, Card, EmptyDataView, InternalErrorView, LoadingView, Text } from '@app/web/components';
+import { BoardModel, useMineBoardList } from '@app/web/features';
+import { DayjsUtil } from '@app/web/utils';
 
 export default function MineBoardList() {
   const { data, hasNextPage, fetchNextPage, isFetchingNextPage, isPending, isSuccess } = useMineBoardList();

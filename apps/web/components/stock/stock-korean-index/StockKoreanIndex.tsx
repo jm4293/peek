@@ -1,13 +1,10 @@
 'use client';
 
-import { DayjsUtil } from '@/utils';
 import Link from 'next/link';
 
-import { Card } from '@/components/card';
-import { LineSkeleton } from '@/components/skeleton';
-import { KoreanStockIndexText, NetworkErrorText, Text } from '@/components/text';
-
-import { useStockKoreanIndex } from '@/hooks/socket';
+import { Card, KoreanStockIndexText, LineSkeleton, NetworkErrorText, Text } from '@app/web/components';
+import { useStockKoreanIndex } from '@app/web/hooks';
+import { DayjsUtil } from '@app/web/utils';
 
 interface StockIndexData {
   jisu: string;

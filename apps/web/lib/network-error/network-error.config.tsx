@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { Text } from '@/components/text';
+import { Text } from '@app/web/components';
 
 interface Props {
   children: React.ReactNode;

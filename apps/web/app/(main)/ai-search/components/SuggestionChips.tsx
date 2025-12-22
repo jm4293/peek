@@ -1,6 +1,6 @@
 'use client';
 
-import { Text } from '@/components/text';
+import { Text } from '@app/web/components';
 
 interface SuggestionChipsProps {
   onSelect: (value: string) => void;

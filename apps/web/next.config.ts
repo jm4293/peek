@@ -26,8 +26,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  webpack(config) {
+  transpilePackages: ['@packages/shared', '@packages/database'],
+  webpack(config, { isServer }) {
     config.resolve.alias['@'] = path.resolve(__dirname); // 프로젝트 루트 기준
+
+    // require-in-the-middle 경고 억제
+    if (isServer) {
+      config.ignoreWarnings = [...(config.ignoreWarnings || []), { module: /node_modules\/require-in-the-middle/ }];
+    }
+
     return config;
   },
 };

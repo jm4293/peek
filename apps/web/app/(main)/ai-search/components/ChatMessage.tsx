@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import ReactMarkdown from 'react-markdown';
 
-import type { ChatMessage } from '@/services/ai/types';
+import { ChatMessage } from '@app/web/features';
 
 export interface ChatMessageWithMeta extends ChatMessage {
   id: string;

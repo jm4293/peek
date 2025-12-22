@@ -1,6 +1,6 @@
-import { TokenManager } from '@/lib/auth/token-manager';
+import { API_URL } from '@app/web/shared';
 
-import { API_URL } from '@/shared/constant/api-url';
+import { TokenManager } from '../auth';
 
 interface NestJSResponse<T> {
   success: boolean;

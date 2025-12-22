@@ -1,8 +1,7 @@
-import { LocalStorageUtil, SessionStorageUtil } from '@/utils';
 import axios from 'axios';
 
-import { API_URL } from '@/shared/constant/api-url';
-import { REFRESH_TOKEN_NAME } from '@/shared/constant/cookie';
+import { API_URL, REFRESH_TOKEN_NAME } from '@app/web/shared';
+import { LocalStorageUtil, SessionStorageUtil } from '@app/web/utils';
 
 /**
  * 중앙화된 인증 관리 클래스

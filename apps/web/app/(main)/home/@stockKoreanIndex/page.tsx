@@ -1,4 +1,4 @@
-import { StockKoreanIndex } from '@/components/stock';
+import { StockKoreanIndex } from '@app/web/components';
 
 export default function HomeStockKoreanIndexPage() {
   return <StockKoreanIndex />;

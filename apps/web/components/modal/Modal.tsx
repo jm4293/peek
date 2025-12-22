@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
-import { useModal } from '@/hooks/modal';
+import { useModal } from '@app/web/hooks';
 
 import { Button } from '../button';
 import { Text } from '../text';

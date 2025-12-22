@@ -1,18 +1,12 @@
 'use client';
 
-import { useDeviceLayout } from '@/hooks';
 import { useRouter } from 'next/navigation';
 
-import { InternalErrorView, LoadingView } from '@/components/card';
-import { Tab } from '@/components/tab';
-
-import { useQueryParams } from '@/hooks/queryParams';
-
-import { useStockCategoryList } from '@/services/stock';
-
-import { LocalStorageKey } from '@/shared/constant/local-storage-key';
-
-import { LocalStorageUtil } from '@/utils/local-storage.util';
+import { InternalErrorView, LoadingView, Tab } from '@app/web/components';
+import { useStockCategoryList } from '@app/web/features';
+import { useDeviceLayout, useQueryParams } from '@app/web/hooks';
+import { LocalStorageKey } from '@app/web/shared';
+import { LocalStorageUtil } from '@app/web/utils';
 
 export default function BoardCategory() {
   const router = useRouter();

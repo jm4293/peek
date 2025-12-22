@@ -1,15 +1,11 @@
 'use client';
 
-import { DayjsUtil } from '@/utils';
 import Link from 'next/link';
 
-import { Card } from '@/components/card';
-import { LineSkeleton } from '@/components/skeleton';
-import { KoreanStockIndexText, NetworkErrorText, Text } from '@/components/text';
-
-import { useStockKoreanTop10 } from '@/hooks/socket';
-
-import { KoreanStockTop10 } from '@/shared/types/stock';
+import { Card, KoreanStockIndexText, LineSkeleton, NetworkErrorText, Text } from '@app/web/components';
+import { useStockKoreanTop10 } from '@app/web/hooks';
+import { KoreanStockTop10 } from '@app/web/shared';
+import { DayjsUtil } from '@app/web/utils';
 
 export const StockKoreanTop10 = () => {
   const { data, isConnected, loading } = useStockKoreanTop10();

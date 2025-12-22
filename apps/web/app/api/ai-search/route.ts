@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-import { type ChatMessage, requestGeminiStockAnswer } from '@/services/ai';
+import { ChatMessage, requestGeminiStockAnswer } from '@app/web/features';
 
 export async function POST(request: Request) {
   try {

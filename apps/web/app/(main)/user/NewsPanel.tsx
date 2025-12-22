@@ -1,19 +1,13 @@
 'use client';
 
-import { DayjsUtil } from '@/utils';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect } from 'react';
 
-import { Card } from '@/components/card';
-import { InfinityList } from '@/components/infinity-list';
-import { PreText, Text } from '@/components/text';
-
-import { useNewsPanel } from '@/hooks/news-panel';
-
-import { NoticeModel, useNoticeList } from '@/services/notice';
-
-import { NoticeTypeEnumList } from '@/shared/enum/notice';
+import { InfinityList, Card, PreText, Text } from '@app/web/components';
+import { NoticeModel, useNoticeList } from '@app/web/features';
+import { useNewsPanel } from '@app/web/hooks';
+import { DayjsUtil } from '@app/web/utils';
 
 export const NewsPanel = () => {
   const { isOpen, closePanel } = useNewsPanel();
@@ -29,7 +23,7 @@ export const NewsPanel = () => {
             <div className="flex flex-col">
               <Text.PARAGRAPH text={DayjsUtil.of(createdAt).formatYYMMDDHHmm()} color="gray" />
               <div className="flex items-center gap-2">
-                <Text.PARAGRAPH text={`[${NoticeTypeEnumList[type].label}]`} color={NoticeTypeEnumList[type].color} />
+                {/* <Text.PARAGRAPH text={`[${NoticeTypeEnumList[type].label}]`} color={NoticeTypeEnumList[type].color} /> */}
                 <Text.PARAGRAPH text={title} />
               </div>
             </div>

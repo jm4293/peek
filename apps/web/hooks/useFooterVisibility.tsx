@@ -1,8 +1,10 @@
-import { useDeviceLayout } from '@/hooks';
+'use client';
+
 import { useAtom } from 'jotai';
 import { useEffect, useRef } from 'react';
 
-import { footerVisibilityAtom } from '@/stores/footer-visibility.atom';
+import { footerVisibilityAtom } from '../stores';
+import { useDeviceLayout } from './useDeviceLayout';
 
 export const useFooterVisibility = () => {
   const [isVisible, setIsVisible] = useAtom(footerVisibilityAtom);

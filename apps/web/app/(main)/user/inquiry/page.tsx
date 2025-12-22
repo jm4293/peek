@@ -1,6 +1,5 @@
-import { Card } from '@/components/card';
-
-import { getUserInfo } from '@/services/user';
+import { Card } from '@app/web/components';
+import { getUserInfo } from '@app/web/features';
 
 import InquiryList from './InquiryList';
 import { InquiryRegisterButton } from './InquiryRegisterButton';

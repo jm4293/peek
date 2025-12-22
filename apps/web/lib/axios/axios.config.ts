@@ -1,8 +1,8 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
-import { TokenManager } from '@/lib/auth/token-manager';
+import { API_URL } from '@app/web/shared';
 
-import { API_URL } from '@/shared/constant/api-url';
+import { TokenManager } from '../auth';
 
 interface Req {
   url: string;
@@ -17,7 +17,7 @@ interface PostReq<D> extends Req {
   data?: D | null;
 }
 
-const createAxiosInstance = (headers: AxiosRequestConfig['headers'] = {}) => {
+export const createAxiosInstance = (headers: AxiosRequestConfig['headers'] = {}) => {
   const axiosInstance: AxiosInstance = axios.create({
     baseURL: API_URL,
     headers: { 'Content-Type': 'application/json', ...headers },
@@ -83,5 +83,3 @@ const createAxiosInstance = (headers: AxiosRequestConfig['headers'] = {}) => {
     },
   };
 };
-
-export default createAxiosInstance;

@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai';
 
-import { newsPanelAtom } from '@/stores/news-panel.atom';
+import { newsPanelAtom } from '@app/web/stores';
 
 export const useNewsPanel = () => {
   const [isOpen, setIsOpen] = useAtom(newsPanelAtom);
