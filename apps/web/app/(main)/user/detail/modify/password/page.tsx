@@ -15,7 +15,7 @@ export default async function ModifyPasswordPage() {
 
   if (!data) {
     return (
-      <Card.MAIN text="비밀번호 변경">
+      <Card.MAIN>
         <InternalErrorView />
       </Card.MAIN>
     );
@@ -23,7 +23,7 @@ export default async function ModifyPasswordPage() {
 
   if (data.userAccountType !== UserAccountType.EMAIL) {
     return (
-      <Card.MAIN text="비밀번호 변경">
+      <Card.MAIN>
         <Card.SECTION>
           <Text.HEADING text="이메일 회원만 비밀번호 변경이 가능합니다." />
         </Card.SECTION>
@@ -32,7 +32,7 @@ export default async function ModifyPasswordPage() {
   }
 
   return (
-    <Card.MAIN text="비밀번호 변경">
+    <Card.MAIN>
       <ModifyPassword />
     </Card.MAIN>
   );

@@ -6,7 +6,7 @@ import KosdaqIndex from './KosdaqIndex';
 
 export default function KosdaqIndexPage() {
   return (
-    <Card.MAIN text="코스닥 상세">
+    <Card.MAIN>
       <KosdaqIndex />
     </Card.MAIN>
   );

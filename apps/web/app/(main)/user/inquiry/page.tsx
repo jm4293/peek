@@ -8,7 +8,7 @@ export default async function UserInquiryPage() {
   const { success } = await getUserInfo();
 
   return (
-    <Card.MAIN text="문의하기">
+    <Card.MAIN>
       <InquiryList />
 
       <InquiryRegisterButton isAuth={success} />

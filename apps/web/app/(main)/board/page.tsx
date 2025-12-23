@@ -9,7 +9,7 @@ export default async function BoardPage() {
   const { data: userInfo } = await getUserInfo();
 
   return (
-    <Card.MAIN text="커뮤니티">
+    <Card.MAIN>
       <div className="flex flex-col gap-4">
         <BoardCategory />
         <BoardList />

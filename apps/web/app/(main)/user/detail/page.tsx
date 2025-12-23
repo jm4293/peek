@@ -18,14 +18,14 @@ export default async function UserDetailPage() {
 
   if (!data) {
     return (
-      <Card.MAIN text="유저 상세">
+      <Card.MAIN>
         <InternalErrorView />
       </Card.MAIN>
     );
   }
 
   return (
-    <Card.MAIN text="유저 상세">
+    <Card.MAIN>
       <Card.SECTION text="상세">
         <div className="flex items-center gap-2">
           <Text.PARAGRAPH text="가입경로:" />

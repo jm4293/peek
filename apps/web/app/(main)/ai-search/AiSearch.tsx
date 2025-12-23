@@ -121,7 +121,7 @@ export default function AiSearch() {
   );
 
   return (
-    <Card.MAIN text="AI 국내 주식 검색">
+    <Card.MAIN>
       <Card.SECTION text="추천 질문">
         <SuggestionChips onSelect={handleSuggestionSelect} />
       </Card.SECTION>

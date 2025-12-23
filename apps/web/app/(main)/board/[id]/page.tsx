@@ -19,7 +19,7 @@ export default async function BoardDetailPage(props: Props) {
   const board = getBoardDetail(id);
 
   return (
-    <Card.MAIN text="게시글">
+    <Card.MAIN>
       <Suspense fallback={<SkeletonSuspense />}>
         <BoardDetail board={board} userInfo={userInfo} />
       </Suspense>

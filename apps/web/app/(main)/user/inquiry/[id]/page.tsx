@@ -15,7 +15,7 @@ export default async function UserInquiryDetailPage(props: Props) {
   const inquiry = getInquiryDetail(id);
 
   return (
-    <Card.MAIN text="문의">
+    <Card.MAIN>
       <Suspense fallback={<SkeletonSuspense />}>
         <InquiryDetail inquiry={inquiry} />
       </Suspense>

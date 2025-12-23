@@ -14,7 +14,7 @@ export default async function BoardModifyPage(props: Props) {
 
   if (!success) {
     return (
-      <Card.MAIN text="게시글 수정">
+      <Card.MAIN>
         <InternalErrorView />
       </Card.MAIN>
     );
@@ -22,14 +22,14 @@ export default async function BoardModifyPage(props: Props) {
 
   if (!data) {
     return (
-      <Card.MAIN text="게시글 수정">
+      <Card.MAIN>
         <EmptyDataView text="게시글" />
       </Card.MAIN>
     );
   }
 
   return (
-    <Card.MAIN text="게시글 수정">
+    <Card.MAIN>
       <BoardModify data={data} id={id} />
     </Card.MAIN>
   );

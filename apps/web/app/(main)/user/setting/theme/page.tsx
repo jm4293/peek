@@ -2,7 +2,7 @@ import { Card, ThemeSwitcher } from '@app/web/components';
 
 export default function UserSettingThemePage() {
   return (
-    <Card.MAIN text="테마 설정">
+    <Card.MAIN>
       <ThemeSwitcher />
     </Card.MAIN>
   );

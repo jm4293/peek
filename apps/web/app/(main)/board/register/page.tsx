@@ -11,7 +11,7 @@ export default async function BoardRegisterPage() {
   }
 
   return (
-    <Card.MAIN text="게시글 등록">
+    <Card.MAIN>
       <BoardRegister />
     </Card.MAIN>
   );

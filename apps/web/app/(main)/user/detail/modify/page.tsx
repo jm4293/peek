@@ -13,14 +13,14 @@ export default async function ModifyUserPage() {
 
   if (!data) {
     return (
-      <Card.MAIN text="유저 상세">
+      <Card.MAIN>
         <InternalErrorView />
       </Card.MAIN>
     );
   }
 
   return (
-    <Card.MAIN text="유저정보 변경">
+    <Card.MAIN>
       <ModifyUser userInfo={data} />
     </Card.MAIN>
   );

@@ -18,7 +18,7 @@ export default async function UserPage() {
 
   if (!data) {
     return (
-      <Card.MAIN text="내 정보">
+      <Card.MAIN>
         <InternalErrorView />
       </Card.MAIN>
     );
@@ -29,7 +29,7 @@ export default async function UserPage() {
       <NewsButton />
       <NewsPanel />
 
-      <Card.MAIN text="내 정보">
+      <Card.MAIN>
         <Card.SECTION>
           <Link href="/user/detail" className="w-full flex justify-between items-center">
             <div className="flex items-center gap-4">
