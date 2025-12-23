@@ -1,9 +1,9 @@
 import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 
-import { CurrencyScheduleService } from './currency-schedule.service';
-
 import { CurrencyHistoryRepository } from '@packages/database/repositories';
+
+import { CurrencyScheduleService } from './currency-schedule.service';
 
 @Module({
   imports: [HttpModule],

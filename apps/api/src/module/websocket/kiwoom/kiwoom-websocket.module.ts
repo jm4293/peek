@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 
-import { KiwoomKoreanStockGateway } from './kiwoom-korean-stock.gateway';
-
 import { SecuritiesTokenRepository } from '@packages/database/repositories';
+
+import { KiwoomKoreanStockGateway } from './kiwoom-korean-stock.gateway';
 
 @Module({
   imports: [],

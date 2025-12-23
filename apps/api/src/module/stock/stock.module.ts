@@ -1,10 +1,6 @@
 import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 
-import { UserModule } from '../user';
-import { StockController } from './stock.controller';
-import { StockService } from './stock.service';
-
 import {
   SecuritiesTokenRepository,
   StockCategoryRepository,
@@ -12,6 +8,10 @@ import {
   StockKoreanIndexHistoryRepository,
   UserStockFavoriteRepository,
 } from '@packages/database/repositories';
+
+import { UserModule } from '../user';
+import { StockController } from './stock.controller';
+import { StockService } from './stock.service';
 
 @Module({
   imports: [HttpModule, UserModule],

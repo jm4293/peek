@@ -2,14 +2,14 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectDataSource } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 
-import { CreateInquiryDto, GetInquiryListDto, UpdateInquiryDto } from './dto';
-
 import { LIST_LIMIT } from '@app/api/shared';
 
 import { Inquiry, InquiryImage } from '@packages/database/entities';
 import { InquiryImageRepository, InquiryReplyRepository, InquiryRepository } from '@packages/database/repositories';
 
 import { EntityName } from '@packages/shared/constant';
+
+import { CreateInquiryDto, GetInquiryListDto, UpdateInquiryDto } from './dto';
 
 @Injectable()
 export class InquiryService {

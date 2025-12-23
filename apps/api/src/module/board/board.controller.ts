@@ -1,6 +1,11 @@
 import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, Query, Req } from '@nestjs/common';
 import { Request } from 'express';
 
+import { Public } from '@app/api/decorator';
+import { ParseReqHandler } from '@app/api/handler';
+
+import { Board, BoardComment } from '@packages/database/entities';
+
 import { BoardService } from './board.service';
 import {
   CreateBoardCommentDto,
@@ -14,11 +19,6 @@ import {
   UpdateBoardCommentDto,
   UpdateBoardDto,
 } from './dto';
-
-import { Public } from '@app/api/decorator';
-import { ParseReqHandler } from '@app/api/handler';
-
-import { Board, BoardComment } from '@packages/database/entities';
 
 @Controller('board')
 export class BoardController {

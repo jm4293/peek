@@ -5,11 +5,11 @@ import { Cron } from '@nestjs/schedule';
 import { InjectDataSource } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 
-import { KisKoreanIndexGateway } from '../../websocket';
-
 import { SecuritiesTokenRepository } from '@packages/database/repositories';
 
 import { TokenProvider, TokenType } from '@packages/shared/constant';
+
+import { KisKoreanIndexGateway } from '../../websocket';
 
 @Injectable()
 export class KisTokenScheduleService implements OnModuleInit {

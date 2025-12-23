@@ -1,9 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { BoardController } from './board.controller';
-import { BoardService } from './board.service';
-
 import { NotificationHandler } from '@app/api/handler';
 
 import { UserNotification } from '@packages/database/entities';
@@ -17,6 +14,9 @@ import {
   UserPushTokenRepository,
   UserRepository,
 } from '@packages/database/repositories';
+
+import { BoardController } from './board.controller';
+import { BoardService } from './board.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([UserNotification])],

@@ -2,9 +2,9 @@ import { GetObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3';
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import sharp from 'sharp';
 
-import { AWSService } from '../aws';
-
 import { AWS_S3_BUCKET_NAME, IMAGE_TYPE } from '@app/api/shared';
+
+import { AWSService } from '../aws';
 
 @Injectable()
 export class ImageService {

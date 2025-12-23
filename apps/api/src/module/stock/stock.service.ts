@@ -3,14 +3,6 @@ import { Injectable, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { FindOptionsOrder, Like } from 'typeorm';
 
-import {
-  GetStockCandleDto,
-  GetStockFavoriteListDto,
-  GetStockKoreanListDto,
-  GetStockKoreanRankDto,
-  UpdateStockFavoriteDto,
-} from './dto';
-
 import { LIST_LIMIT } from '@app/api/shared';
 
 import { StockKoreanCompany } from '@packages/database/entities';
@@ -23,6 +15,14 @@ import {
 } from '@packages/database/repositories';
 
 import { EntityName, TokenProvider } from '@packages/shared/constant';
+
+import {
+  GetStockCandleDto,
+  GetStockFavoriteListDto,
+  GetStockKoreanListDto,
+  GetStockKoreanRankDto,
+  UpdateStockFavoriteDto,
+} from './dto';
 
 @Injectable()
 export class StockService implements OnModuleInit {

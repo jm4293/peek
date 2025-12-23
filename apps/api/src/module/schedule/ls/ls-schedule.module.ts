@@ -1,10 +1,10 @@
 import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 
+import { SecuritiesTokenRepository } from '@packages/database/repositories';
+
 import { LsWebSocketModule } from '../../websocket';
 import { LsScheduleService } from './ls-schedule.service';
-
-import { SecuritiesTokenRepository } from '@packages/database/repositories';
 
 @Module({
   imports: [HttpModule, LsWebSocketModule],

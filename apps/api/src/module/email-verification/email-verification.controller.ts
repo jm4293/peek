@@ -1,9 +1,9 @@
 import { Body, Controller, Post } from '@nestjs/common';
 
+import { Public } from '@app/api/decorator';
+
 import { SendVerificationDto, VerifyCodeDto } from './dto';
 import { EmailVerificationService } from './email-verification.service';
-
-import { Public } from '@app/api/decorator';
 
 @Controller('email-verification')
 export class EmailVerificationController {

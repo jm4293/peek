@@ -1,8 +1,8 @@
 import { Controller, Get } from '@nestjs/common';
 
-import { HomeService } from './home.service';
-
 import { Public } from '@app/api/decorator';
+
+import { HomeService } from './home.service';
 
 @Controller('home')
 export class HomeController {

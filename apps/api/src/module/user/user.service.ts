@@ -7,18 +7,6 @@ import { Cache } from 'cache-manager';
 import { Request } from 'express';
 import { DataSource } from 'typeorm';
 
-import { CheckEmailCodeDto, CheckEmailDto } from '../auth/dto';
-import { AWSService } from '../aws';
-import { EmailVerificationService } from '../email-verification';
-import {
-  ReadUserNotificationDto,
-  RegisterUserPushTokenDto,
-  ResetUserPasswordDto,
-  UpdateUserDto,
-  UpdateUserPasswordDto,
-  UpdateUserThumbnailDto,
-} from './dto';
-
 import { BcryptHandler } from '@app/api/handler';
 
 import {
@@ -31,6 +19,18 @@ import {
 } from '@packages/database/repositories';
 
 import { EntityName, UserAccountType } from '@packages/shared/constant';
+
+import { CheckEmailCodeDto, CheckEmailDto } from '../auth/dto';
+import { AWSService } from '../aws';
+import { EmailVerificationService } from '../email-verification';
+import {
+  ReadUserNotificationDto,
+  RegisterUserPushTokenDto,
+  ResetUserPasswordDto,
+  UpdateUserDto,
+  UpdateUserPasswordDto,
+  UpdateUserThumbnailDto,
+} from './dto';
 
 @Injectable()
 export class UserService {

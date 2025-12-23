@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 
-import { GetNoticeListDto } from './dto';
-
 import { LIST_LIMIT } from '@app/api/shared';
 
 import { NoticeRepository } from '@packages/database/repositories';
 
 import { EntityName, EntityRelation } from '@packages/shared/constant';
+
+import { GetNoticeListDto } from './dto';
 
 @Injectable()
 export class NoticeService {

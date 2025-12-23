@@ -1,6 +1,11 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Post, Query, Req } from '@nestjs/common';
 import { Request } from 'express';
 
+import { Public } from '@app/api/decorator';
+import { ParseReqHandler } from '@app/api/handler';
+
+import { StockCategory } from '@packages/database/entities';
+
 import { UserService } from '../user';
 import {
   GetStockCandleDto,
@@ -11,11 +16,6 @@ import {
   UpdateStockFavoriteDto,
 } from './dto';
 import { StockService } from './stock.service';
-
-import { Public } from '@app/api/decorator';
-import { ParseReqHandler } from '@app/api/handler';
-
-import { StockCategory } from '@packages/database/entities';
 
 @Controller('stock')
 export class StockController {

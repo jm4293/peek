@@ -123,34 +123,34 @@ pnpm lint             # ESLint 검사
 
 ### 파일 네이밍
 
-| 패턴                | 용도                        |
-| ------------------- | --------------------------- |
-| `*.module.ts`       | NestJS 모듈                 |
-| `*.controller.ts`   | NestJS 컨트롤러             |
-| `*.service.ts`      | NestJS 서비스               |
-| `*.repository.ts`   | DB 레포지토리               |
-| `*.entity.ts`       | TypeORM 엔티티              |
-| `*.dto.ts`          | DTO                         |
-| `*.constant.ts`     | 상수                        |
-| `*.atom.ts`         | Jotai 상태 (web)            |
-| `*.store.ts`        | Zustand 상태 (web-admin)    |
-| `Component.tsx`     | React 컴포넌트 (PascalCase) |
+| 패턴              | 용도                        |
+| ----------------- | --------------------------- |
+| `*.module.ts`     | NestJS 모듈                 |
+| `*.controller.ts` | NestJS 컨트롤러             |
+| `*.service.ts`    | NestJS 서비스               |
+| `*.repository.ts` | DB 레포지토리               |
+| `*.entity.ts`     | TypeORM 엔티티              |
+| `*.dto.ts`        | DTO                         |
+| `*.constant.ts`   | 상수                        |
+| `*.atom.ts`       | Jotai 상태 (web)            |
+| `*.store.ts`      | Zustand 상태 (web-admin)    |
+| `Component.tsx`   | React 컴포넌트 (PascalCase) |
 
 ### 폴더 구조
 
-| 폴더          | 용도                   |
-| ------------- | ---------------------- |
-| `module/`     | NestJS 기능 모듈       |
-| `config/`     | NestJS 설정            |
-| `decorator/`  | 커스텀 데코레이터      |
-| `handler/`    | 핸들러/유틸리티        |
-| `components/` | React 컴포넌트         |
-| `hooks/`      | Custom Hooks           |
-| `lib/`        | 유틸리티 라이브러리    |
-| `services/`   | API 클라이언트         |
-| `stores/`     | 상태 관리              |
-| `shared/`     | 공유 타입/상수         |
-| `utils/`      | 유틸 함수              |
+| 폴더          | 용도                |
+| ------------- | ------------------- |
+| `module/`     | NestJS 기능 모듈    |
+| `config/`     | NestJS 설정         |
+| `decorator/`  | 커스텀 데코레이터   |
+| `handler/`    | 핸들러/유틸리티     |
+| `components/` | React 컴포넌트      |
+| `hooks/`      | Custom Hooks        |
+| `lib/`        | 유틸리티 라이브러리 |
+| `services/`   | API 클라이언트      |
+| `stores/`     | 상태 관리           |
+| `shared/`     | 공유 타입/상수      |
+| `utils/`      | 유틸 함수           |
 
 ## Git 커밋 규칙
 

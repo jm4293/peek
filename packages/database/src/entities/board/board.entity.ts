@@ -12,15 +12,15 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
+import { BoardCommentRepository } from '@packages/database/repositories';
+
+import { BoardType, BoardTypeValue } from '@packages/shared/constant';
+
 import { StockCategory } from '../stock';
 import { UserAccount } from '../user';
 import { BoardArticle } from './board-article.entity';
 import { BoardComment } from './board-comment.entity';
 import { BoardLike } from './board-like.entity';
-
-import { BoardCommentRepository } from '@packages/database/repositories';
-
-import { BoardType, BoardTypeValue } from '@packages/shared/constant';
 
 @Entity()
 export class Board {

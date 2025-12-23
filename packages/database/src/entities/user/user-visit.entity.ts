@@ -1,9 +1,9 @@
 import { Exclude } from 'class-transformer';
 import { Column, CreateDateColumn, Entity, Generated, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
-import { UserAccount } from './user-account.entity';
-
 import { UserVisitType, UserVisitTypeValue } from '@packages/shared/constant';
+
+import { UserAccount } from './user-account.entity';
 
 @Entity()
 export class UserVisit {

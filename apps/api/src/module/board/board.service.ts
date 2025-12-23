@@ -3,15 +3,6 @@ import { InjectDataSource } from '@nestjs/typeorm';
 import { Request } from 'express';
 import { DataSource } from 'typeorm';
 
-import {
-  CreateBoardCommentDto,
-  CreateBoardDto,
-  GetBoardCommentListDto,
-  GetBoardListDto,
-  UpdateBoardCommentDto,
-  UpdateBoardDto,
-} from './dto';
-
 import { NotificationHandler } from '@app/api/handler';
 import { LIST_LIMIT } from '@app/api/shared';
 
@@ -28,6 +19,15 @@ import {
 } from '@packages/database/repositories';
 
 import { BoardType, EntityName, EntityRelation, UserNotificationType } from '@packages/shared/constant';
+
+import {
+  CreateBoardCommentDto,
+  CreateBoardDto,
+  GetBoardCommentListDto,
+  GetBoardListDto,
+  UpdateBoardCommentDto,
+  UpdateBoardDto,
+} from './dto';
 
 @Injectable()
 export class BoardService {

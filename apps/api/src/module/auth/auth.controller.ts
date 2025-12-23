@@ -1,9 +1,6 @@
 import { Body, Controller, HttpCode, Post, Req, Res } from '@nestjs/common';
 import { CookieOptions, Request, Response } from 'express';
 
-import { AuthService } from './auth.service';
-import { CheckEmailCodeDto, CheckEmailDto, LoginEmailDto, LoginOauthDto, SignupEmailDto } from './dto';
-
 import { Public } from '@app/api/decorator';
 import { ParseReqHandler } from '@app/api/handler';
 import {
@@ -12,6 +9,9 @@ import {
   REFRESH_TOKEN_COOKIE_TIME,
   REFRESH_TOKEN_NAME,
 } from '@app/api/shared';
+
+import { AuthService } from './auth.service';
+import { CheckEmailCodeDto, CheckEmailDto, LoginEmailDto, LoginOauthDto, SignupEmailDto } from './dto';
 
 @Controller('auth')
 export class AuthController {

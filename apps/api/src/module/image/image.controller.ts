@@ -14,10 +14,10 @@ import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
 import { Response } from 'express';
 import pLimit from 'p-limit';
 
-import { ImageService } from './image.service';
-
 import { Public } from '@app/api/decorator';
 import { IMAGE_TYPE } from '@app/api/shared';
+
+import { ImageService } from './image.service';
 
 @Controller('image')
 export class ImageController {

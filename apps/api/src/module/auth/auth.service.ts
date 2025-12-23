@@ -6,10 +6,6 @@ import { InjectDataSource } from '@nestjs/typeorm';
 import { Request } from 'express';
 import { DataSource, EntityManager } from 'typeorm';
 
-import { AWSService } from '../aws';
-import { EmailVerificationService } from '../email-verification';
-import { CheckEmailCodeDto, CheckEmailDto, LoginEmailDto, LoginOauthDto, SignupEmailDto } from './dto';
-
 import { BcryptHandler } from '@app/api/handler';
 import { ACCESS_TOKEN_TIME, REFRESH_TOKEN_NAME, REFRESH_TOKEN_TIME } from '@app/api/shared';
 import { IJwtToken } from '@app/api/type';
@@ -30,6 +26,10 @@ import {
   UserVisitTypeValue,
   userAccountTypeDescription,
 } from '@packages/shared/constant';
+
+import { AWSService } from '../aws';
+import { EmailVerificationService } from '../email-verification';
+import { CheckEmailCodeDto, CheckEmailDto, LoginEmailDto, LoginOauthDto, SignupEmailDto } from './dto';
 
 @Injectable()
 export class AuthService {
