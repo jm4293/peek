@@ -1,12 +1,12 @@
-export interface SignUpEmailReq {
+export type SignUpEmailRequest = {
   nickname: string;
   name: string;
   policy: boolean;
   birthdate: string;
   email: string;
   password: string;
-}
+};
 
-export interface SignUpEmailRes {
+export type SignUpEmailResponse = {
   email: string;
-}
+};

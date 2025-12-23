@@ -1,68 +1,66 @@
 import { createAxiosInstance } from '@app/web/lib';
 
 import {
-  CheckEmailCodeReq,
-  CheckEmailCodeRes,
-  CheckEmailReq,
-  CheckEmailRes,
-  SignInEmailReq,
-  SignInEmailRes,
-  SignInOAuthReq,
-  SignInOAuthRes,
-  SignUpEmailReq,
-  SignUpEmailRes,
+  CheckEmailCodeRequest,
+  CheckEmailCodeResponse,
+  CheckEmailRequest,
+  CheckEmailResponse,
+  RefreshTokenResponse,
+  SignInEmailRequest,
+  SignInEmailResponse,
+  SignInOAuthRequest,
+  SignInOAuthResponse,
+  SignUpEmailRequest,
+  SignUpEmailResponse,
 } from '../type';
-import { RefreshTokenRes } from '../type/refresh-token.type';
 
 const axios = createAxiosInstance();
-const baseURL = '/auth';
+const BASEURL = '/auth';
 
-const authApi = {
-  signInEmail: async (dto: SignInEmailReq) => {
-    return await axios.post<SignInEmailRes, SignInEmailReq>({
-      url: `${baseURL}/login`,
+export const authApi = {
+  signInEmail: async (dto: SignInEmailRequest) => {
+    return await axios.post<SignInEmailResponse, SignInEmailRequest>({
+      url: `${BASEURL}/login`,
       data: dto,
     });
   },
 
-  signInOauth: async (dto: SignInOAuthReq) => {
-    return await axios.post<SignInOAuthRes, SignInOAuthReq>({
-      url: `${baseURL}/login/oauth`,
+  signInOauth: async (dto: SignInOAuthRequest) => {
+    return await axios.post<SignInOAuthResponse, SignInOAuthRequest>({
+      url: `${BASEURL}/login/oauth`,
       data: dto,
     });
   },
 
-  checkEmail: async (dto: CheckEmailReq) => {
-    return await axios.post<CheckEmailRes, CheckEmailReq>({
-      url: `${baseURL}/check-email`,
+  checkEmail: async (dto: CheckEmailRequest) => {
+    return await axios.post<CheckEmailResponse, CheckEmailRequest>({
+      url: `${BASEURL}/check-email`,
       data: dto,
     });
   },
 
-  checkEmailCode: async (dto: CheckEmailCodeReq) => {
-    return await axios.post<CheckEmailCodeRes, CheckEmailCodeReq>({
-      url: `${baseURL}/check-email-code`,
+  checkEmailCode: async (dto: CheckEmailCodeRequest) => {
+    return await axios.post<CheckEmailCodeResponse, CheckEmailCodeRequest>({
+      url: `${BASEURL}/check-email-code`,
       data: dto,
     });
   },
 
-  signUp: async (dto: SignUpEmailReq) => {
-    return await axios.post<SignUpEmailRes, SignUpEmailReq>({
-      url: `${baseURL}/signup`,
+  signUp: async (dto: SignUpEmailRequest) => {
+    return await axios.post<SignUpEmailResponse, SignUpEmailRequest>({
+      url: `${BASEURL}/signup`,
       data: dto,
     });
   },
 
   logout: async () => {
-    return await axios.post<{}, {}>({ url: `${baseURL}/logout`, data: {} });
+    return await axios.post<{}, {}>({ url: `${BASEURL}/logout`, data: {} });
   },
 
   refreshToken: async () => {
-    return await axios.post<RefreshTokenRes, null>({
-      url: `${baseURL}/refresh-token`,
+    return await axios.post<RefreshTokenResponse, null>({
+      url: `${BASEURL}/refresh-token`,
       data: null,
     });
   },
 };
-
-export default authApi;

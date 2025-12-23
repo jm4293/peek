@@ -1,9 +1,9 @@
-export interface CheckEmailReq {
+export type CheckEmailRequest = {
   email: string;
-}
+};
 
-export interface CheckEmailRes {
+export type CheckEmailResponse = {
   isExist: boolean;
   email: string;
   message: string;
-}
+};

@@ -8,7 +8,7 @@ import { useToast } from '@app/web/hooks';
 
 import { UserAccountType } from '@packages/shared/constant';
 
-export default function KakaoOauth() {
+export const KakaoOauth = () => {
   const router = useRouter();
 
   const { openToast } = useToast();
@@ -34,4 +34,4 @@ export default function KakaoOauth() {
   }, []);
 
   return null;
-}
+};

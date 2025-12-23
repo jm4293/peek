@@ -15,15 +15,12 @@ export const ButtonNaver = () => {
     <Link
       href={`https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_NAVER_REDIRECT_URL}&state=peek`}
       className="
-        w-full flex items-center justify-center gap-3
+        w-full flex justify-center items-center gap-2
         px-4 py-3 rounded-lg
-        border-2 border-theme-border-light bg-theme-bg-card
-        hover:bg-theme-bg-card-hover hover:shadow-md
-        active:scale-[0.98]
-        text-theme-text-main
+        bg-[#ddd6fe]/40 hover:bg-[#ddd6fe]/60
+        dark:bg-[#4b5563]/40 dark:hover:bg-[#4b5563]/60
         transition-all duration-200
-      "
-    >
+      ">
       <NaverLogo />
       <Text.HEADING text="네이버 로그인" />
     </Link>

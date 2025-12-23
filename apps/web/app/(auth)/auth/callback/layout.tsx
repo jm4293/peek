@@ -1,10 +1,10 @@
-import Loading from '../../../../(main)/loading';
+import { LoadingSpinner } from '@app/web/components';
 
 export default function AuthOAuthLayout({ children }: { children: React.ReactNode }) {
   return (
     <div>
       {children}
-      <Loading />
+      <LoadingSpinner />
     </div>
   );
 }

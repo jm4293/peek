@@ -30,15 +30,12 @@ export const ButtonGoogle = () => {
     <Link
       href={`https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_OAUTH_REDIRECT_URL}&response_type=token&scope=openid email profile&include_granted_scopes=true`}
       className="
-        w-full flex items-center justify-center gap-3
+        w-full flex justify-center items-center gap-2
         px-4 py-3 rounded-lg
-        border-2 border-theme-border-light bg-theme-bg-card
-        hover:bg-theme-bg-card-hover hover:shadow-md
-        active:scale-[0.98]
-        text-theme-text-main
+        bg-[#ddd6fe]/40 hover:bg-[#ddd6fe]/60
+        dark:bg-[#4b5563]/40 dark:hover:bg-[#4b5563]/60
         transition-all duration-200
-      "
-    >
+      ">
       <GoogleLogo />
       <Text.HEADING text="구글 로그인" />
     </Link>

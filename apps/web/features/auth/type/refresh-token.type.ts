@@ -1,5 +1,5 @@
-export interface RefreshTokenReq {}
+export type RefreshTokenRequest = {};
 
-export interface RefreshTokenRes {
+export type RefreshTokenResponse = {
   accessToken: string;
-}
+};

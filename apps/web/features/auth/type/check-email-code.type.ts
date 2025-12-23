@@ -1,9 +1,9 @@
-export interface CheckEmailCodeReq {
+export type CheckEmailCodeRequest = {
   email: string;
   code: string;
-}
+};
 
-export interface CheckEmailCodeRes {
+export type CheckEmailCodeResponse = {
   success: boolean;
   message: string;
-}
+};

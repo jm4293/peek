@@ -1,4 +1,4 @@
-import GoogleOauth from './GoogleOauth';
+import { GoogleOauth } from '@app/web/features';
 
 export default function GoogleOauthPage() {
   return <GoogleOauth />;

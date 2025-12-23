@@ -11,8 +11,14 @@ import { LocalStorageUtil, SessionStorageUtil } from '@app/web/utils';
 
 import { userAccountTypeDescription } from '@packages/shared/constant';
 
-import authApi from '../api/auth.api';
-import { CheckEmailCodeReq, CheckEmailReq, SignInEmailReq, SignInOAuthReq, SignUpEmailReq } from '../type';
+import { authApi } from '../api';
+import {
+  CheckEmailCodeRequest,
+  CheckEmailRequest,
+  SignInEmailRequest,
+  SignInOAuthRequest,
+  SignUpEmailRequest,
+} from '../type';
 
 export const useAuthMutation = () => {
   const queryClient = useQueryClient();
@@ -24,7 +30,7 @@ export const useAuthMutation = () => {
   // const { notificationTokenMutation } = useUserMutation();
 
   const signInMutation = useMutation({
-    mutationFn: (dto: SignInEmailReq) => authApi.signInEmail(dto),
+    mutationFn: (dto: SignInEmailRequest) => authApi.signInEmail(dto),
     onSuccess: async () => {
       // if (notificationToken) {
       //   await notificationTokenMutation.mutateAsync(notificationToken);
@@ -42,7 +48,7 @@ export const useAuthMutation = () => {
   });
 
   const oauthSignInMutation = useMutation({
-    mutationFn: (dto: SignInOAuthReq) => authApi.signInOauth(dto),
+    mutationFn: (dto: SignInOAuthRequest) => authApi.signInOauth(dto),
     onSuccess: async (_, variables) => {
       const { userAccountType } = variables;
 
@@ -61,15 +67,15 @@ export const useAuthMutation = () => {
   });
 
   const checkEmailMutation = useMutation({
-    mutationFn: (dto: CheckEmailReq) => authApi.checkEmail(dto),
+    mutationFn: (dto: CheckEmailRequest) => authApi.checkEmail(dto),
   });
 
   const checkEmailCodeMutation = useMutation({
-    mutationFn: (dto: CheckEmailCodeReq) => authApi.checkEmailCode(dto),
+    mutationFn: (dto: CheckEmailCodeRequest) => authApi.checkEmailCode(dto),
   });
 
   const signUpMutation = useMutation({
-    mutationFn: (dto: SignUpEmailReq) => authApi.signUp(dto),
+    mutationFn: (dto: SignUpEmailRequest) => authApi.signUp(dto),
     onSuccess: (res) => {
       const { email } = res.data;
 

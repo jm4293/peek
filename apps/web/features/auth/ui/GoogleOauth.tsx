@@ -8,7 +8,7 @@ import { useToast } from '@app/web/hooks';
 
 import { UserAccountType } from '@packages/shared/constant';
 
-export default function GoogleOauth() {
+export const GoogleOauth = () => {
   const router = useRouter();
 
   const { openToast } = useToast();
@@ -38,4 +38,4 @@ export default function GoogleOauth() {
   }, []);
 
   return null;
-}
+};

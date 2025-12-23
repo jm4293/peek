@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
-import { AnimatedBackground, Text } from '@app/web/components';
+import { Text } from '@app/web/components';
 import { LocalStorageKey } from '@app/web/shared';
 import { LocalStorageUtil } from '@app/web/utils';
 
@@ -14,7 +14,8 @@ import { UserAccountType, UserAccountTypeValue } from '@packages/shared/constant
 import { ButtonGoogle } from './ButtonGoogle';
 import { ButtonKakao } from './ButtonKakao';
 import { ButtonNaver } from './ButtonNaver';
-import { LastLoginCheck } from './LastLoginCheck';
+import { LastLoginBadge } from './LastLoginBadge';
+import { LoginAnimatedBackground } from './LoginAnimatedBackground';
 
 gsap.registerPlugin(useGSAP);
 
@@ -40,7 +41,7 @@ const getTimeBasedMessage = () => {
   }
 };
 
-export function LoginOAuth() {
+export function Login() {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
@@ -101,7 +102,6 @@ export function LoginOAuth() {
 
   return (
     <div className="relative w-screen h-screen flex justify-center items-center bg-theme-bg-main overflow-hidden">
-      <AnimatedBackground />
       <div className="relative z-10 flex flex-col items-center gap-8 w-full max-w-md" ref={containerRef}>
         <div ref={textRef} className="flex flex-col gap-2">
           <Text.TITLE text="안녕하세요!" className="text-center" />
@@ -110,17 +110,17 @@ export function LoginOAuth() {
 
         <div className="flex flex-col gap-8 w-full px-8" ref={buttonsRef}>
           <div className="relative w-full">
-            {lastLoginMethod === UserAccountType.GOOGLE && <LastLoginCheck />}
+            {lastLoginMethod === UserAccountType.GOOGLE && <LastLoginBadge />}
             <ButtonGoogle />
           </div>
 
           <div className="relative w-full">
-            {lastLoginMethod === UserAccountType.NAVER && <LastLoginCheck />}
+            {lastLoginMethod === UserAccountType.NAVER && <LastLoginBadge />}
             <ButtonNaver />
           </div>
 
           <div className="relative w-full">
-            {lastLoginMethod === UserAccountType.KAKAO && <LastLoginCheck />}
+            {lastLoginMethod === UserAccountType.KAKAO && <LastLoginBadge />}
             <ButtonKakao />
           </div>
 

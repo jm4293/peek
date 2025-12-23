@@ -18,15 +18,12 @@ export const ButtonKakao = () => {
     <Link
       href={`https://kauth.kakao.com/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_KAKAO_APP_KEY}&redirect_uri=${process.env.NEXT_PUBLIC_KAKAO_REDIRECT_URL}&response_type=code`}
       className="
-        w-full flex items-center justify-center gap-3
+        w-full flex justify-center items-center gap-2
         px-4 py-3 rounded-lg
-        border-2 border-theme-border-light bg-theme-bg-card
-        hover:bg-theme-bg-card-hover hover:shadow-md
-        active:scale-[0.98]
-        text-theme-text-main
+        bg-[#ddd6fe]/40 hover:bg-[#ddd6fe]/60
+        dark:bg-[#4b5563]/40 dark:hover:bg-[#4b5563]/60
         transition-all duration-200
-      "
-    >
+      ">
       <KakaoLogo />
       <Text.HEADING text="카카오 로그인" />
     </Link>

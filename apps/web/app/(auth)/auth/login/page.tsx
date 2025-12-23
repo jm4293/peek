@@ -1,5 +1,5 @@
-import { LoginOAuth } from './LoginOAuth';
+import { Login } from '@app/web/features';
 
 export default function LoginPage() {
-  return <LoginOAuth />;
+  return <Login />;
 }

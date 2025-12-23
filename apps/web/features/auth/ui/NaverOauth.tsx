@@ -8,7 +8,7 @@ import { useToast } from '@app/web/hooks';
 
 import { UserAccountType } from '@packages/shared/constant';
 
-export default function NaverOauth() {
+export const NaverOauth = () => {
   const router = useRouter();
 
   const { openToast } = useToast();
@@ -34,4 +34,4 @@ export default function NaverOauth() {
   }, []);
 
   return null;
-}
+};

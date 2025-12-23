@@ -1,9 +1,9 @@
-export interface SignInEmailReq {
+export type SignInEmailRequest = {
   email: string;
   password: string;
-}
+};
 
-export interface SignInEmailRes {
+export type SignInEmailResponse = {
   accessToken: string;
   refreshToken: string;
-}
+};
