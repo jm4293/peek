@@ -1,4 +1,4 @@
-import { ErrorCode } from '../constant/error-code/error-code';
+import { ErrorCode } from '../constants/error-code/error-code';
 
 export interface ResponseType<T> {
   success: boolean;
