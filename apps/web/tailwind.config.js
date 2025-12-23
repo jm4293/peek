@@ -1,34 +1,37 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: ['./app/**/*.{js,jsx,ts,tsx}', './asset/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: [
+    './app/**/*.{js,jsx,ts,tsx}',
+    './asset/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './features/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     extend: {
       colors: {
-        // Main Brand Colors
-        'theme-main-color': 'var(--main-color)',
-        'theme-main-color-light': 'var(--main-color-light)',
-
         // Backgrounds
-        'theme-bg-header': 'var(--bg-header)',
-        'theme-bg-main': 'var(--bg-main)',
-        'theme-bg-section': 'var(--bg-section)',
-        'theme-bg-card': 'var(--bg-card)',
-        'theme-bg-card-hover': 'var(--bg-card-hover)',
+        'layer-0': 'var(--bg-layer-0)',
+        'layer-1': 'var(--bg-layer-1)',
+        'layer-2': 'var(--bg-layer-2)',
 
         // Borders
-        'theme-border-light': 'var(--border-light)',
-        'theme-border-medium': 'var(--border-medium)',
+        'border-primary': 'var(--border-primary)',
 
         // Text
-        'theme-text-main': 'var(--text-main)',
-        'theme-text-default': 'var(--text-default)',
-        'theme-text-gray': 'var(--text-gray)',
-        'theme-text-blue': 'var(--text-blue)',
-        'theme-text-red': 'var(--text-red)',
+        main: 'var(--text-main)',
+        foreground: 'var(--text-foreground)',
+        'foreground-muted': 'var(--text-foreground-muted)',
+        gray: 'var(--text-gray)',
+        blue: 'var(--text-blue)',
+        red: 'var(--text-red)',
+
+        // Button
+        'btn-primary': 'var(--button-primary)',
+        'btn-secondary': 'var(--button-secondary)',
 
         // Other
-        'theme-skeleton-bg': 'var(--skeleton-bg)',
+        skeleton: 'var(--skeleton-primary)',
       },
     },
   },

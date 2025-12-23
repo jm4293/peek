@@ -10,4 +10,4 @@ export * from './useDebounce';
 export * from './useDeviceLayout';
 export * from './useDevicePlatform';
 export * from './useFooterVisibility';
-export * from './useGlobalError';
+export * from './useMenuItem';

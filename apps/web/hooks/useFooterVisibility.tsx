@@ -7,12 +7,15 @@ import { footerVisibilityAtom } from '../stores';
 import { useDeviceLayout } from './useDeviceLayout';
 
 export const useFooterVisibility = () => {
-  const [isVisible, setIsVisible] = useAtom(footerVisibilityAtom);
   const lastScrollY = useRef(0);
+
+  const [isVisible, setIsVisible] = useAtom(footerVisibilityAtom);
   const { isMobile } = useDeviceLayout();
 
   useEffect(() => {
-    if (!isMobile) return;
+    if (!isMobile) {
+      return;
+    }
 
     const handleScroll = () => {
       const currentY = window.scrollY;

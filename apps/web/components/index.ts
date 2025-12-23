@@ -5,6 +5,7 @@ export * from './chart';
 export * from './image';
 export * from './infinity-list';
 export * from './input';
+export * from './layout';
 export * from './loading';
 export * from './modal';
 export * from './select';
