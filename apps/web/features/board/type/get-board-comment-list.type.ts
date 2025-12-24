@@ -1,12 +1,12 @@
 import { BoardCommentModel } from '../model';
 
-export interface GetBoardCommentListReq {
+export type GetBoardCommentListRequest = {
   page: number;
   boardId: string;
-}
+};
 
-export interface GetBoardCommentListRes {
+export type GetBoardCommentListResponse = {
   boardCommentList: BoardCommentModel[];
   total: number;
   nextPage: number | null;
-}
+};

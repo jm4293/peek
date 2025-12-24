@@ -2,8 +2,8 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 
 import { QueryKeys } from '@app/web/shared';
 
-import boardApi from '../api/board.api';
-import { GetBoardListRes } from '../type';
+import { boardApi } from '../api';
+import { GetBoardListResponse } from '../type';
 
 export const useMineBoardList = () => {
   return useInfiniteQuery({
@@ -16,7 +16,7 @@ export const useMineBoardList = () => {
     },
     select: (data) => {
       return data.pages.reduce(
-        (acc: GetBoardListRes, cur) => {
+        (acc: GetBoardListResponse, cur) => {
           const { boardList, total, nextPage } = cur.data;
 
           return { boardList: [...acc.boardList, ...boardList], total, nextPage };

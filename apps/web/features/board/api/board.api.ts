@@ -1,105 +1,56 @@
 import { createAxiosInstance } from '@app/web/lib';
 
 import {
-  CreateBoardCommentReq,
-  CreateBoardReq,
-  DeleteBoardCommentReq,
-  DeleteBoardReq,
-  GetBoardCommentListReq,
-  GetBoardCommentListRes,
-  GetBoardDetailRes,
-  GetBoardListReq,
-  GetBoardListRes,
-  UpdateBoardCommentReq,
-  UpdateBoardReq,
+  CreateBoardRequest,
+  DeleteBoardRequest,
+  GetBoardListRequest,
+  GetBoardListResponse,
+  GetBoardResponse,
+  UpdateBoardRequest,
 } from '../type';
 
 const axios = createAxiosInstance();
-const baseURL = '/board';
+const BASEURL = '/board';
 
-const boardApi = {
+export const boardApi = {
   getBoardDetail: async (boardId: number) => {
-    return await axios.get<GetBoardDetailRes, null>({ url: `${baseURL}/${boardId}` });
+    return await axios.get<GetBoardResponse, null>({ url: `${BASEURL}/${boardId}` });
   },
 
-  getBoardList: async (dto: GetBoardListReq) => {
-    return await axios.get<GetBoardListRes, GetBoardListReq>({
-      url: baseURL,
+  getBoardList: async (dto: GetBoardListRequest) => {
+    return await axios.get<GetBoardListResponse, GetBoardListRequest>({
+      url: BASEURL,
       params: dto,
     });
   },
 
-  getBoardListMine: async (dto: GetBoardListReq) => {
-    return await axios.get<GetBoardListRes, GetBoardListReq>({
-      url: `${baseURL}/mine`,
+  getBoardListMine: async (dto: GetBoardListRequest) => {
+    return await axios.get<GetBoardListResponse, GetBoardListRequest>({
+      url: `${BASEURL}/mine`,
       params: dto,
     });
   },
 
-  createBoard: async (dto: CreateBoardReq) => {
-    return await axios.post<null, CreateBoardReq>({ url: baseURL, data: dto });
+  createBoard: async (dto: CreateBoardRequest) => {
+    return await axios.post<null, CreateBoardRequest>({ url: BASEURL, data: dto });
   },
 
-  updateBoard: async (dto: UpdateBoardReq) => {
+  updateBoard: async (dto: UpdateBoardRequest) => {
     const { boardId, ...rest } = dto;
 
-    return await axios.put<null, Omit<UpdateBoardReq, 'boardId'>>({
-      url: `${baseURL}/${boardId}`,
+    return await axios.put<null, Omit<UpdateBoardRequest, 'boardId'>>({
+      url: `${BASEURL}/${boardId}`,
       data: rest,
     });
   },
 
-  deleteBoard: async (dto: DeleteBoardReq) => {
+  deleteBoard: async (dto: DeleteBoardRequest) => {
     const { boardId } = dto;
 
-    return await axios.delete<null, null>({ url: `${baseURL}/${boardId}` });
+    return await axios.delete<null, null>({ url: `${BASEURL}/${boardId}` });
   },
 
   // boardLike: async (boardSeq: number) => {
-  //   return await axios.post<null, {}>({ url: `${baseURL}/${boardSeq}/like`, data: {} });
+  //   return await axios.post<null, {}>({ url: `${BASEURL}/${boardSeq}/like`, data: {} });
   // },
-
-  /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  getBoardCommentList: async (params: GetBoardCommentListReq) => {
-    const { boardId, page } = params;
-
-    return await axios.get<GetBoardCommentListRes, Omit<GetBoardCommentListReq, 'boardId'>>({
-      url: `${baseURL}/${boardId}/comments`,
-      params: { page },
-    });
-  },
-
-  getBoardCommentListMine: async (dto: Omit<GetBoardCommentListReq, 'boardId'>) => {
-    return await axios.get<GetBoardCommentListRes, Omit<GetBoardCommentListReq, 'boardId'>>({
-      url: `${baseURL}/mine/comment`,
-      params: dto,
-    });
-  },
-
-  createBoardComment: async (dto: CreateBoardCommentReq) => {
-    const { boardId, ...rest } = dto;
-
-    return await axios.post<null, Omit<CreateBoardCommentReq, 'boardId'>>({
-      url: `${baseURL}/${boardId}/comment`,
-      data: rest,
-    });
-  },
-
-  updateBoardComment: async (dto: UpdateBoardCommentReq) => {
-    const { boardId, boardCommentId, ...rest } = dto;
-
-    return await axios.put<null, Omit<UpdateBoardCommentReq, 'boardId' | 'boardCommentId'>>({
-      url: `${baseURL}/${boardId}/comment/${boardCommentId}`,
-      data: rest,
-    });
-  },
-
-  deleteBoardComment: async (dto: DeleteBoardCommentReq) => {
-    const { boardId, boardCommentId } = dto;
-
-    return await axios.delete<null, null>({ url: `${baseURL}/${boardId}/comment/${boardCommentId}` });
-  },
 };
-
-export default boardApi;

@@ -6,8 +6,8 @@ import { useRouter } from 'next/navigation';
 import { useToast } from '@app/web/hooks';
 import { QueryKeys } from '@app/web/shared';
 
-import boardApi from '../api/board.api';
-import { CreateBoardReq, DeleteBoardReq, UpdateBoardReq } from '../type';
+import { boardApi } from '../api';
+import { CreateBoardRequest, DeleteBoardRequest, UpdateBoardRequest } from '../type';
 
 export const useBoardMutation = () => {
   const queryClient = useQueryClient();
@@ -16,7 +16,7 @@ export const useBoardMutation = () => {
   const { openToast } = useToast();
 
   const createBoardMutation = useMutation({
-    mutationFn: (dto: CreateBoardReq) => boardApi.createBoard(dto),
+    mutationFn: (dto: CreateBoardRequest) => boardApi.createBoard(dto),
     onSuccess: async (_, variables) => {
       const { categoryId } = variables;
 
@@ -28,7 +28,7 @@ export const useBoardMutation = () => {
   });
 
   const updateBoardMutation = useMutation({
-    mutationFn: (dto: UpdateBoardReq) => boardApi.updateBoard(dto),
+    mutationFn: (dto: UpdateBoardRequest) => boardApi.updateBoard(dto),
     onSuccess: async (_, variables) => {
       const { boardId } = variables;
 
@@ -41,11 +41,11 @@ export const useBoardMutation = () => {
   });
 
   const deleteBoardMutation = useMutation({
-    mutationFn: (dto: DeleteBoardReq) => boardApi.deleteBoard(dto),
+    mutationFn: (dto: DeleteBoardRequest) => boardApi.deleteBoard(dto),
     onSuccess: async () => {
-      router.push('/board');
-
       await queryClient.invalidateQueries({ queryKey: QueryKeys.board.list() });
+
+      router.push('/board');
     },
   });
 

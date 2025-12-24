@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 
 import { Button, Card, Input, InternalErrorView, SkeletonSuspense, Text, Textarea } from '@app/web/components';
-import { CreateBoardReq, createBoardReqSchema, useBoardMutation, useStockCategoryList } from '@app/web/features';
+import { CreateBoardRequest, createBoardReqSchema, useBoardMutation, useStockCategoryList } from '@app/web/features';
 
 export default function BoardRegister() {
   const {
@@ -14,7 +14,7 @@ export default function BoardRegister() {
     setValue,
     watch,
     formState: { errors },
-  } = useForm<CreateBoardReq>({
+  } = useForm<CreateBoardRequest>({
     resolver: zodResolver(createBoardReqSchema),
   });
 
@@ -24,7 +24,7 @@ export default function BoardRegister() {
 
   const { createBoardMutation } = useBoardMutation();
 
-  const onSubmit = (formData: CreateBoardReq) => {
+  const onSubmit = (formData: CreateBoardRequest) => {
     createBoardMutation.mutate({ ...formData });
   };
 

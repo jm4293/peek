@@ -1,14 +1,14 @@
 import { BoardModel } from '../model';
 
-export interface GetBoardListReq {
+export type GetBoardListRequest = {
   page: number;
   stockCategory?: number;
   sort?: 'createdAt' | 'viewCount';
   text?: string;
-}
+};
 
-export interface GetBoardListRes {
+export type GetBoardListResponse = {
   boardList: BoardModel[];
   total: number;
   nextPage: number | null;
-}
+};

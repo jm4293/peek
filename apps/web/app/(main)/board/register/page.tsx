@@ -7,7 +7,7 @@ export default async function BoardRegisterPage() {
   const { data: userInfo } = await getUserInfo();
 
   if (!userInfo) {
-    return <NotAuthView text="게시글 등록" />;
+    return <NotAuthView />;
   }
 
   return (
