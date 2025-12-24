@@ -20,7 +20,7 @@ export const Header = () => {
 
   if (isMobile) {
     return (
-      <header className="backdrop-blur-md">
+      <header className="backdrop-blur-sm">
         <div className="w-full grid grid-cols-3 items-center">
           {pathname.split('/').length > 2 ? (
             <div onClick={() => router.back()}>
@@ -41,8 +41,8 @@ export const Header = () => {
   }
 
   return (
-    <header className="backdrop-blur-md">
-      <div className="w-full px-12 py-3 rounded-full bg-layer-2">
+    <header className="backdrop-blur-sm">
+      <div className="w-full px-12 py-3 rounded-full bg-layer-1">
         <div className="grid grid-cols-5 items-center">
           <Text.TITLE text="PEEK" />
           <nav className="col-span-3 flex justify-center items-center gap-12">

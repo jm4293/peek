@@ -32,7 +32,7 @@ export const ButtonGoogle = () => {
       className="
         w-full flex justify-center items-center gap-2
         px-4 py-3 rounded-lg
-        bg-[#ddd6fe]/40 hover:bg-[#ddd6fe]/60
+        bg-[#ffffff]/40 hover:bg-[#ffffff]/60
         dark:bg-[#4b5563]/40 dark:hover:bg-[#4b5563]/60
         transition-all duration-200
       ">

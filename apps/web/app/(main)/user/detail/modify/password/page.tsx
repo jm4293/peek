@@ -10,7 +10,7 @@ export default async function ModifyPasswordPage() {
   const { success, data, code } = await getUserInfo();
 
   if (!success && code === ERROR_CODE.UNAUTHORIZED) {
-    return <NotAuthView text="비밀번호 변경" />;
+    return <NotAuthView />;
   }
 
   if (!data) {

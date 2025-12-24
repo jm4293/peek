@@ -104,8 +104,7 @@ export function Login() {
     <div className="relative w-screen h-screen flex justify-center items-center bg-theme-bg-main overflow-hidden">
       <div className="relative z-10 flex flex-col items-center gap-8 w-full max-w-md" ref={containerRef}>
         <div ref={textRef} className="flex flex-col gap-2">
-          <Text.TITLE text="안녕하세요!" className="text-center" />
-          <Text.PARAGRAPH text={getTimeBasedMessage()} className="text-center" />
+          <p className="text-center font-bold text-2xl">안녕하세요!</p>
         </div>
 
         <div className="flex flex-col gap-8 w-full px-8" ref={buttonsRef}>

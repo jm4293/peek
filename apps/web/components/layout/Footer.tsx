@@ -26,12 +26,12 @@ export const Footer = () => {
   return (
     <footer
       className={`
-          py-2 flex justify-center backdrop-blur-md 
+          py-2 flex justify-center backdrop-blur-sm
           transition-transform duration-500 ease-in-out
           ${isVisible ? 'translate-y-0' : 'translate-y-full'}
         `}>
       <div
-        className={`w-full px-4 py-3 flex justify-between items-center rounded-full bg-layer-2
+        className={`w-full px-4 py-3 flex justify-between items-center rounded-full bg-layer-1
           ${platform === 'ios' ? 'mb-4' : 'mb-2'}
         `}>
         {menuItems.map(({ path, icon: Icon, label, basePath }) => {

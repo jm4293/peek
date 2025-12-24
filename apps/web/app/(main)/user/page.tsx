@@ -13,7 +13,7 @@ export default async function UserPage() {
   const { success, data, code } = await getUserInfo();
 
   if (!success && code === ERROR_CODE.UNAUTHORIZED) {
-    return <NotAuthView text="내 정보" />;
+    return <NotAuthView />;
   }
 
   if (!data) {
