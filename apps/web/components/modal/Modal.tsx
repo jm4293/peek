@@ -39,19 +39,17 @@ export const Modal = () => {
   return ReactDOM.createPortal(
     <div
       className="fixed inset-0 w-screen h-screen bg-black/40 flex items-center justify-center z-[1000]"
-      onClick={closeModal}
-    >
+      onClick={closeModal}>
       <div
         className="rounded-2xl shadow-2xl p-6 min-w-[320px] flex flex-col backdrop-blur-xl bg-white dark:bg-theme-bg-section/70 border border-white/20 dark:border-white/10 text-theme-text-default"
-        onClick={(e) => e.stopPropagation()}
-      >
+        onClick={(e) => e.stopPropagation()}>
         <Text.TITLE text={modal.title} className="mb-4" />
 
         <div className="mb-6">
           {typeof modal.content === 'string' ? <Text.SUBTITLE text={modal.content} /> : modal.content}
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-4">
           {modal.onCancel && <Button.OUTLINE text={modal.cancelText || '취소'} onClick={(e) => handleCancel(e)} />}
           {modal.onConfirm && <Button.CONTAINER text={modal.confirmText || '확인'} onClick={(e) => handleConfirm(e)} />}
         </div>

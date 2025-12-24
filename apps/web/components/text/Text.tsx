@@ -7,11 +7,12 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 }
 
 const textColor = {
-  default: 'text-theme-text-default',
-  gray: 'text-theme-text-gray',
-  blue: 'text-theme-text-blue',
-  red: 'text-theme-text-red',
-  main: 'text-theme-text-main',
+  main: 'text-main',
+  default: 'text-foreground',
+  'main-muted': 'text-foreground-muted',
+  gray: 'text-gray',
+  blue: 'text-blue',
+  red: 'text-red',
 };
 
 const TITLE = (props: Props) => {

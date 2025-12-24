@@ -14,21 +14,15 @@ module.exports = {
         'layer-0': 'var(--bg-layer-0)',
         'layer-1': 'var(--bg-layer-1)',
         'layer-2': 'var(--bg-layer-2)',
-
-        // Borders
-        'border-primary': 'var(--border-primary)',
+        'layer-3': 'var(--bg-layer-3)',
 
         // Text
-        main: 'var(--text-main)',
-        foreground: 'var(--text-foreground)',
-        'foreground-muted': 'var(--text-foreground-muted)',
-        gray: 'var(--text-gray)',
-        blue: 'var(--text-blue)',
-        red: 'var(--text-red)',
-
-        // Button
-        'btn-primary': 'var(--button-primary)',
-        'btn-secondary': 'var(--button-secondary)',
+        main: 'var(--main)',
+        foreground: 'var(--foreground)',
+        'foreground-muted': 'var(--foreground-muted)',
+        gray: 'var(--gray)',
+        blue: 'var(--blue)',
+        red: 'var(--red)',
 
         // Other
         skeleton: 'var(--skeleton-primary)',

@@ -4,66 +4,49 @@ import { ButtonHTMLAttributes } from 'react';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string | React.ReactNode;
-  color?: 'default' | 'danger';
+  className?: string;
 }
 
-const containerStyles = {
-  default: 'bg-theme-main-color hover:bg-theme-main-color-light disabled:bg-theme-main-color/50 active:scale-95',
-  danger: 'bg-[#FF5A5F] hover:bg-[#FF7B81] disabled:bg-[#FFB3B8] active:scale-95',
-};
-
-const outlineStyles = {
-  default:
-    'border-theme-main-color hover:bg-theme-main-color/10 dark:hover:bg-theme-main-color/20 hover:border-theme-main-color-light focus:ring-2 focus:ring-theme-main-color/20 focus:border-theme-main-color disabled:bg-theme-main-color/5 dark:disabled:bg-theme-bg-section/50 disabled:border-theme-main-color/30 active:scale-95',
-  danger:
-    'border-[#FF5A5F] hover:bg-[#FF5A5F]/10 dark:hover:bg-[#FF5A5F]/20 hover:border-[#FF7B81] focus:ring-2 focus:ring-[#FF5A5F]/20 focus:border-[#FF5A5F] disabled:bg-[#FFEBEE] dark:disabled:bg-theme-bg-section/50 disabled:border-[#FFB3B8] active:scale-95',
-};
-
 const CONTAINER = (props: Props) => {
-  const { text, color = 'default', className = '', ...rest } = props;
+  const { text, className, ...rest } = props;
 
   return (
     <button
       className={`
         px-6 py-3 rounded-lg
         border-none
-        transition-all duration-200 ease-in-out
-        shadow-md hover:shadow-lg
-        disabled:shadow-none disabled:cursor-not-allowed
-        ${containerStyles[color]} 
+        transition-colors duration-200
+        disabled:cursor-not-allowed
+        bg-main hover:brightness-105 disabled:bg-gray/20
         ${className}
       `}
-      {...rest}
-    >
-      <strong className="text-white disabled:text-theme-text-gray whitespace-nowrap font-semibold">{text}</strong>
+      {...rest}>
+      {typeof text === 'string' ? (
+        <strong className="text-white disabled:text-gray whitespace-nowrap font-semibold">{text}</strong>
+      ) : (
+        text
+      )}
     </button>
   );
 };
 
 const OUTLINE = (props: Props) => {
-  const { text, color = 'default', className = '', ...rest } = props;
+  const { text, className, ...rest } = props;
 
   return (
     <button
       className={`
         px-6 py-3 rounded-xl
         border
-        bg-theme-bg-card/30 dark:bg-theme-bg-section/30 backdrop-blur-md
-        transition-all duration-200 ease-in-out
+        bg-layer-2/30 dark:bg-layer-1/30 backdrop-blur-sm
+        transition-colors duration-200
         focus:outline-none
-        shadow-lg shadow-black/5 dark:shadow-black/20
-        hover:shadow-xl
         disabled:cursor-not-allowed disabled:opacity-60
-        ${outlineStyles[color]} 
+        border-main hover:border-layer-3 focus:ring-2 focus:ring-main/20 focus:border-main disabled:bg-gray/5 dark:disabled:bg-layer-1/50 disabled:border-gray/30
         ${className}
       `}
-      {...rest}
-    >
-      <strong
-        className={`whitespace-nowrap font-semibold ${color === 'default' ? 'text-theme-main-color disabled:text-theme-text-gray' : 'text-[#FF5A5F]'}`}
-      >
-        {text}
-      </strong>
+      {...rest}>
+      <strong className="whitespace-nowrap font-semibold text-main disabled:text-gray">{text}</strong>
     </button>
   );
 };

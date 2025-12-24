@@ -4,23 +4,18 @@
 
 :root {
   /* Light Mode - Backgrounds */
-  --bg-layer-0: #e7e9ed;
-  --bg-layer-1: #f3f5f7;
-  --bg-layer-2: #ffffff;
-
-  /* Light Mode - Borders */
-  --border-primary: #fafbfb;
+  --bg-layer-0: #f0f2f5;
+  --bg-layer-1: #ffffff;
+  --bg-layer-2: #f0f1f3;
+  --bg-layer-3: #c7d2fe;
 
   /* Light Mode - Text */
-  --text-main: #5a4fcf;
-  --text-foreground: #000000;
-  --text-foreground-muted: #475465;
-  --text-gray: #999999;
-  --text-blue: #0894e2;
-  --text-red: #db2840;
-
-  --button-primary: #ddd6fe;
-  --button-secondary: #e6e8ed;
+  --main: #6366f1;
+  --foreground: #000000;
+  --foreground-muted: #475465;
+  --gray: #999999;
+  --blue: #0894e2;
+  --red: #db2840;
 
   /* Light Mode - Other */
   --skeleton-primary: #e8e8e8;
@@ -28,23 +23,18 @@
 
 html.dark {
   /* Dark Mode - Backgrounds */
-  --bg-layer-0: #16171b;
-  --bg-layer-1: #1d1d22;
+  --bg-layer-0: #111114;
+  --bg-layer-1: #16171b;
   --bg-layer-2: #27272e;
-
-  /* Dark Mode - Borders */
-  --border-primary: #27272d;
+  --bg-layer-3: #c7d2fe;
 
   /* Dark Mode - Text */
-  --text-main: #5a4fcf;
-  --text-foreground: #e3e3e5;
-  --text-foreground-muted: #98999e;
-  --text-gray: #a1a1aa;
-  --text-blue: #60a5fa;
-  --text-red: #f87171;
-
-  --button-primary: #4b5563;
-  --button-secondary: #27272d;
+  --main: #6366f1;
+  --foreground: #e3e3e5;
+  --foreground-muted: #98999e;
+  --gray: #a1a1aa;
+  --blue: #60a5fa;
+  --red: #f87171;
 
   /* Dark Mode - Other */
   --skeleton-primary: #35353a;

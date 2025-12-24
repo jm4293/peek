@@ -7,19 +7,13 @@ import { Card } from '@app/web/components';
 import { NewsButton } from '../../app/(main)/user/NewsButton';
 import { NewsPanel } from '../../app/(main)/user/NewsPanel';
 
-interface Props {
-  text: string;
-}
-
-export function NotAuthView(props: Props) {
-  const { text } = props;
-
+export function NotAuthView() {
   return (
     <>
       <NewsButton />
       <NewsPanel />
 
-      <Card.MAIN text={text}>
+      <Card.MAIN>
         <Card.SECTION text="로그인이 필요합니다.">
           <Link href="/auth/login" className="flex items-center justify-between">
             <div className="flex items-center gap-3">
