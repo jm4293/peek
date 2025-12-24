@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 import { Card } from '../card';
 
-export const ThemeSwitcher = () => {
+export const ThemeButton = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -25,27 +25,26 @@ export const ThemeSwitcher = () => {
   ];
 
   return (
-    <Card.SECTION text="테마">
+    <Card.SECTION>
       <div className="flex flex-col gap-3">
         {themes.map(({ value, icon: Icon, label }) => {
           const isActive = theme === value;
+
           return (
             <button
               key={value}
               onClick={() => setTheme(value)}
               className={`
-                flex items-center gap-3 px-4 py-3 rounded-lg transition-all border-2
+                flex items-center gap-3 px-4 py-3 rounded-lg transition-all border-[1px]
                 ${
                   isActive
-                    ? 'bg-[#9470dc]/10 border-[#9470dc] text-theme-text-main'
-                    : 'bg-theme-bg-sub border-theme-border-light text-theme-text-sub hover:border-[#9470dc]/50 hover:text-theme-text-main'
+                    ? 'bg-[#9470dc]/10 border-[#9470dc] text-main'
+                    : 'bg-layer-2 border-layer-2 text-foreground hover:border-[#9470dc]/50 hover:text-main'
                 }
-              `}
-              title={label}
-            >
-              <Icon size={24} className={isActive ? 'text-[#9470dc]' : ''} />
-              <span className="text-base font-medium">{label}</span>
-              {isActive && <div className="ml-auto w-2 h-2 rounded-full bg-[#9470dc]" />}
+              `}>
+              <Icon size={20} className={isActive ? 'text-main' : ''} />
+              <span className={`${isActive ? 'text-main' : ''} font-medium`}>{label}</span>
+              {isActive && <div className="ml-auto w-2 h-2 rounded-full bg-main" />}
             </button>
           );
         })}

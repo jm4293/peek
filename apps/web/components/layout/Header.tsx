@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronLeft, Menu } from 'lucide-react';
+import { Bell, ChevronLeft, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -20,7 +20,7 @@ export const Header = () => {
 
   if (isMobile) {
     return (
-      <header className="backdrop-blur-sm">
+      <header className="backdrop-blur-md">
         <div className="w-full grid grid-cols-3 items-center">
           {pathname.split('/').length > 2 ? (
             <div onClick={() => router.back()}>
@@ -41,8 +41,8 @@ export const Header = () => {
   }
 
   return (
-    <header className="backdrop-blur-sm">
-      <div className="w-full px-12 py-3 rounded-full bg-layer-1">
+    <header className="">
+      <div className="w-full px-12 py-3 rounded-full bg-layer-1 opacity-95 shadow-lg">
         <div className="grid grid-cols-5 items-center">
           <Text.TITLE text="PEEK" />
           <nav className="col-span-3 flex justify-center items-center gap-12">
@@ -62,6 +62,10 @@ export const Header = () => {
               );
             })}
           </nav>
+
+          <div className="flex justify-end">
+            <Bell size={20} />
+          </div>
         </div>
       </div>
     </header>

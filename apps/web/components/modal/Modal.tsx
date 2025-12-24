@@ -38,10 +38,10 @@ export const Modal = () => {
 
   return ReactDOM.createPortal(
     <div
-      className="fixed inset-0 w-screen h-screen bg-black/40 flex items-center justify-center z-[1000]"
+      className="fixed inset-0 w-screen h-screen bg-black/60 flex items-center justify-center z-[1000]"
       onClick={closeModal}>
       <div
-        className="rounded-2xl shadow-2xl p-6 min-w-[320px] flex flex-col backdrop-blur-xl bg-white dark:bg-theme-bg-section/70 border border-white/20 dark:border-white/10 text-theme-text-default"
+        className="rounded-2xl shadow-2xl p-6 min-w-[320px] flex flex-col backdrop-blur-xl bg-layer-0 dark:bg-layer-1 text-foreground"
         onClick={(e) => e.stopPropagation()}>
         <Text.TITLE text={modal.title} className="mb-4" />
 
