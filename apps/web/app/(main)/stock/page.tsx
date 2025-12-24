@@ -6,12 +6,10 @@ export default function Page() {
   return (
     <Card.MAIN
       text={
-        <div className="flex items-center justify-between">
-          <Text.TITLE text="주식" />
+        <div className="flex justify-end">
           <CurrentTimeText />
         </div>
-      }
-    >
+      }>
       <Card.SECTION>
         <RecentStockList />
       </Card.SECTION>

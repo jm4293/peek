@@ -1,7 +1,7 @@
 import { UserAccountModel } from '../model';
 
-export interface GetUserInfoReq {}
+export type GetUserInfoRequest = {};
 
-export interface GetUserInfoRes {
+export type GetUserInfoResponse = {
   userInfo: UserAccountModel;
-}
+};

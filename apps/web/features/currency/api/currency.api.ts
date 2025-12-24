@@ -1,13 +1,13 @@
 import { createAxiosInstance } from '@app/web/lib';
 
-import { GetCurrencyListRes } from '../type';
+import { GetCurrencyListResponse } from '../type';
 
 const axios = createAxiosInstance();
-const baseURL = '/currency';
+const BASEURL = '/currency';
 
 const currencyApi = {
   getCurrencyList: async () => {
-    return await axios.get<GetCurrencyListRes, null>({ url: `${baseURL}/list` });
+    return await axios.get<GetCurrencyListResponse, null>({ url: `${BASEURL}/list` });
   },
 };
 

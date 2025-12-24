@@ -8,7 +8,12 @@ import { QueryKeys } from '@app/web/shared';
 import { LocalStorageUtil, SessionStorageUtil } from '@app/web/utils';
 
 import userApi from '../api/user.api';
-import { ResetUserPasswordReq, UpdateUserInfoReq, UpdateUserPasswordReq, UpdateUserThumbnailReq } from '../type';
+import {
+  ResetUserPasswordRequest,
+  UpdateUserInfoRequest,
+  UpdateUserPasswordRequest,
+  UpdateUserThumbnailRequest,
+} from '../type';
 
 export const useUserMutation = () => {
   const queryClient = useQueryClient();
@@ -18,7 +23,7 @@ export const useUserMutation = () => {
   const { openToast } = useToast();
 
   const updateUserMutation = useMutation({
-    mutationFn: (dto: UpdateUserInfoReq) => userApi.updateUser(dto),
+    mutationFn: (dto: UpdateUserInfoRequest) => userApi.updateUser(dto),
     onSuccess: async () => {
       await queryClient.refetchQueries({ queryKey: QueryKeys.user.myInfo() });
       openToast({ message: '회원정보 수정 완료', type: 'success' });
@@ -28,7 +33,7 @@ export const useUserMutation = () => {
   });
 
   const updateThumbnailMutation = useMutation({
-    mutationFn: (dto: UpdateUserThumbnailReq) => userApi.updateThumbnail(dto),
+    mutationFn: (dto: UpdateUserThumbnailRequest) => userApi.updateThumbnail(dto),
     onSuccess: async () => {
       await queryClient.refetchQueries({ queryKey: QueryKeys.user.myInfo() });
     },
@@ -43,7 +48,7 @@ export const useUserMutation = () => {
   // });
 
   const updatePasswordMutation = useMutation({
-    mutationFn: (dto: UpdateUserPasswordReq) => userApi.updatePassword(dto),
+    mutationFn: (dto: UpdateUserPasswordRequest) => userApi.updatePassword(dto),
     onSuccess: async () => {
       await queryClient.refetchQueries({ queryKey: QueryKeys.user.myInfo() });
       openToast({ message: '비밀번호가 변경되었습니다.', type: 'success' });
@@ -61,7 +66,7 @@ export const useUserMutation = () => {
   });
 
   const resetPasswordMutation = useMutation({
-    mutationFn: (dto: ResetUserPasswordReq) => userApi.resetPassword(dto),
+    mutationFn: (dto: ResetUserPasswordRequest) => userApi.resetPassword(dto),
     onSuccess: (_, variables) => {
       const { email } = variables;
 

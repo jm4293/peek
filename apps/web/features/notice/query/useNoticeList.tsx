@@ -3,9 +3,9 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { QueryKeys } from '@app/web/shared';
 
 import noticeApi from '../api/notice.api';
-import { GetNoticeListReq, GetNoticeListRes } from '../type/get-notice-list.type';
+import { GetNoticeListRequest, GetNoticeListResponse } from '../type/get-notice-list.type';
 
-export interface NoticeListProps extends Omit<GetNoticeListReq, 'page'> {}
+export interface NoticeListProps extends Omit<GetNoticeListRequest, 'page'> {}
 
 export const useNoticeList = (props: NoticeListProps) => {
   const { type } = props;
@@ -20,7 +20,7 @@ export const useNoticeList = (props: NoticeListProps) => {
     },
     select: (data) => {
       return data.pages.reduce(
-        (acc: GetNoticeListRes, cur) => {
+        (acc: GetNoticeListResponse, cur) => {
           const { noticeList, total, nextPage } = cur.data;
           return { noticeList: [...acc.noticeList, ...noticeList], total, nextPage };
         },

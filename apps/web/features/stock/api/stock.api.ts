@@ -1,73 +1,73 @@
 import { createAxiosInstance } from '@app/web/lib';
 
 import {
-  GetStockCategoryListRes,
-  GetStockKoreanDetailReq,
-  GetStockKoreanDetailRes,
-  GetStockKoreanFavoriteListReq,
-  GetStockKoreanFavoriteListRes,
-  GetStockKoreanIndexCandleListReq,
-  GetStockKoreanIndexCandleListRes,
-  GetStockKoreanListReq,
-  GetStockKoreanListRes,
-  GetStockKoreanRankListReq,
-  GetStockKoreanRankListRes,
-  UpdateStockKoreanFavoriteReq,
+  GetStockCategoryListResponse,
+  GetStockKoreanDetailRequest,
+  GetStockKoreanDetailResponse,
+  GetStockKoreanFavoriteListRequest,
+  GetStockKoreanFavoriteListResponse,
+  GetStockKoreanIndexCandleListRequest,
+  GetStockKoreanIndexCandleListResponse,
+  GetStockKoreanListRequest,
+  GetStockKoreanListResponse,
+  GetStockKoreanRankListRequest,
+  GetStockKoreanRankListResponse,
+  UpdateStockKoreanFavoriteRequest,
 } from '../type';
 
-const baseURL = '/stock';
+const BASEURL = '/stock';
 const axios = createAxiosInstance();
 
 const stockApi = {
   // getToken: async () => {
-  //   return await axios.get<IStockTokenRes, null>({ url: `${baseURL}/token` });
+  //   return await axios.get<IStockTokenRes, null>({ url: `${BASEURL}/token` });
   // },
 
   getStockCategoryList: async () => {
-    return await axios.get<GetStockCategoryListRes, null>({ url: `${baseURL}/category` });
+    return await axios.get<GetStockCategoryListResponse, null>({ url: `${BASEURL}/category` });
   },
 
-  getStockKoreanList: async (dto: GetStockKoreanListReq) => {
-    return await axios.get<GetStockKoreanListRes, GetStockKoreanListReq>({
-      url: `${baseURL}/korean`,
+  getStockKoreanList: async (dto: GetStockKoreanListRequest) => {
+    return await axios.get<GetStockKoreanListResponse, GetStockKoreanListRequest>({
+      url: `${BASEURL}/korean`,
       params: dto,
     });
   },
 
-  getStockKorean: async (dto: GetStockKoreanDetailReq) => {
+  getStockKorean: async (dto: GetStockKoreanDetailRequest) => {
     const { code } = dto;
 
-    return await axios.get<GetStockKoreanDetailRes, GetStockKoreanDetailReq>({
-      url: `${baseURL}/korean/detail/${code}`,
+    return await axios.get<GetStockKoreanDetailResponse, GetStockKoreanDetailRequest>({
+      url: `${BASEURL}/korean/detail/${code}`,
     });
   },
 
-  getStockKoreanRank: async (dto: GetStockKoreanRankListReq) => {
-    return await axios.get<GetStockKoreanRankListRes, GetStockKoreanRankListReq>({
-      url: `${baseURL}/korean/rank`,
+  getStockKoreanRank: async (dto: GetStockKoreanRankListRequest) => {
+    return await axios.get<GetStockKoreanRankListResponse, GetStockKoreanRankListRequest>({
+      url: `${BASEURL}/korean/rank`,
       params: dto,
     });
   },
 
-  getStockKoreanIndexCandleList: async (dto: GetStockKoreanIndexCandleListReq) => {
+  getStockKoreanIndexCandleList: async (dto: GetStockKoreanIndexCandleListRequest) => {
     const { code, ...rest } = dto;
 
-    return await axios.get<GetStockKoreanIndexCandleListRes, Omit<GetStockKoreanIndexCandleListReq, 'code'>>({
-      url: `${baseURL}/korean/index/candle/${code}`,
+    return await axios.get<GetStockKoreanIndexCandleListResponse, Omit<GetStockKoreanIndexCandleListRequest, 'code'>>({
+      url: `${BASEURL}/korean/index/candle/${code}`,
       params: rest,
     });
   },
 
-  getStockKoreanFavoriteList: async (dto: GetStockKoreanFavoriteListReq) => {
-    return await axios.get<GetStockKoreanFavoriteListRes, GetStockKoreanFavoriteListReq>({
-      url: `${baseURL}/korean/favorite`,
+  getStockKoreanFavoriteList: async (dto: GetStockKoreanFavoriteListRequest) => {
+    return await axios.get<GetStockKoreanFavoriteListResponse, GetStockKoreanFavoriteListRequest>({
+      url: `${BASEURL}/korean/favorite`,
       params: dto,
     });
   },
 
-  toggleStockKoreanFavorite: async (dto: UpdateStockKoreanFavoriteReq) => {
-    return await axios.post<null, UpdateStockKoreanFavoriteReq>({
-      url: `${baseURL}/korean/favorite`,
+  toggleStockKoreanFavorite: async (dto: UpdateStockKoreanFavoriteRequest) => {
+    return await axios.post<null, UpdateStockKoreanFavoriteRequest>({
+      url: `${BASEURL}/korean/favorite`,
       data: dto,
     });
   },

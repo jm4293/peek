@@ -1,81 +1,81 @@
 import { createAxiosInstance } from '@app/web/lib';
 
 import {
-  CreateUserPushTokenReq,
-  DeleteUserNotificationReq,
-  GetUserInfoRes,
-  ResetUserPasswordReq,
-  UpdateUserInfoReq,
-  UpdateUserNotificationReadReq,
-  UpdateUserPasswordReq,
-  UpdateUserThumbnailReq,
+  CreateUserPushTokenRequest,
+  DeleteUserNotificationRequest,
+  GetUserInfoResponse,
+  ResetUserPasswordRequest,
+  UpdateUserInfoRequest,
+  UpdateUserNotificationReadRequest,
+  UpdateUserPasswordRequest,
+  UpdateUserThumbnailRequest,
 } from '../type';
 
 const axios = createAxiosInstance();
-const baseURL = '/user';
+const BASEURL = '/user';
 
 const userApi = {
   getMyInfo: async () => {
-    return await axios.get<GetUserInfoRes, null>({ url: baseURL });
+    return await axios.get<GetUserInfoResponse, null>({ url: BASEURL });
   },
 
-  updateUser: async (dto: UpdateUserInfoReq) => {
-    return await axios.put<null, UpdateUserInfoReq>({ url: baseURL, data: dto });
+  updateUser: async (dto: UpdateUserInfoRequest) => {
+    return await axios.put<null, UpdateUserInfoRequest>({ url: BASEURL, data: dto });
   },
 
-  updateThumbnail: async (dto: UpdateUserThumbnailReq) => {
-    return await axios.patch<null, UpdateUserThumbnailReq>({ url: `${baseURL}/thumbnail`, data: dto });
+  updateThumbnail: async (dto: UpdateUserThumbnailRequest) => {
+    return await axios.patch<null, UpdateUserThumbnailRequest>({ url: `${BASEURL}/thumbnail`, data: dto });
   },
 
   // checkEmail: async (dto: ICheckEmailDto) => {
   //   return await axios.post<ICheckEmailRes, ICheckEmailDto>({
-  //     url: `${baseURL}/check-email`,
+  //     url: `${BASEURL}/check-email`,
   //     data: dto,
   //   });
   // },
 
   // checkEmailCode: async (dto: ICheckEmailCodeDto) => {
   //   return await axios.post<ICheckEmailCodeRes, ICheckEmailCodeDto>({
-  //     url: `${baseURL}/check-email-code`,
+  //     url: `${BASEURL}/check-email-code`,
   //     data: dto,
   //   });
   // },
 
-  updatePassword: async (dto: UpdateUserPasswordReq) => {
-    return await axios.patch<null, UpdateUserPasswordReq>({ url: `${baseURL}/password`, data: dto });
+  updatePassword: async (dto: UpdateUserPasswordRequest) => {
+    return await axios.patch<null, UpdateUserPasswordRequest>({ url: `${BASEURL}/password`, data: dto });
   },
 
-  resetPassword: async (dto: ResetUserPasswordReq) => {
-    return await axios.patch<null, ResetUserPasswordReq>({ url: `${baseURL}/password/reset`, data: dto });
+  resetPassword: async (dto: ResetUserPasswordRequest) => {
+    return await axios.patch<null, ResetUserPasswordRequest>({ url: `${BASEURL}/password/reset`, data: dto });
   },
 
   withdraw: async () => {
-    return await axios.delete<null, null>({ url: baseURL });
+    return await axios.delete<null, null>({ url: BASEURL });
   },
 
   // getNotificationList: async (page: number) => {
   // return await axios.get<INotificationListRes, { page: number }>({
-  //   url: `${baseURL}/notifications`,
+  //   url: `${BASEURL}/notifications`,
   //   params: { page },
   // });
   // },
 
-  // postRegisterPushToken: async (dto: CreateUserPushTokenReq) => {
-  //   return await axios.post<null, CreateUserPushTokenReq>({ url: `${baseURL}/push-token`, data: dto });
+  // postRegisterPushToken: async (dto: CreateUserPushTokenRequest) => {
+  //   return await axios.post<null, CreateUserPushTokenRequest>({ url: `${BASEURL}/push-token`, data: dto });
   // },
 
-  // postNotificationRead: async (dto: UpdateUserNotificationReadReq) => {
-  //   return await axios.post<null, UpdateUserNotificationReadReq>({ url: `${baseURL}/notification/read`, data: dto });
+  // postNotificationRead: async (dto: UpdateUserNotificationReadRequest) => {
+  //   return await axios.post<null, UpdateUserNotificationReadRequest>({ url: `${BASEURL}/notification/read`, data: dto });
   // },
 
   // postNotificationReadAll: async () => {
-  //   return await axios.post<null, {}>({ url: `${baseURL}/notification/read-all`, data: {} });
+  //   return await axios.post<null, {}>({ url: `${BASEURL}/notification/read-all`, data: {} });
   // },
 
-  // deleteNotification: async (dto: DeleteUserNotificationReq) => {
+  // deleteNotification: async (dto: DeleteUserNotificationRequest) => {
   //   const { notificationSeq } = dto;
 
-  //   return await axios.delete<null, null>({ url: `${baseURL}/notification/${notificationSeq}` });
+  //   return await axios.delete<null, null>({ url: `${BASEURL}/notification/${notificationSeq}` });
   // },
 };
 

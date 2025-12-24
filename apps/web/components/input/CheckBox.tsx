@@ -19,7 +19,7 @@ export const CheckBox = (props: Props) => {
           checked
             ? 'border-theme-main-color bg-theme-main-color'
             : 'border-theme-border-light/50 dark:border-white/10 bg-theme-bg-card/30 dark:bg-[#1f1f22]/30'
-        } backdrop-blur-sm text-theme-main-color focus:outline-none focus:ring-2 focus:ring-theme-main-color/20 focus:border-theme-main-color transition-all duration-200 cursor-pointer shadow-sm shadow-black/5 dark:shadow-black/20`}
+        } backdrop-blur-md text-theme-main-color focus:outline-none focus:ring-2 focus:ring-theme-main-color/20 focus:border-theme-main-color transition-all duration-200 cursor-pointer shadow-sm shadow-black/5 dark:shadow-black/20`}
         name={name}
         type="checkbox"
         checked={checked}

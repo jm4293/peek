@@ -1,11 +1,11 @@
 import { InquiryModel } from '../model';
 
-export interface GetInquiryListReq {
+export type GetInquiryListRequest = {
   page: number;
-}
+};
 
-export interface GetInquiryListRes {
+export type GetInquiryListResponse = {
   inquiryList: InquiryModel[];
   total: number;
   nextPage: number | null;
-}
+};

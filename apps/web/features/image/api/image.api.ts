@@ -1,7 +1,7 @@
 import { createAxiosInstance } from '@app/web/lib';
 
 const axios = createAxiosInstance({ 'Content-Type': 'multipart/form-data' });
-const baseURL = '/image';
+const BASEURL = '/image';
 
 const imageApi = {
   uploadImage: async (dto: { file: File }) => {
@@ -11,7 +11,7 @@ const imageApi = {
     formData.append('image', file);
 
     return await axios.post<{ name: string }, FormData>({
-      url: `${baseURL}/upload`,
+      url: `${BASEURL}/upload`,
       data: formData,
     });
   },
@@ -26,7 +26,7 @@ const imageApi = {
     });
 
     return await axios.post<{ successUploads: string[]; failUploads: string[] }, FormData>({
-      url: `${baseURL}/uploads`,
+      url: `${BASEURL}/uploads`,
       data: formData,
     });
   },
@@ -34,7 +34,7 @@ const imageApi = {
   downloadImage: async (dto: { name: string; w?: number; h?: number }) => {
     const { name, w, h } = dto;
 
-    const ret = await axios.get({ url: `${baseURL}/${name}`, params: { w, h } });
+    const ret = await axios.get({ url: `${BASEURL}/${name}`, params: { w, h } });
 
     return ret.data;
   },

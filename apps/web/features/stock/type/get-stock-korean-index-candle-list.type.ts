@@ -1,11 +1,11 @@
-export interface GetStockKoreanIndexCandleListReq {
+export type GetStockKoreanIndexCandleListRequest = {
   code: string;
   startDate?: string;
   endDate?: string;
   limit?: number;
-}
+};
 
-export interface GetStockKoreanIndexCandleListRes {
+export type GetStockKoreanIndexCandleListResponse = {
   code: string;
   candleList: {
     open: number;
@@ -15,4 +15,4 @@ export interface GetStockKoreanIndexCandleListRes {
     time: number;
   }[];
   count: number;
-}
+};

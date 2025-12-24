@@ -72,15 +72,14 @@ export const NewsPanel = () => {
   return (
     <>
       <div
-        className={`fixed inset-0 bg-black/30 backdrop-blur-sm z-40 transition-opacity duration-300 ease-out 
+        className={`fixed inset-0 bg-black/30 backdrop-blur-md z-40 transition-opacity duration-300 ease-out 
           ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={closePanel}
       />
 
       <div
         className={`fixed top-0 left-0 h-full w-[420px] max-w-[100vw] backdrop-blur-xl bg-white/95 dark:bg-[#1f1f22]/95 z-50 transition-transform duration-300 ease-out flex flex-col gap-4
-          ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
-      >
+          ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex flex-col gap-2 p-5">
           <div className="flex justify-between items-center">
             <Text.TITLE text="PEEK" />
@@ -96,8 +95,7 @@ export const NewsPanel = () => {
             <InfinityList
               hasNextPage={hasNextPage}
               isFetchingNextPage={isFetchingNextPage}
-              fetchNextPage={fetchNextPage}
-            >
+              fetchNextPage={fetchNextPage}>
               {data?.noticeList?.map(renderItem) || []}
             </InfinityList>
 

@@ -1,11 +1,11 @@
 import { createAxiosInstance } from '@app/web/lib';
 
 import {
+  CreateBoardCommentRequest,
   DeleteBoardCommentRequest,
   GetBoardCommentListRequest,
   GetBoardCommentListResponse,
   UpdateBoardCommentRequest,
-  createBoardCommentRequest,
 } from '../type';
 
 const axios = createAxiosInstance();
@@ -28,10 +28,10 @@ export const boardCommentApi = {
     });
   },
 
-  createBoardComment: async (dto: createBoardCommentRequest) => {
+  createBoardComment: async (dto: CreateBoardCommentRequest) => {
     const { boardId, ...rest } = dto;
 
-    return await axios.post<null, Omit<createBoardCommentRequest, 'boardId'>>({
+    return await axios.post<null, Omit<CreateBoardCommentRequest, 'boardId'>>({
       url: `${BASEURL}/${boardId}/comment`,
       data: rest,
     });

@@ -3,9 +3,9 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { QueryKeys } from '@app/web/shared';
 
 import stockApi from '../api/stock.api';
-import { GetStockKoreanRankListReq } from '../type';
+import { GetStockKoreanRankListRequest } from '../type';
 
-interface Props extends Omit<GetStockKoreanRankListReq, 'page'> {}
+interface Props extends Omit<GetStockKoreanRankListRequest, 'page'> {}
 
 export const useStockKoreanRankList = (props: Props) => {
   const { type } = props;

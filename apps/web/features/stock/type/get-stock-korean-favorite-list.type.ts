@@ -1,11 +1,11 @@
 import { UserStockFavoriteModel } from '../../user';
 
-export interface GetStockKoreanFavoriteListReq {
+export type GetStockKoreanFavoriteListRequest = {
   page: number;
-}
+};
 
-export interface GetStockKoreanFavoriteListRes {
+export type GetStockKoreanFavoriteListResponse = {
   favoriteStockList: UserStockFavoriteModel[];
   total: number;
   nextPage: number | null;
-}
+};

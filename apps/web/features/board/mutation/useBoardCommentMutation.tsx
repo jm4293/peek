@@ -3,13 +3,13 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { QueryKeys } from '@app/web/shared';
 
 import { boardCommentApi } from '../api';
-import { DeleteBoardCommentRequest, UpdateBoardCommentRequest, createBoardCommentRequest } from '../type';
+import { CreateBoardCommentRequest, DeleteBoardCommentRequest, UpdateBoardCommentRequest } from '../type';
 
 export const useBoardCommentMutation = () => {
   const queryClient = useQueryClient();
 
   const createBoardCommentMutation = useMutation({
-    mutationFn: (dto: createBoardCommentRequest) => boardCommentApi.createBoardComment(dto),
+    mutationFn: (dto: CreateBoardCommentRequest) => boardCommentApi.createBoardComment(dto),
     onSuccess: async (_, variables) => {
       const { boardId } = variables;
 

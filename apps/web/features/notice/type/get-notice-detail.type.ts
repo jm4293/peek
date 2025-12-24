@@ -1,9 +1,9 @@
 import { NoticeModel } from '../model';
 
-export interface GetNoticeDetailReq {
+export type GetNoticeDetailRequest = {
   noticeId: number;
-}
+};
 
-export interface GetNoticeDetailRes {
+export type GetNoticeDetailResponse = {
   notice: NoticeModel;
-}
+};

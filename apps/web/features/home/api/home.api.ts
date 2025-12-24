@@ -1,13 +1,13 @@
 import { createAxiosInstance } from '@app/web/lib';
 
-import { GetRecentBoardListRes } from '../type';
+import { GetRecentBoardListResponse } from '../type';
 
 const axios = createAxiosInstance();
-const baseURL = '/home';
+const BASEURL = '/home';
 
 const homeApi = {
   getRecentBoardList: async () => {
-    return await axios.get<GetRecentBoardListRes, null>({ url: `${baseURL}/recent-boards` });
+    return await axios.get<GetRecentBoardListResponse, null>({ url: `${BASEURL}/recent-boards` });
   },
 };
 

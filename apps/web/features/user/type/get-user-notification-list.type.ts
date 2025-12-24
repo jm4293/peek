@@ -1,5 +1,5 @@
-export interface GetUserNotificationListReq {
+export type GetUserNotificationListRequest = {
   page: number;
-}
+};
 
-export interface GetUserNotificationListRes {}
+export type GetUserNotificationListResponse = {};

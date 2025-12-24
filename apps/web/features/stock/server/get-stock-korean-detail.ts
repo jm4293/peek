@@ -4,10 +4,10 @@ import { apiFetch } from '@app/web/lib';
 import { ResponseType } from '@app/web/shared';
 
 import { StockKoreanModel } from '../model/stock-korean.model';
-import { GetStockKoreanDetailReq } from '../type';
+import { GetStockKoreanDetailRequest } from '../type';
 
 export const getStockKoreanDetail = async (
-  dto: GetStockKoreanDetailReq,
+  dto: GetStockKoreanDetailRequest,
 ): Promise<ResponseType<StockKoreanModel | null>> => {
   const { code } = dto;
 

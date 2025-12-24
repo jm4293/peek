@@ -1,7 +1,7 @@
 import { StockCategoryModel } from '../model';
 
-export interface GetStockCategoryListReq {}
+export type GetStockCategoryListRequest = {};
 
-export interface GetStockCategoryListRes {
+export type GetStockCategoryListResponse = {
   stockCategoryList: StockCategoryModel[];
-}
+};

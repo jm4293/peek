@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 
 import { Button, Input, Text } from '@app/web/components';
 import { Card } from '@app/web/components';
-import { UpdateUserInfoReq, UserAccountModel, updateUserInfoReqSchema, useUserMutation } from '@app/web/features';
+import { UpdateUserInfoRequest, UserAccountModel, updateUserInfoRequestSchema, useUserMutation } from '@app/web/features';
 
 interface Props {
   userInfo: UserAccountModel;
@@ -19,8 +19,8 @@ export default function ModifyUser(props: Props) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<UpdateUserInfoReq>({
-    resolver: zodResolver(updateUserInfoReqSchema),
+  } = useForm<UpdateUserInfoRequest>({
+    resolver: zodResolver(updateUserInfoRequestSchema),
     defaultValues: {
       nickname: userInfo.user.nickname,
     },
@@ -28,7 +28,7 @@ export default function ModifyUser(props: Props) {
 
   const { updateUserMutation } = useUserMutation();
 
-  const onSubmit = async (formData: UpdateUserInfoReq) => {
+  const onSubmit = async (formData: UpdateUserInfoRequest) => {
     updateUserMutation.mutate({ ...formData });
   };
 

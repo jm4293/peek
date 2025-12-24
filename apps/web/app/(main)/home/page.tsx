@@ -1,11 +1,10 @@
-import { Card, CurrentTimeText, Text } from '@app/web/components';
+import { Card, CurrentTimeText } from '@app/web/components';
 
 export default async function HomePage() {
   return (
     <Card.MAIN
       text={
-        <div className="flex items-center justify-between">
-          <Text.TITLE text="메인" />
+        <div className="flex justify-end">
           <CurrentTimeText />
         </div>
       }

@@ -7,7 +7,7 @@ import { ACCESS_TOKEN_NAME, ERROR_CODE, REFRESH_TOKEN_NAME, ResponseType } from 
 import { getOrRefreshAccessToken } from '@app/web/utils';
 
 import { UserAccountModel } from '../model';
-import { GetUserInfoRes } from '../type';
+import { GetUserInfoResponse } from '../type';
 
 export const getUserInfo = async (): Promise<ResponseType<UserAccountModel>> => {
   const cookieStore = await cookies();
@@ -23,7 +23,7 @@ export const getUserInfo = async (): Promise<ResponseType<UserAccountModel>> => 
     }
 
     // apiFetch가 자동으로 NestJS 응답에서 data를 추출
-    const { userInfo } = await apiFetch<GetUserInfoRes>('/user', {
+    const { userInfo } = await apiFetch<GetUserInfoResponse>('/user', {
       credentials: 'include',
       headers: {
         cookie: `${ACCESS_TOKEN_NAME}=${validTkn}`,

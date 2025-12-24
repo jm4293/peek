@@ -1,46 +1,46 @@
 import { createAxiosInstance } from '@app/web/lib';
 
 import {
-  CreateInquiryReq,
-  DeleteInquiryReq,
-  GetInquiryDetailReq,
-  GetInquiryDetailRes,
-  GetInquiryListReq,
-  GetInquiryListRes,
-  UpdateInquiryReq,
+  CreateInquiryRequest,
+  DeleteInquiryRequest,
+  GetInquiryDetailRequest,
+  GetInquiryDetailResponse,
+  GetInquiryListRequest,
+  GetInquiryListResponse,
+  UpdateInquiryRequest,
 } from '../type';
 
 const axios = createAxiosInstance();
-const baseURL = '/inquiry';
+const BASEURL = '/inquiry';
 
 const inquiryApi = {
-  getInquiryDetail: async (dto: GetInquiryDetailReq) => {
+  getInquiryDetail: async (dto: GetInquiryDetailRequest) => {
     const { inquiryId } = dto;
 
-    return await axios.get<GetInquiryDetailRes, null>({ url: `${baseURL}/${inquiryId}` });
+    return await axios.get<GetInquiryDetailResponse, null>({ url: `${BASEURL}/${inquiryId}` });
   },
 
-  getInquiryList: async (dto: GetInquiryListReq) => {
-    return await axios.get<GetInquiryListRes, GetInquiryListReq>({ url: baseURL, params: dto });
+  getInquiryList: async (dto: GetInquiryListRequest) => {
+    return await axios.get<GetInquiryListResponse, GetInquiryListRequest>({ url: BASEURL, params: dto });
   },
 
-  createInquiry: async (dto: CreateInquiryReq) => {
-    return await axios.post<null, CreateInquiryReq>({ url: baseURL, data: dto });
+  createInquiry: async (dto: CreateInquiryRequest) => {
+    return await axios.post<null, CreateInquiryRequest>({ url: BASEURL, data: dto });
   },
 
-  modifyInquiry: async (dto: UpdateInquiryReq) => {
+  modifyInquiry: async (dto: UpdateInquiryRequest) => {
     const { inquiryId, ...rest } = dto;
 
-    return await axios.put<null, Omit<UpdateInquiryReq, 'inquiryId'>>({
-      url: `${baseURL}/${inquiryId}`,
+    return await axios.put<null, Omit<UpdateInquiryRequest, 'inquiryId'>>({
+      url: `${BASEURL}/${inquiryId}`,
       data: rest,
     });
   },
 
-  deleteInquiry: async (dto: DeleteInquiryReq) => {
+  deleteInquiry: async (dto: DeleteInquiryRequest) => {
     const { inquiryId } = dto;
 
-    return await axios.delete<null, null>({ url: `${baseURL}/${inquiryId}` });
+    return await axios.delete<null, null>({ url: `${BASEURL}/${inquiryId}` });
   },
 };
 

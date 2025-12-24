@@ -2,12 +2,11 @@
 
 import Link from 'next/link';
 
-import { AnimatedBackground, Text } from '@app/web/components';
+import { Text } from '@app/web/components';
 
 export default function CatchAllPage() {
   return (
     <div className="relative w-screen h-screen flex justify-center items-center bg-theme-bg-main overflow-hidden">
-      <AnimatedBackground />
       <div className="relative z-10 flex flex-col items-center justify-center gap-8 px-4">
         <p className="text-8xl font-bold text-gray-500 dark:text-gray-400 select-none">404</p>
 
@@ -18,8 +17,7 @@ export default function CatchAllPage() {
 
         <Link
           href="/home"
-          className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200 text-sm underline"
-        >
+          className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200 text-sm underline">
           홈으로 돌아가기
         </Link>
       </div>

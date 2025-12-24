@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 
 import { Button, Card, Input, Text, Textarea } from '@app/web/components';
-import { BoardModel, UpdateBoardReq, updateBoardReqSchema, useBoardMutation } from '@app/web/features';
+import { BoardModel, UpdateBoardRequest, updateBoardRequestSchema, useBoardMutation } from '@app/web/features';
 
 interface Props {
   data: BoardModel;
@@ -19,8 +19,8 @@ export default function BoardModify(props: Props) {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<UpdateBoardReq>({
-    resolver: zodResolver(updateBoardReqSchema),
+  } = useForm<UpdateBoardRequest>({
+    resolver: zodResolver(updateBoardRequestSchema),
     defaultValues: {
       title: data.title || '',
       content: data.boardArticle.content || '',
@@ -30,7 +30,7 @@ export default function BoardModify(props: Props) {
 
   const { updateBoardMutation } = useBoardMutation();
 
-  const onSubmit = (data: UpdateBoardReq) => {
+  const onSubmit = (data: UpdateBoardRequest) => {
     updateBoardMutation.mutate({ ...data });
   };
 

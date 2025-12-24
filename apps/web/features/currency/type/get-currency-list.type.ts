@@ -1,8 +1,8 @@
 import { CurrencyHistoryModel } from '../model';
 
-export interface GetCurrencyListReq {}
+export type GetCurrencyListRequest = {};
 
-export interface GetCurrencyListRes {
+export type GetCurrencyListResponse = {
   currencyList: CurrencyHistoryModel[];
   total: number;
-}
+};

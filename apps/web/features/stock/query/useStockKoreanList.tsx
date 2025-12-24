@@ -3,9 +3,9 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { QueryKeys } from '@app/web/shared';
 
 import stockApi from '../api/stock.api';
-import { GetStockKoreanListReq, GetStockKoreanListRes } from '../type';
+import { GetStockKoreanListRequest, GetStockKoreanListResponse } from '../type';
 
-interface Props extends Omit<GetStockKoreanListReq, 'page'> {}
+interface Props extends Omit<GetStockKoreanListRequest, 'page'> {}
 
 export const useStockKoreanList = (props: Props) => {
   const { text, kind } = props;
@@ -20,7 +20,7 @@ export const useStockKoreanList = (props: Props) => {
     },
     select: (data) => {
       return data.pages.reduce(
-        (acc: GetStockKoreanListRes, cur) => {
+        (acc: GetStockKoreanListResponse, cur) => {
           const { stockKoreanList, total } = cur.data;
 
           return {

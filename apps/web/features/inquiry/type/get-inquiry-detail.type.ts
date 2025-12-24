@@ -1,9 +1,9 @@
 import { InquiryModel } from '../model';
 
-export interface GetInquiryDetailReq {
+export type GetInquiryDetailRequest = {
   inquiryId: number;
-}
+};
 
-export interface GetInquiryDetailRes {
+export type GetInquiryDetailResponse = {
   inquiry: InquiryModel;
-}
+};

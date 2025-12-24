@@ -1,9 +1,9 @@
 import { StockKoreanCompanyModel } from '../model';
 
-export interface GetStockKoreanDetailReq {
+export type GetStockKoreanDetailRequest = {
   code: string;
-}
+};
 
-export interface GetStockKoreanDetailRes {
+export type GetStockKoreanDetailResponse = {
   stockKoreanCompany: StockKoreanCompanyModel;
-}
+};

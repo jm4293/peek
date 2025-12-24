@@ -6,7 +6,7 @@ import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { Button, Card, Input, Text, Textarea } from '@app/web/components';
-import { CreateInquiryReq, createInquiryReqSchema, useImageMutation, useInquiryMutation } from '@app/web/features';
+import { CreateInquiryRequest, createInquiryRequestSchema, useImageMutation, useInquiryMutation } from '@app/web/features';
 import { useToast } from '@app/web/hooks';
 
 export default function InquiryRegister() {
@@ -17,8 +17,8 @@ export default function InquiryRegister() {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<CreateInquiryReq>({
-    resolver: zodResolver(createInquiryReqSchema),
+  } = useForm<CreateInquiryRequest>({
+    resolver: zodResolver(createInquiryRequestSchema),
   });
 
   const { openToast } = useToast();
@@ -26,7 +26,7 @@ export default function InquiryRegister() {
   const { uploadImagesMutation } = useImageMutation();
   const { createInquiryMutation } = useInquiryMutation();
 
-  const onSubmit = async (data: CreateInquiryReq) => {
+  const onSubmit = async (data: CreateInquiryRequest) => {
     if (images.length === 0) {
       createInquiryMutation.mutate({ ...data, images: [] });
       return;

@@ -3,9 +3,9 @@ import { useQuery } from '@tanstack/react-query';
 import { QUERY_CACHE_TIME_SIX, QueryKeys } from '@app/web/shared';
 
 import stockApi from '../api/stock.api';
-import { GetStockKoreanDetailReq } from '../type';
+import { GetStockKoreanDetailRequest } from '../type';
 
-interface Props extends GetStockKoreanDetailReq {}
+interface Props extends GetStockKoreanDetailRequest {}
 
 export const useStockKorean = (props: Props) => {
   const { code } = props;

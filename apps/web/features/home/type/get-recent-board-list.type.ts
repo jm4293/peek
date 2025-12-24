@@ -1,5 +1,5 @@
-export interface GetRecentBoardListReq {}
+export type GetRecentBoardListRequest = {};
 
-export interface GetRecentBoardListRes {
+export type GetRecentBoardListResponse = {
   // boards: BoardModel[];
-}
+};

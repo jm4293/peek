@@ -4,16 +4,16 @@ import { API_URL } from '@app/web/shared';
 
 import { TokenManager } from '../auth';
 
-interface Req {
+interface AxiosRequest {
   url: string;
   headers?: AxiosRequestConfig['headers'];
 }
 
-interface GetReq<D> extends Req {
+interface GetRequest<D> extends AxiosRequest {
   params?: D | null;
 }
 
-interface PostReq<D> extends Req {
+interface PostRequest<D> extends AxiosRequest {
   data?: D | null;
 }
 
@@ -66,19 +66,19 @@ export const createAxiosInstance = (headers: AxiosRequestConfig['headers'] = {})
   );
 
   return {
-    get: async <T, D>({ url, params, headers }: GetReq<D>) => {
+    get: async <T, D>({ url, params, headers }: GetRequest<D>) => {
       return await axiosInstance.get<T>(url, { params, headers });
     },
-    post: async <T, D>({ url, data, headers }: PostReq<D>) => {
+    post: async <T, D>({ url, data, headers }: PostRequest<D>) => {
       return await axiosInstance.post<T>(url, data, { headers });
     },
-    put: async <T, D>({ url, data, headers }: PostReq<D>) => {
+    put: async <T, D>({ url, data, headers }: PostRequest<D>) => {
       return await axiosInstance.put<T>(url, data, { headers });
     },
-    delete: async <T, D>({ url, params, headers }: GetReq<D>) => {
+    delete: async <T, D>({ url, params, headers }: GetRequest<D>) => {
       return await axiosInstance.delete<T>(url, { params, headers });
     },
-    patch: async <T, D>({ url, data, headers }: PostReq<D>) => {
+    patch: async <T, D>({ url, data, headers }: PostRequest<D>) => {
       return await axiosInstance.patch<T>(url, data, { headers });
     },
   };

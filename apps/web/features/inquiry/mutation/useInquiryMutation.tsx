@@ -7,7 +7,7 @@ import { useToast } from '@app/web/hooks';
 import { QueryKeys } from '@app/web/shared';
 
 import inquiryApi from '../api/inquiry.api';
-import { CreateInquiryReq, DeleteInquiryReq, UpdateInquiryReq } from '../type';
+import { CreateInquiryRequest, DeleteInquiryRequest, UpdateInquiryRequest } from '../type';
 
 export const useInquiryMutation = () => {
   const queryClient = useQueryClient();
@@ -16,7 +16,7 @@ export const useInquiryMutation = () => {
   const { openToast } = useToast();
 
   const createInquiryMutation = useMutation({
-    mutationFn: (dto: CreateInquiryReq) => inquiryApi.createInquiry(dto),
+    mutationFn: (dto: CreateInquiryRequest) => inquiryApi.createInquiry(dto),
     onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: QueryKeys.inquiry.list() });
 
@@ -26,7 +26,7 @@ export const useInquiryMutation = () => {
   });
 
   const updateInquiryMutation = useMutation({
-    mutationFn: (dto: UpdateInquiryReq) => inquiryApi.modifyInquiry(dto),
+    mutationFn: (dto: UpdateInquiryRequest) => inquiryApi.modifyInquiry(dto),
     onSuccess: async (_, variables) => {
       const { inquiryId } = variables;
 
@@ -38,7 +38,7 @@ export const useInquiryMutation = () => {
   });
 
   const deleteInquiryMutation = useMutation({
-    mutationFn: (dto: DeleteInquiryReq) => inquiryApi.deleteInquiry(dto),
+    mutationFn: (dto: DeleteInquiryRequest) => inquiryApi.deleteInquiry(dto),
     onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: QueryKeys.inquiry.list() });
 
