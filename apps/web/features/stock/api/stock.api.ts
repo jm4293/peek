@@ -18,7 +18,7 @@ import {
 const BASEURL = '/stock';
 const axios = createAxiosInstance();
 
-const stockApi = {
+export const stockApi = {
   // getToken: async () => {
   //   return await axios.get<IStockTokenRes, null>({ url: `${BASEURL}/token` });
   // },
@@ -72,5 +72,3 @@ const stockApi = {
     });
   },
 };
-
-export default stockApi;

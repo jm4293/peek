@@ -1,9 +1,11 @@
 import { BoardModel } from '../model';
 
+export type BoardSortType = 'newest' | 'oldest' | 'popular';
+
 export type GetBoardListRequest = {
   page: number;
-  stockCategory?: number;
-  sort?: 'createdAt' | 'viewCount';
+  stockCategory?: string;
+  sort?: BoardSortType;
   text?: string;
 };
 

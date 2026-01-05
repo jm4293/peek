@@ -3,13 +3,14 @@ import React from 'react';
 interface Props extends React.HTMLAttributes<HTMLElement> {
   text: string | undefined | null;
   className?: string;
-  color?: 'default' | 'gray' | 'blue' | 'red' | 'main';
+  color?: 'default' | 'main' | 'white' | 'black' | 'gray' | 'blue' | 'red';
 }
 
 const textColor = {
   main: 'text-main',
   default: 'text-foreground',
-  'main-muted': 'text-foreground-muted',
+  white: 'text-white',
+  black: 'text-black',
   gray: 'text-gray',
   blue: 'text-blue',
   red: 'text-red',

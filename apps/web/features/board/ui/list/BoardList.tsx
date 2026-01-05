@@ -1,27 +1,28 @@
 'use client';
 
-import { Heart, MessageCircle } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Heart, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
-import {
-  InfinityList,
-  Card,
-  EmptyDataView,
-  InternalErrorView,
-  LoadingView,
-  Text,
-  Thumbnail,
-} from '@app/web/components';
-import { BoardModel, useBoardList } from '@app/web/features';
+import { Card, EmptyDataView, InternalErrorView, LoadingView, Text, Thumbnail } from '@app/web/components';
 import { useQueryParams } from '@app/web/hooks';
 import { DayjsUtil } from '@app/web/utils';
 
-export default function BoardList() {
-  const { getQuery } = useQueryParams();
-  const stockCategory = getQuery('stockCategory');
+import { BoardModel } from '../../model';
+import { useBoardListPaginated } from '../../query';
+import { BoardSortType } from '../../type';
 
-  const { data, hasNextPage, fetchNextPage, isFetchingNextPage, isPending, isSuccess } = useBoardList({
-    stockCategory: stockCategory ? Number(stockCategory) : undefined,
+export const BoardList = () => {
+  const { getQuery } = useQueryParams();
+  const stockCategory = getQuery('category') || undefined;
+  const page = Number(getQuery('page')) || 1;
+  const sort = (getQuery('sort') as BoardSortType) || 'newest';
+  const searchText = getQuery('text') || undefined;
+
+  const { data, isPending, isSuccess } = useBoardListPaginated({
+    page,
+    stockCategory,
+    sort,
+    text: searchText,
   });
 
   const renderItem = (item: BoardModel) => {
@@ -64,6 +65,18 @@ export default function BoardList() {
     );
   };
 
+  const handlePrevPage = () => {
+    if (page > 1) {
+      // onPageChange(page - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (data?.nextPage) {
+      // onPageChange(page + 1);
+    }
+  };
+
   if (isPending) {
     return <LoadingView />;
   }
@@ -77,8 +90,30 @@ export default function BoardList() {
   }
 
   return (
-    <InfinityList hasNextPage={hasNextPage} isFetchingNextPage={isFetchingNextPage} fetchNextPage={fetchNextPage}>
-      {data.boardList.map(renderItem)}
-    </InfinityList>
+    <div className="flex flex-col gap-4">
+      <ol className="flex flex-col gap-2">{data.boardList.map(renderItem)}</ol>
+
+      <Card.SECTION className="grid grid-cols-9">
+        <div className="col-span-3">
+          <button
+            onClick={handlePrevPage}
+            disabled={page === 1}
+            className="p-2 rounded-lg bg-layer-1/80 border border-border-0 disabled:opacity-50 transition-all hover:bg-layer-2 flex justify-center">
+            <ChevronLeft size={20} />
+          </button>
+        </div>
+        <div className="col-span-3 flex justify-center items-center">
+          <Text.PARAGRAPH text={`${page} / ${data.totalPages || 1}`} />
+        </div>
+        <div className="col-span-3 flex justify-end">
+          <button
+            onClick={handleNextPage}
+            disabled={!data.nextPage}
+            className="p-2 rounded-lg bg-layer-1/80 border border-border-0 disabled:opacity-50 transition-all hover:bg-layer-2 flex justify-center">
+            <ChevronRight size={20} />
+          </button>
+        </div>
+      </Card.SECTION>
+    </div>
   );
-}
+};

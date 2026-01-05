@@ -4,3 +4,4 @@ export * from './model';
 export * from './mutation';
 export * from './query';
 export * from './type';
+export * from './ui';

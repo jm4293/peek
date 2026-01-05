@@ -1,7 +1,5 @@
 import { Card, NotAuthView } from '@app/web/components';
-import { getUserInfo } from '@app/web/features';
-
-import BoardRegister from './BoardRegister';
+import { BoardRegister, getUserInfo } from '@app/web/features';
 
 export default async function BoardRegisterPage() {
   const { data: userInfo } = await getUserInfo();

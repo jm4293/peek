@@ -1,7 +1,5 @@
 import { Card, EmptyDataView, InternalErrorView } from '@app/web/components';
-import { getBoardDetail } from '@app/web/features';
-
-import BoardModify from './BoardModify';
+import { BoardModify, getBoardDetail } from '@app/web/features';
 
 interface Props {
   params: Promise<{ id: string }>;

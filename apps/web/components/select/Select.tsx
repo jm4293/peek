@@ -8,29 +8,26 @@ import { Text } from '../text';
 interface Props {
   name: string;
   options: { value: string; label: string }[];
-  title?: string;
-  value?: string;
+  value: string | undefined | null;
+  onChange: (value: string) => void;
   defaultValue?: string;
-  onChange?: (value: string) => void;
+  title?: string;
   isError?: boolean;
   className?: string;
   placeholder?: string;
-  disabled?: boolean;
 }
 
 export const Select = (props: Props) => {
-  const { options, title, name, value, defaultValue, onChange, isError, className, placeholder, disabled } = props;
+  const { options, title, name, value, defaultValue, onChange, isError, className, placeholder } = props;
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(value || defaultValue || '');
+  const [selectedValue, setSelectedValue] = useState<string | undefined | null>(value || defaultValue);
 
   const selectRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleToggle = () => {
-    if (!disabled) {
-      setIsOpen(!isOpen);
-    }
+    setIsOpen(!isOpen);
   };
 
   const handleSelect = (optionValue: string) => {
@@ -76,17 +73,11 @@ export const Select = (props: Props) => {
         </label>
       )}
       <div className="relative">
-        <button
-          type="button"
-          id={name}
-          name={name}
+        <div
           onClick={handleToggle}
-          disabled={disabled}
           className={`w-full flex items-center justify-between pl-4 pr-10 py-3 rounded-xl border ${
-            isError ? 'border-red-500' : 'border-theme-border-light/50 dark:border-white/10'
-          } bg-theme-bg-card/30 dark:bg-theme-bg-section/30 backdrop-blur-md text-theme-text-default focus:outline-none focus:ring-2 focus:ring-theme-main-color/20 focus:border-theme-main-color transition-all duration-200 ${
-            disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'
-          } shadow-lg shadow-black/5 dark:shadow-black/20`}>
+            isError ? 'border-red-500' : 'border-border-0'
+          } `}>
           <span className={`${!selectedOption && placeholder ? 'text-theme-text-gray' : ''}`}>{displayText}</span>
           <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
             <ChevronDown
@@ -94,7 +85,7 @@ export const Select = (props: Props) => {
               className={`text-theme-text-gray transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
             />
           </div>
-        </button>
+        </div>
 
         {isOpen && (
           <div

@@ -3,22 +3,27 @@
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useCallback } from 'react';
 
-// 타입 정의 추가
 type QueryValue = string | number | boolean | null | undefined;
 type QueryObject = Record<string, QueryValue>;
 
-interface UseQueryParamsReturn {
-  searchParams: URLSearchParams;
-  setQuery: (key: string, value: QueryValue) => void;
-  setQueries: (queryObject: QueryObject) => void;
-  getQuery: (key: string) => string | null;
-  hasQuery: (key: string) => boolean;
-}
-
-export const useQueryParams = (): UseQueryParamsReturn => {
+export const useQueryParams = () => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  const getQuery = useCallback(
+    (key: string): string | null => {
+      return searchParams.get(key);
+    },
+    [searchParams],
+  );
+
+  const hasQuery = useCallback(
+    (key: string): boolean => {
+      return searchParams.has(key);
+    },
+    [searchParams],
+  );
 
   const setQuery = useCallback(
     (key: string, value: QueryValue): void => {
@@ -53,10 +58,9 @@ export const useQueryParams = (): UseQueryParamsReturn => {
   );
 
   return {
-    searchParams,
+    getQuery,
+    hasQuery,
     setQuery,
     setQueries,
-    getQuery: (key: string) => searchParams.get(key),
-    hasQuery: (key: string) => searchParams.has(key),
   };
 };

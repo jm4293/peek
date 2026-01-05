@@ -5,7 +5,10 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 
 import { Button, Card, Input, InternalErrorView, SkeletonSuspense, Text, Textarea } from '@app/web/components';
-import { CreateBoardRequest, createBoardRequestSchema, useBoardMutation, useStockCategoryList } from '@app/web/features';
+
+import { useStockCategoryList } from '../../../stock';
+import { useBoardMutation } from '../../mutation';
+import { CreateBoardRequest, createBoardRequestSchema } from '../../type';
 
 export default function BoardRegister() {
   const {

@@ -4,9 +4,11 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 import { Card, Input, Text } from '@app/web/components';
-import { UserAccountModel, useBoardCommentMutation } from '@app/web/features';
 import { useModal } from '@app/web/hooks';
 import { ValidationUtil } from '@app/web/utils';
+
+import { UserAccountModel } from '../../../user';
+import { useBoardCommentMutation } from '../../mutation';
 
 interface Props {
   id: string;

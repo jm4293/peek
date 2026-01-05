@@ -3,9 +3,12 @@
 import { useEffect, useState } from 'react';
 
 import { Card, Input, LineSkeleton, Text, Thumbnail } from '@app/web/components';
-import { UserAccountModel, useBoardCommentList, useBoardCommentMutation } from '@app/web/features';
 import { useToast } from '@app/web/hooks';
 import { DayjsUtil, ValidationUtil } from '@app/web/utils';
+
+import { UserAccountModel } from '../../../user';
+import { useBoardCommentMutation } from '../../mutation';
+import { useBoardCommentList } from '../../query';
 
 interface Props {
   id: string;

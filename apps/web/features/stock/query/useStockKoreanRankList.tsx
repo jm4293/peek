@@ -2,7 +2,7 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 
 import { QueryKeys } from '@app/web/shared';
 
-import stockApi from '../api/stock.api';
+import { stockApi } from '../api';
 import { GetStockKoreanRankListRequest } from '../type';
 
 interface Props extends Omit<GetStockKoreanRankListRequest, 'page'> {}

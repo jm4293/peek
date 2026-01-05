@@ -1,11 +1,13 @@
 import { Suspense } from 'react';
 
 import { Card, SkeletonSuspense } from '@app/web/components';
-import { getBoardDetail, getUserInfo } from '@app/web/features';
-
-import BoardComment from './BoardComment';
-import BoardCommentRegister from './BoardCommentRegister';
-import BoardDetail from './BoardDetail';
+import {
+  BoardComment,
+  BoardCommentRegister,
+  BoardDetail,
+  getBoardDetail,
+  getUserInfo,
+} from '@app/web/features';
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -14,7 +16,7 @@ interface Props {
 export default async function BoardDetailPage(props: Props) {
   const { id } = await props.params;
 
-  const { data: userInfo, success } = await getUserInfo();
+  const { data: userInfo } = await getUserInfo();
 
   const board = getBoardDetail(id);
 

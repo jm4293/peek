@@ -4,9 +4,12 @@ import Link from 'next/link';
 import { use } from 'react';
 
 import { Card, EmptyDataView, InternalErrorView, PreText, ShareButton, Text, Thumbnail } from '@app/web/components';
-import { BoardModel, UserAccountModel, useBoardMutation } from '@app/web/features';
 import { ResponseType } from '@app/web/shared';
 import { DayjsUtil } from '@app/web/utils';
+
+import { UserAccountModel } from '../../../user';
+import { BoardModel } from '../../model';
+import { useBoardMutation } from '../../mutation';
 
 interface Props {
   board: Promise<ResponseType<BoardModel | null>>;

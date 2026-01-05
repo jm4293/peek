@@ -33,7 +33,7 @@ export const Header = () => {
           <div />
 
           <div className="flex justify-end">
-            <Menu size={24} />
+            <Bell size={20} />
           </div>
         </div>
       </header>
@@ -45,6 +45,7 @@ export const Header = () => {
       <div className="w-full px-12 py-3 rounded-full bg-layer-1 opacity-95 shadow-lg">
         <div className="grid grid-cols-5 items-center">
           <Text.TITLE text="PEEK" />
+
           <nav className="col-span-3 flex justify-center items-center gap-12">
             {menuItems.map(({ path, label, basePath }) => {
               const isActive = pathname.startsWith(basePath);
