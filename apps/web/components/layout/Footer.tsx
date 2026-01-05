@@ -28,10 +28,11 @@ export const Footer = () => {
       className={`
           flex justify-center
           transition-transform duration-500 ease-in-out
-          ${isVisible ? 'translate-y-0' : 'translate-y-full'}
-          ${platform === 'ios' ? 'mb-4' : 'mb-2'}
+          ${isVisible ? 'translate-y-0' : 'translate-y-full'}    
         `}>
-      <div className="w-full px-4 py-3 flex justify-between items-center rounded-full bg-layer-1 opacity-95 shadow-lg">
+      <div
+        className={`w-full px-4 py-3 flex justify-between items-center rounded-full bg-layer-0 shadow-lg 
+          ${platform === 'ios' ? 'mb-4' : 'mb-2'}`}>
         {menuItems.map(({ path, icon: Icon, label, basePath }) => {
           const isActive = pathname.startsWith(basePath);
 
@@ -48,5 +49,3 @@ export const Footer = () => {
     </footer>
   );
 };
-
-//         ${platform === 'ios' ? 'mb-6' : 'mb-2'}

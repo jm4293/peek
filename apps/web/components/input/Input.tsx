@@ -30,9 +30,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           ref={ref}
           id={name}
           name={name}
-          className={`w-full pl-4 ${children ? 'pr-16' : 'pr-4'} py-3 rounded-xl border ${
-            isError ? 'border-red-500' : 'border-border-0'
-          } `}
+          className={`w-full pl-4 bg-layer-0 ${children ? 'pr-16' : 'pr-4'} py-3 rounded-xl ${isError ? 'border-red-500' : ''} `}
           placeholder={`${isOptional ? '[선택] ' : ''}${placeholder ?? label}`}
           {...rest}
         />

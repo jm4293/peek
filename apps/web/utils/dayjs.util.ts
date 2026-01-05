@@ -117,7 +117,7 @@ export class DayjsUtil {
     }
 
     // 하루 초과: "YYYY.MM.DD"
-    return target.format('YY.MM.DD');
+    return target.format('YY.MM.DD HH:mm');
   }
 
   // 날짜 조작

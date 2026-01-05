@@ -13,7 +13,7 @@ const SORT_OPTIONS = [
 
 export const BoardSortSelect = () => {
   const { getQuery, setQueries } = useQueryParams();
-  const value = getQuery('sort');
+  const value = getQuery('sort') || 'newest';
 
   const handleSortChange = (newValue: string) => {
     setQueries({ sort: newValue as BoardSortType, page: 1 });

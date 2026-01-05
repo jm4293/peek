@@ -12,13 +12,11 @@ interface Props {
   onChange: (value: string) => void;
   defaultValue?: string;
   title?: string;
-  isError?: boolean;
   className?: string;
-  placeholder?: string;
 }
 
 export const Select = (props: Props) => {
-  const { options, title, name, value, defaultValue, onChange, isError, className, placeholder } = props;
+  const { options, title, name, value, defaultValue, onChange, className } = props;
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState<string | undefined | null>(value || defaultValue);
@@ -39,7 +37,7 @@ export const Select = (props: Props) => {
   };
 
   const selectedOption = options.find((opt) => opt.value === selectedValue);
-  const displayText = selectedOption ? selectedOption.label : placeholder || '선택하세요';
+  const displayText = selectedOption ? selectedOption.label : '선택하세요';
 
   // 외부 클릭 감지
   useEffect(() => {
@@ -58,7 +56,6 @@ export const Select = (props: Props) => {
     };
   }, [isOpen]);
 
-  // value prop이 변경되면 내부 상태 업데이트
   useEffect(() => {
     if (value !== undefined) {
       setSelectedValue(value);
@@ -75,14 +72,12 @@ export const Select = (props: Props) => {
       <div className="relative">
         <div
           onClick={handleToggle}
-          className={`w-full flex items-center justify-between pl-4 pr-10 py-3 rounded-xl border ${
-            isError ? 'border-red-500' : 'border-border-0'
-          } `}>
-          <span className={`${!selectedOption && placeholder ? 'text-theme-text-gray' : ''}`}>{displayText}</span>
+          className={`w-full flex items-center justify-between pl-4 pr-10 py-3 bg-layer-0 rounded-xl`}>
+          <span className={`${!selectedOption ? 'text-gray' : 'text-foreground'}`}>{displayText}</span>
           <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
             <ChevronDown
               size={18}
-              className={`text-theme-text-gray transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+              className={`text-gray transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
             />
           </div>
         </div>
@@ -90,7 +85,7 @@ export const Select = (props: Props) => {
         {isOpen && (
           <div
             ref={dropdownRef}
-            className="absolute z-50 w-full mt-2 rounded-xl border border-theme-border-light/50 dark:border-white/10 bg-theme-bg-card dark:bg-theme-bg-section backdrop-blur-md shadow-lg shadow-black/10 dark:shadow-black/30 overflow-hidden max-h-60 overflow-y-auto">
+            className="absolute z-50 w-full mt-2 rounded-xl bg-layer-0 overflow-hidden max-h-60 overflow-y-auto">
             {options.map((option) => (
               <button
                 key={option.value}

@@ -12,7 +12,7 @@ import { useBoardListPaginated } from '../../query';
 import { BoardSortType } from '../../type';
 
 export const BoardList = () => {
-  const { getQuery } = useQueryParams();
+  const { getQuery, setQuery } = useQueryParams();
   const stockCategory = getQuery('category') || undefined;
   const page = Number(getQuery('page')) || 1;
   const sort = (getQuery('sort') as BoardSortType) || 'newest';
@@ -67,13 +67,13 @@ export const BoardList = () => {
 
   const handlePrevPage = () => {
     if (page > 1) {
-      // onPageChange(page - 1);
+      setQuery('page', String(page - 1));
     }
   };
 
   const handleNextPage = () => {
     if (data?.nextPage) {
-      // onPageChange(page + 1);
+      setQuery('page', String(page + 1));
     }
   };
 

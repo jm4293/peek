@@ -18,7 +18,7 @@ export const Tab = (props: Props) => {
   const { items, value, onChange, className } = props;
 
   return (
-    <div className={`flex items-center gap-2 px-4 py-2 rounded-xl bg-layer-2 dark:bg-layer-2 ${className}`}>
+    <div className={`flex items-center gap-2 px-4 py-2 rounded-xl bg-layer-2 ${className}`}>
       {items.map((item) => {
         const active = value === item.value;
 
@@ -27,9 +27,8 @@ export const Tab = (props: Props) => {
             key={item.value}
             onClick={() => onChange(item.value)}
             className={`
-              font-medium whitespace-nowrap rounded-lg 
-              transition-all duration-200 ease-in-out
-              ${active ? 'bg-main dark:bg-main text-white dark:text-white shadow-sm' : ''}
+              rounded-lg transition-all duration-200 ease-in-out py-1
+              ${active ? 'bg-main text-white shadow-sm' : ''}
             `}>
             <Text.HEADING text={item.label} color={active ? 'white' : 'default'} />
           </button>
