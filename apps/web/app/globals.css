@@ -3,41 +3,43 @@
 @tailwind utilities;
 
 :root {
-  /* Light Mode - Backgrounds */
-  --bg-layer-0: #f0f2f5;
+  --bg-layer-0: #f2f4f5;
   --bg-layer-1: #ffffff;
-  --bg-layer-2: #f7f8fa;
-  --bg-layer-3: #c7d2fe;
+  --bg-layer-2: #f2f4f5;
 
-  /* Light Mode - Text */
-  --main: #9470dc;
+  --modal-bg-layer: #ffffff;
+  --modal-bg-btn-left: #f2f3f6;
+  --modal-bg-btn-right: #8f72d6;
+
+  --border-0: #d1d5db;
+
+  --main: #8f72d6;
   --foreground: #000000;
-  --foreground-muted: #475465;
-  --gray: #999999;
-  --blue: #0894e2;
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #86888f;
+  --blue: #6487cf;
   --red: #db2840;
-
-  /* Light Mode - Other */
-  --skeleton-primary: #e8e8e8;
 }
 
 html.dark {
-  /* Dark Mode - Backgrounds */
-  --bg-layer-0: #111114;
-  --bg-layer-1: #16171b;
-  --bg-layer-2: #27272e;
-  --bg-layer-3: #c7d2fe;
+  --bg-layer-0: #17171c;
+  --bg-layer-1: #202026;
+  --bg-layer-2: #2c2c34;
 
-  /* Dark Mode - Text */
-  --main: #9470dc;
-  --foreground: #e3e3e5;
-  --foreground-muted: #98999e;
-  --gray: #a1a1aa;
-  --blue: #60a5fa;
+  --modal-bg: #2c2e33;
+  --modal-btn-left: #424348;
+  --modal-btn-right: #8f72d6;
+
+  --border-0: #d1d5db;
+
+  --main: #8f72d6;
+  --foreground: #f4f5f8;
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #b3b4ba;
+  --blue: #4c7cc6;
   --red: #f87171;
-
-  /* Dark Mode - Other */
-  --skeleton-primary: #35353a;
 }
 
 * {
@@ -116,7 +118,6 @@ textarea {
   width: 100%;
   border-width: 1px;
   border-radius: 0.25rem;
-  border-color: rgb(209 213 219);
   padding: 0.75rem 1rem;
   resize: none;
 }

@@ -10,22 +10,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Backgrounds
         'layer-0': 'var(--bg-layer-0)',
         'layer-1': 'var(--bg-layer-1)',
         'layer-2': 'var(--bg-layer-2)',
-        'layer-3': 'var(--bg-layer-3)',
 
-        // Text
+        'modal-layer': 'var(--modal-bg-layer)',
+        'modal-btn-left': 'var(--modal-bg-btn-left)',
+        'modal-btn-right': 'var(--modal-bg-btn-right)',
+
+        'border-0': 'var(--border-0)',
+
         main: 'var(--main)',
         foreground: 'var(--foreground)',
-        'foreground-muted': 'var(--foreground-muted)',
+        white: 'var(--white)',
+        black: 'var(--black)',
         gray: 'var(--gray)',
         blue: 'var(--blue)',
         red: 'var(--red)',
-
-        // Other
-        skeleton: 'var(--skeleton-primary)',
       },
     },
   },
