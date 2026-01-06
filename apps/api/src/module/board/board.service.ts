@@ -80,14 +80,32 @@ export class BoardService {
       .leftJoinAndSelect('board.userAccount', 'userAccount')
       .leftJoinAndSelect('userAccount.user', 'user')
       .loadRelationCountAndMap('board.commentCount', 'board.boardComments', 'boardComments')
-      .loadRelationCountAndMap('board.likeCount', 'board.boardLikes')
-      // .where('board.title LIKE :text', { text: text ? `%${text}%` : '' })
-      .orderBy(sort === 'createdAt' ? 'board.createdAt' : 'board.viewCount', 'DESC')
-      .skip((page - 1) * LIST_LIMIT)
-      .take(LIST_LIMIT);
+      .loadRelationCountAndMap('board.likeCount', 'board.boardLikes', 'boardLikes');
+
+    queryBuilder.skip((page - 1) * LIST_LIMIT).take(LIST_LIMIT);
+
+    switch (sort) {
+      case 'oldest':
+        queryBuilder.orderBy('board.id', 'ASC');
+        break;
+      case 'popular':
+        queryBuilder
+          .addSelect(
+            (subQuery) =>
+              subQuery.select('COUNT(bl.id)', 'likeCount').from('board_like', 'bl').where('bl.board_id = board.id'),
+            'sortLikeCount',
+          )
+          .orderBy('sortLikeCount', 'DESC')
+          .addOrderBy('board.id', 'DESC');
+        break;
+      case 'newest':
+      default:
+        queryBuilder.orderBy('board.id', 'DESC');
+        break;
+    }
 
     if (stockCategory) {
-      queryBuilder.andWhere('board.stockCategory = :stockCategory', { stockCategory });
+      queryBuilder.andWhere('stockCategory.enName = :stockCategory', { stockCategory });
     }
 
     if (text) {

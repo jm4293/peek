@@ -12,8 +12,6 @@ export const CurrencyUnit = {
   EUR: 'EUR',
   JPY: 'JPY',
   CNH: 'CNH',
-  AUD: 'AUD',
-  GBP: 'GBP',
 } as const;
 
 export type CurrencyUnitKey = keyof typeof CurrencyUnit;

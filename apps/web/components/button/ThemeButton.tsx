@@ -19,14 +19,14 @@ export const ThemeButton = () => {
   }
 
   const themes = [
-    { value: 'system', icon: Monitor, label: 'System' },
-    { value: 'light', icon: Sun, label: 'Light' },
-    { value: 'dark', icon: Moon, label: 'Dark' },
+    { value: 'system', icon: Monitor, label: '시스템' },
+    { value: 'light', icon: Sun, label: '라이트' },
+    { value: 'dark', icon: Moon, label: '다크' },
   ];
 
   return (
     <Card.SECTION>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         {themes.map(({ value, icon: Icon, label }) => {
           const isActive = theme === value;
 
@@ -44,7 +44,7 @@ export const ThemeButton = () => {
               `}>
               <Icon size={20} className={isActive ? 'text-main' : ''} />
               <span className={`${isActive ? 'text-main' : ''} font-medium`}>{label}</span>
-              {isActive && <div className="ml-auto w-2 h-2 rounded-full bg-main" />}
+              {/* {isActive && <div className="ml-auto w-2 h-2 rounded-full bg-main" />} */}
             </button>
           );
         })}

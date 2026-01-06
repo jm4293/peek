@@ -31,7 +31,7 @@ export const Footer = () => {
           ${isVisible ? 'translate-y-0' : 'translate-y-full'}    
         `}>
       <div
-        className={`w-full px-4 py-3 flex justify-between items-center rounded-full bg-layer-0 shadow-lg 
+        className={`w-full px-4 py-3 flex justify-between items-center rounded-full bg-layer-2 shadow-lg 
           ${platform === 'ios' ? 'mb-4' : 'mb-2'}`}>
         {menuItems.map(({ path, icon: Icon, label, basePath }) => {
           const isActive = pathname.startsWith(basePath);

@@ -1,5 +1,5 @@
 import { Type } from 'class-transformer';
-import { IsInt, IsOptional } from 'class-validator';
+import { IsIn, IsInt, IsOptional } from 'class-validator';
 
 export class GetBoardListDto {
   @IsInt()
@@ -7,10 +7,11 @@ export class GetBoardListDto {
   page: number;
 
   @IsOptional()
-  stockCategory?: number;
+  stockCategory?: string;
 
   @IsOptional()
-  sort?: 'createdAt' | 'viewCount';
+  @IsIn(['newest', 'oldest', 'popular'])
+  sort?: 'newest' | 'oldest' | 'popular';
 
   @IsOptional()
   text?: string;

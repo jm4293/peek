@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, Generated, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
-import { StockKoreanIndexType, StockKoreanIndexTypeValue } from '@packages/shared/constant';
+import { StockCategory, StockCategoryValue } from '@packages/shared/constant';
 
 @Entity()
 export class StockKoreanIndexHistory {
@@ -11,8 +11,8 @@ export class StockKoreanIndexHistory {
   @Generated('uuid')
   uuid: string;
 
-  @Column({ type: 'tinyint', enum: StockKoreanIndexType, comment: '지수 타입 (KOSPI/KOSDAQ)' })
-  type: StockKoreanIndexTypeValue;
+  @Column({ type: 'tinyint', enum: StockCategory, comment: '지수 타입 (KOSPI/KOSDAQ)' })
+  type: StockCategoryValue;
 
   @Column({ type: 'varchar', length: 10, comment: '시간' })
   time: string;

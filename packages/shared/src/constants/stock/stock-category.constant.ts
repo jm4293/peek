@@ -1,8 +1,3 @@
-// export enum StockCategoryEnum {
-//   KOSPI = 1,
-//   KOSDAQ = 2,
-// }
-
 export const StockCategory = {
   KOSPI: 1,
   KOSDAQ: 2,
